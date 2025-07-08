@@ -37,12 +37,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="light">
-      <body className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-white text-gray-900`}
-
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-white text-gray-900 items-center`}
       >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {/* Shared container for spacing */}
+        <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <Header />
+        </div>
+
+        <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          {children}
+        </main>
+
+        <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -24,7 +24,7 @@ export default function AboutComponent() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
-          <motion.div variants={fadeIn('right', 'tween', 0.4, 1)}>
+          <motion.div variants={fadeIn('right', 'spring', 0.2, 1)}>
             <Card className="p-8 shadow-lg rounded-2xl bg-white border border-green-100">
               <h2 className="text-2xl font-semibold text-green-800 mb-5">
                 Our Story
@@ -45,7 +45,7 @@ export default function AboutComponent() {
             </Card>
           </motion.div>
 
-          <motion.div variants={fadeIn('left', 'tween', 0.4, 1)}>
+          <motion.div variants={fadeIn('left', 'spring', 0.4, 1)}>
             <Card className="p-8 shadow-lg rounded-2xl bg-white border border-green-100">
               <h2 className="text-2xl font-semibold text-yellow-500 mb-5">
                 Our Mission
@@ -69,7 +69,7 @@ export default function AboutComponent() {
           </motion.div>
         </div>
 
-        <motion.div variants={fadeIn('up', 'tween', 0.6, 1)} className="mt-16">
+        <motion.div variants={fadeIn('up', 'spring', 0.6, 1)} className="mt-16">
           <Card className="p-10 bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl border border-green-200 shadow-inner">
             <h2 className="text-2xl font-semibold text-green-900 mb-8 text-center">
               Why Choose Us?

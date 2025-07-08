@@ -29,11 +29,11 @@ export default function ContactComponent() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <motion.div variants={fadeIn('right', 'tween', 0.4, 1)}>
+          <motion.div variants={fadeIn('right', 'spring', 0.2, 1)}>
             <ContactForm />
           </motion.div>
 
-          <motion.div variants={fadeIn('left', 'tween', 0.4, 1)}>
+          <motion.div variants={fadeIn('left', 'spring', 0.4, 1)}>
             <Card className="p-10 rounded-3xl shadow-lg border border-green-200 bg-white flex flex-col justify-between h-full">
               <section className="mb-12">
                 <h2 className="text-3xl font-semibold text-green-900 mb-6 border-b border-green-200 pb-4">

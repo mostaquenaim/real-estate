@@ -86,7 +86,7 @@ export default function HomeComponent() {
               className="md:w-1/2 rounded-3xl overflow-hidden shadow-xl ring-4 ring-yellow-400 ring-opacity-70 transition-shadow duration-500 hover:shadow-2xl"
             >
               <img
-                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80"
+                src="/lands/nawabganj-investment-land.jpg"
                 alt="About Banglar Choya"
                 className="w-full h-full object-cover"
                 loading="lazy"
