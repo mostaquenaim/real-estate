@@ -63,8 +63,12 @@ export default function ContactComponent() {
                       <h3 className="font-semibold text-green-900 text-lg mb-1">
                         Contact Numbers
                       </h3>
-                      <p className="leading-relaxed">01337-938314</p>
-                      <p className="leading-relaxed">01337-938322</p>
+                      <p>
+                        <a href="tel:01337938314" className="leading-relaxed">01337-938314</a>
+                      </p>
+                      <p>
+                        <a href="tel:01337938322" className="leading-relaxed">01337-938322</a>
+                      </p>
                     </div>
                   </div>
 
@@ -76,7 +80,11 @@ export default function ContactComponent() {
                       <h3 className="font-semibold text-green-900 text-lg mb-1">
                         Email
                       </h3>
-                      <p className="leading-relaxed">mdnayanmalik@gmail.com</p>
+                      <p className="leading-relaxed">
+                        <a href='mailto:mdnayanmalik@gmail.com'>
+                          mdnayanmalik@gmail.com
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>

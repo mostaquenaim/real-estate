@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/components/animations'
 import PropertyCard from '@/components/PropertyCard'
 import { projects } from '@/lib/constants'
+import { FloatingShapes } from './FloatingShapes'
 
 export default function HomeComponent() {
   return (
@@ -21,6 +22,8 @@ export default function HomeComponent() {
             "url('/images/land-drone-view.webp')",
         }}
       >
+
+        {/* <FloatingShapes /> */}
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 

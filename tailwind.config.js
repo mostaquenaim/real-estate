@@ -6,6 +6,13 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}', // Add app directory for App Router
     './components/**/*.{js,ts,jsx,tsx,mdx}', // Explicitly include components
   ],
+  // safelist: [
+  //   'animate-float1',
+  //   'animate-float2',
+  //   'animate-float3',
+  //   'animate-float4',
+  // ],
+
   theme: {
     extend: {
       colors: {

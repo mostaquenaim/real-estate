@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { FloatingShapes } from "@/components/FloatingShapes";
+import ParticleBackground from "@/components/ParticleBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,16 +42,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-white text-gray-900 items-center`}
       >
+        <ParticleBackground />
+
         {/* Shared container for spacing */}
-        <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto">
           <Header />
         </div>
 
-        <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <main className="flex-1 w-full max-w-7xl mx-auto">
+          {/* <FloatingShapes /> */}
           {children}
         </main>
 
-        <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto">
           <Footer />
         </div>
       </body>
