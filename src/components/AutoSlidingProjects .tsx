@@ -90,8 +90,8 @@ const AutoSlidingProjects = () => {
                 className="cursor-pointer overflow-hidden rounded-lg border-2 border-transparent hover:border-yellow-500 transition"
               >
                 <Image
-                  src={project.thumbnail || project.image || '/images/default-thumb.jpg'}
-                  alt={`Thumbnail of ${project.name}`}
+                  src={project.image || '/images/default-thumb.jpg'}
+                  alt={`Thumbnail of ${project.title}`}
                   width={120}
                   height={80}
                   className="object-cover w-full h-[80px]"
