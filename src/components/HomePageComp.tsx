@@ -1,66 +1,93 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/components/animations'
 import PropertyCard from '@/components/PropertyCard'
 import { projects } from '@/lib/constants'
-import { FloatingShapes } from './FloatingShapes'
+import Link from 'next/link'
+import { useScroll, useTransform, motion } from 'framer-motion'
+import { useRef } from 'react'
+import AutoSlidingProjects from './AutoSlidingProjects '
+import { PropertyMap } from './PropertyMap'
+import { StatsSection } from './StatsSection'
+import { Testimonials } from './Testimonials'
 
 export default function HomeComponent() {
+  const heroRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  })
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+
   return (
     <motion.div
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="py-16 bg-white"
+      className=""
     >
       {/* Hero Section */}
-      <section
-        className="relative h-[85vh] sm:h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat"
+      <section ref={heroRef} className="relative h-[85vh] sm:h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat
+        shadow-2xl hover:shadow-green-700 group transition"
         style={{
           backgroundImage:
             "url('/images/land-drone-view.webp')",
         }}
       >
-
-        {/* <FloatingShapes /> */}
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 
         {/* Content Container */}
-        <div className="relative z-20 container mx-auto px-6 max-w-7xl text-center md:text-left">
+        <div className="relative z-20 container mx-auto px-6 max-w-7xl text-center md:text-left 
+        ">
           <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg">
-              Premium Land & Plots in <span className="text-yellow-400">Dhaka</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg
+            lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-20 transform transition-transform duration-500 ease-in-out ">
+              Premium Land & Plots in <span
+                className="text-yellow-400
+                ">Dhaka</span>
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-yellow-100 max-w-2xl mx-auto md:mx-0 leading-relaxed drop-shadow-md">
+            <p className="mt-6 text-lg sm:text-xl text-yellow-100 max-w-2xl mx-auto md:mx-0 leading-relaxed drop-shadow-md
+            lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out delay-300">
               Banglar Choya Model City Ltd. offers carefully selected lands and plots in prime locations of Dhaka with unmatched quality and trust.
             </p>
 
-            <div className="mt-12 flex flex-col sm:flex-row justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0">
-              <motion.button
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-500 shadow-lg text-green-900 font-semibold px-10 py-4 rounded-lg transition-transform duration-300"
-              >
-                Explore Projects
-              </motion.button>
+            <div className="mt-12 flex flex-col sm:flex-row justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
+            lg:group-hover:scale-125 lg:group-hover:translate-x-80 transform transition-transform duration-500 ease-in-out delay-500
+            ">
+              <Link href={'/projects'} className=''>
+                <motion.button
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-yellow-300 to-yellow-600 hover:shadow-lg shadow-white border-white border-2 text-green-900 font-semibold p-4 cursor-pointer rounded-lg transition-transform duration-300"
+                >
+                  Explore Projects
+                </motion.button>
+              </Link>
 
-              <motion.button
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-green-700 font-semibold px-10 py-4 rounded-lg shadow hover:shadow-lg transition duration-300"
-              >
-                Contact Us
-              </motion.button>
+              <Link href={'/contact'} className=''>
+                <motion.button
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-green-700 shadow-white border-white border-2 font-semibold p-4 cursor-pointer rounded-lg shadow hover:shadow-lg transition duration-300"
+                >
+                  Contact Us
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Featured Projects */}
-      <section className="py-24 bg-white">
+      <motion.section
+        className="py-24"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
             <div className="text-center mb-20">
@@ -70,18 +97,20 @@ export default function HomeComponent() {
               <div className="w-28 h-1 rounded-full bg-gradient-to-r from-green-500 to-yellow-400 mx-auto"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12">
-              {projects.map((project, index) => (
-                <PropertyCard key={project.slug || index} project={project} index={index} />
-              ))}
-            </div>
+            <AutoSlidingProjects/>
           </motion.div>
-        </div>
-      </section>
+        </div >
+      </motion.section >
 
       {/* About Section */}
-      <section className="py-28 bg-green-50">
-        <div className="container mx-auto px-6 max-w-7xl">
+      < motion.section
+        className="py-28 bg-gradient-to-br from-green-300 via-white to-green-300"
+        initial={{ opacity: 0, y: 60 }
+        }
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.3 }}
+      > <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row items-center gap-24">
 
             <motion.div
@@ -118,17 +147,25 @@ export default function HomeComponent() {
                 We offer plots ranging from 3 to 10 kathas, customizable to your needs. Our projects are strategically located with excellent connectivity and promising future growth.
               </p>
 
-              <motion.button
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-green-900 font-semibold px-12 py-4 rounded-lg shadow-inner shadow-yellow-300 transition-transform duration-300 hover:shadow-lg"
-              >
-                Learn More About Us
-              </motion.button>
+              <Link href={'/about'}>
+                <motion.button
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="cursor-pointer bg-gradient-to-r from-yellow-400 to-yellow-500 text-green-900 font-semibold px-12 py-4 rounded-lg shadow-inner shadow-yellow-300 transition-transform duration-300 hover:shadow-lg"
+                >
+                  Learn More About Us
+                </motion.button>
+              </Link>
             </motion.div>
           </div>
         </div>
-      </section>
-    </motion.div>
+      </motion.section >
+
+      <Testimonials></Testimonials>
+
+      {/* <PropertyMap/> */}
+      <StatsSection></StatsSection>
+
+    </motion.div >
   )
 }

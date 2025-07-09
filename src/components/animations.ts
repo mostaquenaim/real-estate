@@ -1,3 +1,4 @@
+'use client'
 import { Variants } from 'framer-motion'
 
 export const staggerContainer: Variants = {
@@ -57,3 +58,4 @@ export const textVariant = (delay: number) => ({
     },
   },
 })
+

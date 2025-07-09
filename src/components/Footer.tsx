@@ -93,7 +93,13 @@ export default function Footer() {
               <div className="flex items-start gap-4">
                 <FaMapMarkerAlt className="mt-1 text-yellow-400 flex-shrink-0 h-6 w-6" />
                 <address className="not-italic">
-                  1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
+                  <a
+                    href='https://maps.app.goo.gl/qYfDv6Trgdsd8kf77'
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-700 hover:underline">
+                    1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
+                  </a>
                 </address>
               </div>
               <div className="flex items-center gap-4">

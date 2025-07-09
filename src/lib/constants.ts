@@ -6,7 +6,8 @@ export const projects = [
     landSize: "675 Bigha",
     plotSizes: "3-10 Katha (Customizable)",
     image: "/lands/nawabganj-land.jpg",
-    slug: "nawabganj"
+    slug: "nawabganj",
+    coordinates: [90.411885, 23.792588]
   },
   {
     title: "Borakoir Project",
@@ -15,7 +16,8 @@ export const projects = [
     landSize: "425 Bigha",
     plotSizes: "3-10 Katha (Customizable)",
     image: "/lands/dhamrai-commercial-land.jpeg",
-    slug: "borakoir"
+    slug: "borakoir",
+    coordinates: [90.411885, 23.792588]
   }
 ]
 

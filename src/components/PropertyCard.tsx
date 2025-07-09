@@ -15,7 +15,7 @@ export default function PropertyCard({ project, index }: PropertyCardProps) {
     <motion.div
       variants={fadeIn('up', 'spring', index * 0.2, 0.75)}
       whileHover={{ y: -12, boxShadow: '0 25px 35px rgba(16, 185, 129, 0.3)' }}
-      className="bg-white rounded-2xl shadow-md overflow-hidden cursor-pointer transition-shadow duration-300"
+      className="bg-white rounded-2xl shadow-md overflow-hidden transition-shadow duration-300"
     >
       {/* Image Wrapper */}
       <div className="relative h-56 md:h-64 overflow-hidden rounded-t-2xl">
@@ -68,7 +68,7 @@ export default function PropertyCard({ project, index }: PropertyCardProps) {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="w-full bg-gradient-to-r from-green-500 to-yellow-400 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+            className="cursor-pointer w-full bg-gradient-to-r from-green-500 to-yellow-400 text-white py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300"
             aria-label={`View details of ${project.title}`}
           >
             View Details

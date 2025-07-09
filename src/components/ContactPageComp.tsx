@@ -50,7 +50,13 @@ export default function ContactComponent() {
                         Head Office
                       </h3>
                       <p className="leading-relaxed">
-                        1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
+                        <a
+                          href='https://maps.app.goo.gl/qYfDv6Trgdsd8kf77'
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-green-700 hover:underline">
+                          1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
+                        </a>
                       </p>
                     </div>
                   </div>

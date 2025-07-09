@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FloatingShapes } from "@/components/FloatingShapes";
 import ParticleBackground from "@/components/ParticleBackground";
+import ParticlesBackground from "@/components/ParticlesBackgroundGPT";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,18 +44,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-white text-gray-900 items-center`}
       >
         <ParticleBackground />
+        {/* <ParticlesBackground></ParticlesBackground> */}
 
         {/* Shared container for spacing */}
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="w-full mx-auto">
           <Header />
         </div>
 
-        <main className="flex-1 w-full max-w-7xl mx-auto">
+        <main className="flex-1 w-full mx-auto">
           {/* <FloatingShapes /> */}
           {children}
         </main>
 
-        <div className="w-full max-w-7xl mx-auto">
+        <div className="w-full mx-auto">
           <Footer />
         </div>
       </body>

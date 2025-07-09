@@ -38,9 +38,17 @@ export default function Header() {
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4 text-green-600" />
-          <span>Gulshan-2, Dhaka</span>
-        </div>
+  <MapPin className="w-4 h-4 text-green-600" />
+  <a
+    href="https://maps.app.goo.gl/qYfDv6Trgdsd8kf77"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-green-700 hover:underline"
+  >
+    Gulshan-2, Dhaka
+  </a>
+</div>
+
       </motion.div>
 
       {/* Main Navbar */}
