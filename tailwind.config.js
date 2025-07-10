@@ -6,13 +6,6 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}', // Add app directory for App Router
     './components/**/*.{js,ts,jsx,tsx,mdx}', // Explicitly include components
   ],
-  // safelist: [
-  //   'animate-float1',
-  //   'animate-float2',
-  //   'animate-float3',
-  //   'animate-float4',
-  // ],
-
   theme: {
     extend: {
       colors: {
@@ -81,6 +74,22 @@ module.exports = {
           'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
+        },
+      },
+      keyframes: {
+        blob: {
+          "0%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -50px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+          "100%": {
+            transform: "translate(0px, 0px) scale(1)",
+          },
         },
       },
       fontFamily: {

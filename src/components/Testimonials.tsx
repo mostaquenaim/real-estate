@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import SectionTitle from './SectionTitle'
 
 const testimonials = [
   {
@@ -40,12 +41,10 @@ export const Testimonials = () => {
       <div className="relative z-10 container mx-auto px-6 max-w-7xl">
 
         {/* heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight drop-shadow-md">
-            Client Testimonials
-          </h2>
-          <div className="w-28 h-1 rounded-full bg-gradient-to-r from-green-500 to-yellow-400 mx-auto"></div>
-        </div>
+        <SectionTitle
+          title='Client Testimonials'
+          subtitle="Real words from the people we proudly serve"
+        />
 
         {/* swiper */}
         <Swiper

@@ -9,6 +9,7 @@ import { useRef } from 'react'
 import AutoSlidingProjects from './AutoSlidingProjects '
 import { StatsSection } from './StatsSection'
 import { Testimonials } from './Testimonials'
+import SectionTitle from './SectionTitle'
 
 export default function HomeComponent() {
   const heroRef = useRef(null)
@@ -89,14 +90,11 @@ export default function HomeComponent() {
       >
         <div className="container mx-auto px-6 max-w-7xl">
           <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
-            <div className="text-center mb-20">
-              <h2 className="text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                Our Featured Projects
-              </h2>
-              <div className="w-28 h-1 rounded-full bg-gradient-to-r from-green-500 to-yellow-400 mx-auto"></div>
-            </div>
-
-            <AutoSlidingProjects/>
+            <SectionTitle
+              title="Our Featured Projects"
+              subtitle="A glimpse into the developments shaping our future"
+            />
+            <AutoSlidingProjects />
           </motion.div>
         </div >
       </motion.section >
