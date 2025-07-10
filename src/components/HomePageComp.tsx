@@ -10,6 +10,7 @@ import AutoSlidingProjects from './AutoSlidingProjects '
 import { PropertyMap } from './PropertyMap'
 import { StatsSection } from './StatsSection'
 import { Testimonials } from './Testimonials'
+import { BlogSection } from './BlogSection'
 
 export default function HomeComponent() {
   const heroRef = useRef(null)
@@ -165,6 +166,7 @@ export default function HomeComponent() {
 
       {/* <PropertyMap/> */}
       <StatsSection></StatsSection>
+
 
     </motion.div >
   )
