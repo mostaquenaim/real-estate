@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import CountUp from 'react-countup'
 import { InView } from 'react-intersection-observer'
 import { HiOutlineOfficeBuilding , HiOutlineUserGroup, HiOutlineMap, HiOutlineEmojiHappy } from 'react-icons/hi'
+import { itemVariants } from './animations'
 
 
 const stats = [
@@ -20,11 +21,6 @@ const containerVariants = {
       staggerChildren: 0.3,
     },
   },
-}
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 80, damping: 15 } },
 }
 
 export const StatsSection = () => {
@@ -50,7 +46,7 @@ export const StatsSection = () => {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
+          whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-4 gap-10"
         >
@@ -59,7 +55,7 @@ export const StatsSection = () => {
               {({ inView, ref }) => (
                 <motion.div
                   ref={ref}
-                  variants={itemVariants}
+                  variants={itemVariants()}
                   className="relative bg-white/10 backdrop-blur-md rounded-3xl p-10 flex flex-col items-center shadow-lg border border-green-700 hover:shadow-2xl transition-shadow duration-500 cursor-default select-none"
                 >
                   <div className="bg-yellow-400 rounded-full p-4 mb-6 shadow-xl text-green-900">

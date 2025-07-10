@@ -25,7 +25,7 @@ export default function Header() {
       {/* Top Info Bar */}
       <motion.div
         initial="hidden"
-        animate="visible"
+        animate="show"
         variants={fadeIn("down", "tween", 0.1, 0.5)}
         className="flex justify-around items-center py-2 text-xs sm:text-sm text-green-900 font-medium"
       >
@@ -48,7 +48,6 @@ export default function Header() {
             Gulshan-2, Dhaka
           </a>
         </div>
-
       </motion.div>
 
       {/* Main Navbar */}
@@ -56,8 +55,8 @@ export default function Header() {
         {/* Logo */}
         <motion.div
           initial="hidden"
-          animate="visible"
-          variants={slideIn}
+          animate="show"
+          variants={slideIn()}
           className="flex items-center"
         >
           <Link href="/" className="flex items-baseline gap-2">

@@ -2,13 +2,23 @@
 
 import { motion } from 'framer-motion'
 import { fadeIn } from './animations'
-import { Project } from '@/types'
 import Link from 'next/link'
+
+interface Project {
+  title: string
+  image: string
+  location: string
+  description: string
+  landSize: string
+  plotSizes: string
+  slug: string
+}
 
 interface PropertyCardProps {
   project: Project
   index: number
 }
+
 
 export default function PropertyCard({ project, index }: PropertyCardProps) {
   return (

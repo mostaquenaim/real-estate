@@ -3,9 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { FloatingShapes } from "@/components/FloatingShapes";
 import ParticleBackground from "@/components/ParticleBackground";
-import ParticlesBackground from "@/components/ParticlesBackgroundGPT";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +21,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
-  themeColor: "#1ab31a", // Your green
+  // themeColor: "#1ab31a",
   openGraph: {
     title: "Banglar Choya Model City Ltd.",
     description: "Buy land and plots with confidence in Dhaka. Explore Nawabganj & Dhamrai projects.",

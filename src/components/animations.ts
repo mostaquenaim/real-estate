@@ -1,5 +1,5 @@
 'use client'
-import { Variants } from 'framer-motion'
+import { AnimationGeneratorType, Variants } from 'framer-motion'
 
 export const staggerContainer: Variants = {
   hidden: {},
@@ -11,13 +11,28 @@ export const staggerContainer: Variants = {
   },
 }
 
-export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', type: string, delay: number, duration: number): Variants => ({
+export const itemVariants = (): Variants => ({
+  hidden: {
+    opacity: 0,
+    y: 40
+  },
+  show: {
+    opacity: 1, y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 80,
+      damping: 15
+    }
+  },
+})
+
+export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', type: AnimationGeneratorType, delay: number, duration: number): Variants => ({
   hidden: {
     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
     y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,
     opacity: 0,
   },
-  visible: {
+  show: {
     x: 0,
     y: 0,
     opacity: 1,
@@ -30,10 +45,10 @@ export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', type: string
   },
 })
 
-export const slideIn = {
+export const slideIn = (): Variants => ({
   hidden: { x: -100, opacity: 0 },
-  visible: { 
-    x: 0, 
+  show: {
+    x: 0,
     opacity: 1,
     transition: {
       type: 'spring',
@@ -41,7 +56,7 @@ export const slideIn = {
       damping: 10,
     }
   },
-}
+});
 
 export const textVariant = (delay: number) => ({
   hidden: {
