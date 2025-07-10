@@ -108,7 +108,7 @@ export default function Footer() {
                   href="tel:01337938314"
                   className="hover:text-yellow-400 transition-colors tracking-wide"
                 >
-                  01337-938314
+                  +88 01337938322
                 </a>
               </div>
               <div className="flex items-center gap-4">

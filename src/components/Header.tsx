@@ -33,7 +33,7 @@ export default function Header() {
           <Phone className="w-4 h-4 text-green-600" />
           <span>
             <a href="tel:01337938314">
-              01337-938314
+              +88 01337938322
             </a>
           </span>
         </div>

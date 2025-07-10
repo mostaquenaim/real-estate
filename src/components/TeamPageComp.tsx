@@ -30,7 +30,7 @@ export default function TeamPageComp() {
         {/* Team Members Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {teamMembers.map((member, index) => (
-            <TeamMember key={index} index={index} {...member} />
+            <TeamMember key={index} index={index} highlight={false} {...member} />
           ))}
         </div>
 
@@ -45,15 +45,15 @@ export default function TeamPageComp() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
               'Chairman',
-              'MD',
-              'Directors',
+              'Vice Chairman',
+              'Managing Director',
               'CEO',
+              'Directors',
+              'General Manager',
               'Engineers',
               'Accountant',
-              'Executives',
               'HR & Admin',
-              'Front Desk',
-              'Office Staffs',
+              'Operations'
             ].map((dept) => (
               <div
                 key={dept}

@@ -70,9 +70,6 @@ export default function ContactComponent() {
                         Contact Numbers
                       </h3>
                       <p>
-                        <a href="tel:01337938314" className="leading-relaxed">01337-938314</a>
-                      </p>
-                      <p>
                         <a href="tel:01337938322" className="leading-relaxed">01337-938322</a>
                       </p>
                     </div>
