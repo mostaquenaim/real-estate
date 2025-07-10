@@ -26,7 +26,7 @@ export default function Header() {
       <motion.div
         initial="hidden"
         animate="visible"
-        variants={fadeIn}
+        variants={fadeIn("down", "tween", 0.1, 0.5)}
         className="flex justify-around items-center py-2 text-xs sm:text-sm text-green-900 font-medium"
       >
         <div className="flex items-center gap-2">
@@ -38,16 +38,16 @@ export default function Header() {
           </span>
         </div>
         <div className="flex items-center gap-2">
-  <MapPin className="w-4 h-4 text-green-600" />
-  <a
-    href="https://maps.app.goo.gl/qYfDv6Trgdsd8kf77"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-green-700 hover:underline"
-  >
-    Gulshan-2, Dhaka
-  </a>
-</div>
+          <MapPin className="w-4 h-4 text-green-600" />
+          <a
+            href="https://maps.app.goo.gl/qYfDv6Trgdsd8kf77"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-700 hover:underline"
+          >
+            Gulshan-2, Dhaka
+          </a>
+        </div>
 
       </motion.div>
 
@@ -76,11 +76,10 @@ export default function Header() {
             <Link
               key={link.path}
               href={link.path}
-              className={`relative text-sm font-medium transition duration-300 ease-in-out px-1 py-1 ${
-                pathname === link.path
+              className={`relative text-sm font-medium transition duration-300 ease-in-out px-1 py-1 ${pathname === link.path
                   ? 'text-green-700 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-green-400 after:to-green-600'
                   : 'text-gray-700 hover:text-green-600'
-              }`}
+                }`}
             >
               {link.name}
             </Link>
@@ -112,11 +111,10 @@ export default function Header() {
               key={link.path}
               href={link.path}
               onClick={() => setMenuOpen(false)}
-              className={`block text-center px-4 py-2 rounded-md text-sm font-medium transition ${
-                pathname === link.path
+              className={`block text-center px-4 py-2 rounded-md text-sm font-medium transition ${pathname === link.path
                   ? 'bg-green-100 text-green-700'
                   : 'text-gray-800 hover:bg-green-50 hover:text-green-600'
-              }`}
+                }`}
             >
               {link.name}
             </Link>
