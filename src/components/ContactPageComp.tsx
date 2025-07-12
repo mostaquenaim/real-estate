@@ -14,7 +14,7 @@ export default function ContactComponent() {
       animate="show"
       className="py-20 bg-green-50"
     >
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-7xl md:py-20">
         <motion.div
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="text-center mb-14"

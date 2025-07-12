@@ -32,7 +32,7 @@ export default function HomeComponent() {
         shadow-2xl hover:shadow-green-700 group transition"
         style={{
           backgroundImage:
-            "url('/city-sunset-banglar-choya-cover.jpg')",
+            "url('/rsz_11city-sunset-banglar-choya-cover.jpg')",
         }}
       >
         {/* Dark Overlay */}
@@ -45,7 +45,9 @@ export default function HomeComponent() {
             <h1 className="text-2xl md:text-4xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg
             lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-20 transform transition-transform duration-500 ease-in-out ">
               Your Gateway to Premium Land, Plots & Apartments
-              <span className="text-yellow-400">{' '}Across Bangladesh — Especially in Dhaka</span>
+              <span className="text-yellow-400">{' '}Across
+                <span className="bg-gradient-to-r from-yellow-300 to-green-500 bg-clip-text text-transparent">{' '}Bangladesh{' '}</span>
+                — Especially in Dhaka</span>
             </h1>
 
             <p className="mt-6 text-md text-yellow-100 max-w-2xl mx-auto md:mx-0 leading-relaxed drop-shadow-md
@@ -79,6 +81,7 @@ export default function HomeComponent() {
             </div>
           </motion.div>
         </div>
+        
       </section>
 
       {/* Featured Projects */}
@@ -92,7 +95,8 @@ export default function HomeComponent() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.3 }}
-      > <div className="container mx-auto px-6 max-w-7xl">
+      >
+        <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row items-center gap-24">
 
             <motion.div
