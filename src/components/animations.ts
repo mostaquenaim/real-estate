@@ -26,6 +26,28 @@ export const itemVariants = (): Variants => ({
   },
 })
 
+export const containerVariants = (): Variants => ({
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+})
+
+export const lineVariants = (): Variants => ({
+  hidden: { scaleX: 0, originX: 0.5 },
+  show: {
+    scaleX: 1,
+    transition: {
+      duration: 0.9,
+      delay: 0.3,
+      ease: [0.6, 0.01, -0.05, 0.95],
+    },
+  },
+})
+
 export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', type: AnimationGeneratorType, delay: number, duration: number): Variants => ({
   hidden: {
     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,

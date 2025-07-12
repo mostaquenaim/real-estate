@@ -114,10 +114,10 @@ export default function Footer() {
               <div className="flex items-center gap-4">
                 <FaEnvelope className="text-yellow-400 h-6 w-6" />
                 <a
-                  href="mailto:mdnayanmalik@gmail.com"
+                  href="mailto:banglarchoyamodelcity@gmail.com"
                   className="hover:text-yellow-400 transition-colors tracking-wide"
                 >
-                  mdnayanmalik@gmail.com
+                  banglarchoyamodelcity@gmail.com
                 </a>
               </div>
             </div>

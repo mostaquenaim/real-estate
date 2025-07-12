@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import { motion, useAnimation, useInView, Variants } from 'framer-motion'
+import { containerVariants, lineVariants } from './animations'
 
 interface SectionTitleProps {
     title: string
@@ -39,16 +40,6 @@ export default function SectionTitle({
         right: 'text-right items-end',
     }
 
-    const containerVariants = (): Variants => ({
-        hidden: { opacity: 0 },
-        show: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-            },
-        },
-    })
-
     const itemVariants = (): Variants => ({
         hidden: { opacity: 0, y: 20, scale: 0.98 },
         show: {
@@ -58,18 +49,6 @@ export default function SectionTitle({
             transition: {
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
-            },
-        },
-    })
-
-    const lineVariants = (): Variants => ({
-        hidden: { scaleX: 0, originX: 0.5 },
-        show: {
-            scaleX: 1,
-            transition: {
-                duration: 0.9,
-                delay: 0.3,
-                ease: [0.6, 0.01, -0.05, 0.95],
             },
         },
     })
@@ -115,30 +94,6 @@ export default function SectionTitle({
                 <div className="absolute w-72 h-72 bg-blue-400 rounded-full filter blur-3xl mix-blend-multiply animate-blob -top-20 -left-20" />
                 <div className="absolute w-72 h-72 bg-emerald-400 rounded-full filter blur-3xl mix-blend-multiply animate-blob animation-delay-3000 -bottom-24 -right-16" />
             </div>
-
-            {/* Animate.css-like blob animation */}
-            {/* <style jsx>{`
-        @keyframes blob {
-          0%,
-          100% {
-            transform: translate(0px, 0px) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.05);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.95);
-          }
-        }
-
-        .animate-blob {
-          animation: blob 8s infinite ease-in-out;
-        }
-
-        .animation-delay-3000 {
-          animation-delay: 3s;
-        }
-      `}</style> */}
         </motion.div>
     )
 }

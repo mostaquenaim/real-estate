@@ -84,8 +84,8 @@ export default function ContactComponent() {
                         Email
                       </h3>
                       <p className="leading-relaxed">
-                        <a href='mailto:mdnayanmalik@gmail.com'>
-                          mdnayanmalik@gmail.com
+                        <a href='mailto:banglarchoyamodelcity@gmail.com'>
+                          banglarchoyamodelcity@gmail.com
                         </a>
                       </p>
                     </div>
