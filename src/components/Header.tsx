@@ -12,7 +12,7 @@ export default function Header() {
   const controls = useAnimation()
   const ref = useRef(null)
   const pathname = usePathname()
-  console.log("pathname",pathname);
+  console.log("pathname", pathname);
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navLinks = [
@@ -84,46 +84,45 @@ export default function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center justify-around gap-6">
-  {navLinks.map((link) => (
-    <motion.div
-      key={link.path}
-      className="flex flex-col items-center"
-      whileHover="hover"
-      initial="hidden"
-      animate="show"
-      variants={{
-        hidden: { opacity: 0, y: -10 },
-        show: { opacity: 1, y: 0 },
-        hover: { transition: { staggerChildren: 0.1 } }
-      }}
-    >
-      <Link
-        href={link.path}
-        className={`relative text-sm font-medium transition-colors duration-300 px-1 py-1 
-          ${
-            pathname === link.path || pathname === link.path  + '/'
-              ? 'text-green-700 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r after:from-green-400 after:to-green-600'
-              : 'text-gray-700 hover:text-green-600'
-          }`}
-      >
-        {link.name}
-      </Link>
-      
-      <motion.div
-        variants={{
-          hidden: { opacity: 0, width: 0 },
-          show: { opacity: 0, width: 0 },
-          hover: { 
-            opacity: 1, 
-            width: "3rem",
-            transition: { duration: 0.3 }
-          }
-        }}
-        className="h-1 rounded-full bg-gradient-to-r from-emerald-400 via-lime-400 to-emerald-500 shadow-md"
-      />
-    </motion.div>
-  ))}
-</nav>
+            {navLinks.map((link) => (
+              <motion.div
+                key={link.path}
+                className="flex flex-col items-center"
+                whileHover="hover"
+                initial="hidden"
+                animate="show"
+                variants={{
+                  hidden: { opacity: 0, y: -10 },
+                  show: { opacity: 1, y: 0 },
+                  hover: { transition: { staggerChildren: 0.1 } }
+                }}
+              >
+                <Link
+                  href={link.path}
+                  className={`relative text-sm font-medium transition-colors duration-300 px-1 py-1 
+          ${pathname === link.path || pathname === link.path + '/'
+                      ? 'text-green-700 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r hover:after:from-transparent hover:after:to-transparent after:from-green-400 after:to-green-600'
+                      : 'text-gray-700 hover:text-green-600'
+                    }`}
+                >
+                  {link.name}
+                </Link>
+
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, width: 0 },
+                    show: { opacity: 0, width: 0 },
+                    hover: {
+                      opacity: 1,
+                      width: "3rem",
+                      transition: { duration: 0.3 }
+                    }
+                  }}
+                  className="h-1 rounded-full bg-gradient-to-r from-emerald-400 via-lime-400 to-emerald-500 shadow-md"
+                />
+              </motion.div>
+            ))}
+          </nav>
 
           {/* CTA Button (Desktop) */}
           <div className="hidden md:block">
@@ -151,9 +150,9 @@ export default function Header() {
                 href={link.path}
                 onClick={() => setMenuOpen(false)}
                 className={`block text-center px-4 py-2 rounded-md text-sm font-medium transition 
-                  ${pathname.includes(link.path) 
-                  ? 'bg-green-100 text-green-700'
-                  : 'text-gray-800 hover:bg-green-50 hover:text-green-600'
+                  ${pathname === link.path || pathname === link.path + '/'
+                    ? 'bg-green-100 text-green-700'
+                    : 'text-gray-800 hover:bg-green-50 hover:text-green-600'
                   }`}
               >
                 {link.name}

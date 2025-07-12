@@ -7,27 +7,7 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import SectionTitle from './SectionTitle'
-
-const testimonials = [
-  {
-    quote: "Banglar Choya delivered exactly what they promised. The plot location is perfect!",
-    author: "Mohammad Rahman",
-    role: "Investor",
-    avatar: "/avatars/AI-person-1.webp",
-  },
-  {
-    quote: "Excellent customer service and trustworthy team. Highly recommended.",
-    author: "Fatima Noor",
-    role: "Homebuyer",
-    avatar: "/avatars/ai-person-3.jpg",
-  },
-  {
-    quote: "Great investment opportunity with promising returns.",
-    author: "Arif Khan",
-    role: "Real Estate Agent",
-    avatar: "/avatars/AI-person-2.webp",
-  },
-]
+import { testimonials } from '@/lib/constants'
 
 export const Testimonials = () => {
   return (

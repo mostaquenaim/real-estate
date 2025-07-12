@@ -72,3 +72,24 @@ export const teamMembers = [
     image: "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
   }
 ]
+
+export const testimonials = [
+  {
+    quote: "Banglar Choya delivered exactly what they promised. The plot location is perfect!",
+    author: "Mohammad Rahman",
+    role: "Investor",
+    avatar: "/avatars/AI-person-1.webp",
+  },
+  {
+    quote: "Excellent customer service and trustworthy team. Highly recommended.",
+    author: "Fatima Noor",
+    role: "Homebuyer",
+    avatar: "/avatars/ai-person-3.jpg",
+  },
+  {
+    quote: "Great investment opportunity with promising returns.",
+    author: "Arif Khan",
+    role: "Real Estate Agent",
+    avatar: "/avatars/AI-person-2.webp",
+  },
+]

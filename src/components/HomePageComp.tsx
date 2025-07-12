@@ -10,6 +10,7 @@ import AutoSlidingProjects from './AutoSlidingProjects '
 import { StatsSection } from './StatsSection'
 import { Testimonials } from './Testimonials'
 import SectionTitle from './SectionTitle'
+import FeaturedProjects from './FeaturedProjects'
 
 export default function HomeComponent() {
   const heroRef = useRef(null)
@@ -41,16 +42,16 @@ export default function HomeComponent() {
         <div className="relative z-20 container mx-auto px-6 max-w-7xl text-center md:text-left 
         ">
           <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg
+            <h1 className="text-2xl md:text-4xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg
             lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-20 transform transition-transform duration-500 ease-in-out ">
-              Premium Land & Plots in <span
-                className="text-yellow-400
-                ">Dhaka</span>
+              Your Gateway to Premium Land, Plots & Apartments
+              <span className="text-yellow-400">{' '}Across Bangladesh — Especially in Dhaka</span>
             </h1>
 
-            <p className="mt-6 text-lg sm:text-xl text-yellow-100 max-w-2xl mx-auto md:mx-0 leading-relaxed drop-shadow-md
+            <p className="mt-6 text-md text-yellow-100 max-w-2xl mx-auto md:mx-0 leading-relaxed drop-shadow-md
             lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out delay-300">
-              Banglar Choya Model City Ltd. offers carefully selected lands and plots in prime locations of Dhaka with unmatched quality and trust.
+              Discover the most promising lands, plots, and apartments in Bangladesh, meticulously curated by Banglar Choya Model City Ltd. — your trusted partner in real estate excellence.
+
             </p>
 
             <div className="mt-12 flex flex-col sm:flex-row justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
@@ -81,23 +82,7 @@ export default function HomeComponent() {
       </section>
 
       {/* Featured Projects */}
-      <motion.section
-        className="py-24"
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <div className="container mx-auto px-6 max-w-7xl">
-          <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
-            <SectionTitle
-              title="Our Featured Projects"
-              subtitle="A glimpse into the developments shaping our future"
-            />
-            <AutoSlidingProjects />
-          </motion.div>
-        </div >
-      </motion.section >
+      <FeaturedProjects />
 
       {/* About Section */}
       < motion.section
@@ -158,8 +143,10 @@ export default function HomeComponent() {
         </div>
       </motion.section >
 
+      {/* Testimonials */}
       <Testimonials></Testimonials>
 
+      {/* stats / statistics  */}
       <StatsSection></StatsSection>
 
 
