@@ -5,7 +5,7 @@ export const projects = [
     description: "Premium residential plots in a prime location with excellent connectivity and future growth potential.",
     landSize: "675 Bigha",
     plotSizes: "3-10 Katha (Customizable)",
-    image: "/lands/nawabganj-land.jpg",
+    image: "/lands/nawabganj-project.jpg",
     slug: "nawabganj",
     coordinates: [90.411885, 23.792588]
   },
@@ -15,7 +15,7 @@ export const projects = [
     description: "Beautifully designed plots with modern amenities and peaceful surroundings for your dream home.",
     landSize: "425 Bigha",
     plotSizes: "3-10 Katha (Customizable)",
-    image: "/lands/dhamrai-commercial-land.jpeg",
+    image: "/lands/dhamrai-project.jpg",
     slug: "borakoir",
     coordinates: [90.411885, 23.792588]
   }

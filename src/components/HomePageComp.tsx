@@ -28,11 +28,11 @@ export default function HomeComponent() {
       className=""
     >
       {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[85vh] sm:h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat
+      <section ref={heroRef} className="md:min-h-screen relative h-[85vh] sm:h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat
         shadow-2xl hover:shadow-green-700 group transition"
         style={{
           backgroundImage:
-            "url('/images/land-drone-view.webp')",
+            "url('/city-sunset-banglar-choya-cover.jpg')",
         }}
       >
         {/* Dark Overlay */}
@@ -100,7 +100,7 @@ export default function HomeComponent() {
               className="md:w-1/2 rounded-3xl overflow-hidden shadow-xl ring-4 ring-yellow-400 ring-opacity-70 transition-shadow duration-500 hover:shadow-2xl"
             >
               <img
-                src="/lands/nawabganj-investment-land.jpg"
+                src="/about-banglar-choya.jpg"
                 alt="About Banglar Choya"
                 className="w-full h-full object-cover"
                 loading="lazy"

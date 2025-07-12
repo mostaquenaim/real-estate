@@ -14,8 +14,8 @@ export const Testimonials = () => {
     <section className="relative py-24 overflow-hidden">
       {/* Parallax background */}
       <div
-        className="absolute inset-0 z-0 bg-fixed bg-center bg-cover opacity-20"
-        style={{ backgroundImage: `url('/backgrounds/bangladeshi-land-3.jpg')` }}
+        className="absolute inset-0 z-0 bg-fixed bg-center bg-cover opacity-50"
+        style={{ backgroundImage: `url('/images/happy-client.jpg')` }}
       ></div>
 
       <div className="relative z-10 container mx-auto px-6 max-w-7xl">

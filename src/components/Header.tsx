@@ -59,7 +59,7 @@ export default function Header() {
         </div>
       </motion.div>
 
-      <header className="p-5 md:p-0 absolute top-10 z-50 md:bg-white md:backdrop-blur md:shadow-lg md:shadow-green-200 md:border-b-2 border-green-200 w-full md:w-5/6 lg:w-3/4 rounded-lg">
+      <header className="p-5 md:p-0 absolute top-10 z-50  md:backdrop-blur md:shadow-lg md:shadow-green-200 md:border-b-2 border-green-200 w-full md:w-5/6 lg:w-3/4 rounded-lg">
         {/* Main Navbar */}
         <div className="flex justify-between md:justify-around items-center">
           {/* Logo */}
@@ -94,18 +94,21 @@ export default function Header() {
                 variants={{
                   hidden: { opacity: 0, y: -10 },
                   show: { opacity: 1, y: 0 },
-                  hover: { transition: { staggerChildren: 0.1 } }
+                  hover: { transition: { staggerChildren: 0.1 } },
                 }}
               >
-                <Link
-                  href={link.path}
-                  className={`relative text-sm font-medium transition-colors duration-300 px-1 py-1 
+                <Link href={link.path} passHref>
+                  <motion.button
+                    className={`cursor-pointer relative px-4 py-2 text-sm font-semibold rounded-lg transition-colors duration-300
           ${pathname === link.path || pathname === link.path + '/'
-                      ? 'text-green-700 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-gradient-to-r hover:after:from-transparent hover:after:to-transparent after:from-green-400 after:to-green-600'
-                      : 'text-gray-700 hover:text-green-600'
-                    }`}
-                >
-                  {link.name}
+                        ? 'bg-gradient-to-r from-green-400 to-green-600 text-white shadow-lg'
+                        : 'bg-gray-100 text-gray-800 hover:bg-green-100 hover:text-green-700'
+                      }`}
+                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {link.name}
+                  </motion.button>
                 </Link>
 
                 <motion.div
@@ -114,14 +117,15 @@ export default function Header() {
                     show: { opacity: 0, width: 0 },
                     hover: {
                       opacity: 1,
-                      width: "3rem",
-                      transition: { duration: 0.3 }
-                    }
+                      width: '3rem',
+                      transition: { duration: 0.3 },
+                    },
                   }}
-                  className="h-1 rounded-full bg-gradient-to-r from-emerald-400 via-lime-400 to-emerald-500 shadow-md"
+                  className="h-1 rounded-full mt-1 bg-gradient-to-r from-emerald-400 via-lime-400 to-emerald-500 shadow-md"
                 />
               </motion.div>
             ))}
+
           </nav>
 
           {/* CTA Button (Desktop) */}
