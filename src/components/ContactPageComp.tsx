@@ -51,7 +51,7 @@ export default function ContactComponent() {
                       </h3>
                       <p className="leading-relaxed">
                         <a
-                          href='https://maps.app.goo.gl/qYfDv6Trgdsd8kf77'
+                          href='https://maps.app.goo.gl/4mopBn5iJ6aH8vtA7'
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-green-700 hover:underline">

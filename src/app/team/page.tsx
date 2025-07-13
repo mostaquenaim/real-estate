@@ -1,10 +1,9 @@
-import TeamPageComp from '@/components/TeamPageComp';
-import React from 'react';
+import TeamPageComp from "@/components/TeamPageComp";
 
 const TeamPage = () => {
     return (
         <div>
-            <TeamPageComp></TeamPageComp>
+            <TeamPageComp/>
         </div>
     );
 };

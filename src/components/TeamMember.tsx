@@ -1,3 +1,4 @@
+'use client'
 import { Card, CardHeader, CardContent } from './ui/card'
 import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar'
 import { motion } from 'framer-motion'
