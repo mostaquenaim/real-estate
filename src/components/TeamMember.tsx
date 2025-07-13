@@ -42,11 +42,6 @@ export function TeamMember({
         className={`h-full w-full max-w-xs md:max-w-sm lg:max-w-xs rounded-2xl transition-shadow duration-300 shadow-md hover:shadow-lg border 
     ${highlight ? 'border-yellow-400' : 'border-green-100'}`}
       >
-        {/* {highlight && (
-          <div className="absolute top-0 right-0 bg-yellow-400 text-yellow-900 px-3 py-1 text-xs font-bold rounded-bl-lg rounded-tr-lg">
-            LEADERSHIP
-          </div>
-        )} */}
         <CardHeader>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div>

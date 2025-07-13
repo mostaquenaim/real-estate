@@ -85,7 +85,7 @@ export default function TeamPageComp() {
                       </div>
                       <div className="flex flex-wrap gap-4 justify-center">
                         {staff.map((member, index) => (
-                          <TeamMember key={index} {...member} index={index + 7} />
+                          <TeamMember key={index} {...member} index={index + 7} highlight={member.highlight || false}/>
                         ))}
                       </div>
                     </div>
