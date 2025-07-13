@@ -11,6 +11,7 @@ import { StatsSection } from './StatsSection'
 import { Testimonials } from './Testimonials'
 import SectionTitle from './SectionTitle'
 import FeaturedProjects from './FeaturedProjects'
+import InitialLoading from './InitialLoading'
 
 export default function HomeComponent() {
   const heroRef = useRef(null)
@@ -27,6 +28,7 @@ export default function HomeComponent() {
       animate="show"
       className=""
     >
+      
       {/* Hero Section */}
       <section ref={heroRef} className="md:min-h-screen relative h-[85vh] sm:h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat
         shadow-2xl hover:shadow-green-700 group transition"
@@ -39,11 +41,10 @@ export default function HomeComponent() {
         <div className="absolute inset-0 bg-black/60 z-10"></div>
 
         {/* Content Container */}
-        <div className="relative z-20 container mx-auto px-6 max-w-7xl text-center md:text-left 
-        ">
+        <div className="relative z-20 container mx-auto px-6 max-w-7xl text-center md:text-left">
           <motion.div variants={fadeIn('up', 'tween', 0.3, 1)}>
             <h1 className="text-2xl md:text-4xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg
-            lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-20 transform transition-transform duration-500 ease-in-out ">
+            lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out ">
               Your Gateway to Premium Land, Plots & Apartments
               <span className="text-yellow-400">{' '}Across
                 <span className="bg-gradient-to-r from-yellow-300 to-green-500 bg-clip-text text-transparent">{' '}Bangladesh{' '}</span>
@@ -81,7 +82,7 @@ export default function HomeComponent() {
             </div>
           </motion.div>
         </div>
-        
+
       </section>
 
       {/* Featured Projects */}

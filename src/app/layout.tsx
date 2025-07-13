@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -31,6 +31,12 @@ export const metadata: Metadata = {
   },
 };
 
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '800'],
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen flex flex-col bg-white text-gray-900 items-center`}
+        className={`${geistSans.variable} ${geistMono.variable} ${manrope.className} min-h-screen flex flex-col bg-white text-gray-900 items-center`}
       >
         <ParticleBackground />
         {/* <ParticlesBackground></ParticlesBackground> */}

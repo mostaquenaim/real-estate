@@ -16,7 +16,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const navLinks = [
-    { name: 'Home', path: '/' },
+    { name: 'Home', path: '/home' },
     { name: 'Projects', path: '/projects' },
     { name: 'About', path: '/about' },
     { name: 'Team', path: '/team' },
@@ -32,31 +32,29 @@ export default function Header() {
         variants={fadeIn("down", "tween", 0.1, 0.5)}
         className="flex justify-end md:justify-around gap-5 md:gap-0 px-2 md:px-0 py-2 items-center text-xs md:text-sm font-medium bg-green-800 text-white w-full"
       >
-        <div className="flex items-center gap-2">
+        <a href='tel:01337938314' className="flex items-center gap-2">
           <Phone className="w-4 h-4 text-white md:text-green-600" />
           <span className="hidden md:inline">
-            <a href="tel:01337938314">+88 01337938322</a>
+            <span>+88 01337938322</span>
           </span>
-        </div>
-        <div className="flex items-center gap-2">
+        </a>
+        <a href='mailto:banglarchoyamodelcity@gmail.com' className="flex items-center gap-2">
           <Mail className="w-4 h-4 text-white md:text-green-600" />
           <span className="hidden md:inline">
-            <a href="mailto:banglarchoyamodelcity@gmail.com">
+            <span>
               banglarchoyamodelcity@gmail.com
-            </a>
+            </span>
           </span>
-        </div>
-        <div className="flex items-center gap-2">
+        </a>
+        <a href="https://maps.app.goo.gl/qYfDv6Trgdsd8kf77"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2">
           <MapPin className="w-4 h-4 text-white md:text-green-600" />
-          <a
-            href="https://maps.app.goo.gl/qYfDv6Trgdsd8kf77"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-green-700 hover:underline hidden md:inline"
-          >
+          <span>
             Gulshan-2, Dhaka
-          </a>
-        </div>
+          </span>
+        </a>
       </motion.div>
 
       <header className="p-5 md:p-0 absolute top-10 z-50  md:backdrop-blur md:shadow-lg md:shadow-green-200 md:border-b-2 border-green-200 w-full md:w-5/6 lg:w-3/4 rounded-lg">
@@ -70,15 +68,7 @@ export default function Header() {
             className="flex items-center"
           >
             <Link href="/" className="">
-              <img src={'/Banglar-Choya-logo.png'} className='w-20 md:w-32' />
-              {/* <Link href="/" className="flex items-baseline gap-2">
-            <span className="text-2xl sm:text-3xl font-extrabold text-green-700 tracking-tight leading-none">
-              Banglar Choya
-            </span>
-            <span className="text-[10px] sm:text-xs font-semibold bg-green-600 text-white px-2 py-0.5 rounded shadow-sm">
-              Model City Ltd.
-            </span>
-          </Link> */}
+              <img src={'/rsz_banglar-choya-logo.png'} className='w-20 md:w-32' />
             </Link>
           </motion.div>
 

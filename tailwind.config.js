@@ -94,6 +94,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        sans: ['Manrope', 'sans-serif'],
+
       },
       borderRadius: {
         lg: 'var(--radius)',

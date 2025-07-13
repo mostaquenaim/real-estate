@@ -1,10 +1,18 @@
 'use client'
 import { teamMembers } from '@/lib/constants'
-import { TeamMember } from '@/components/TeamMember'
 import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/components/animations'
+import { Tree, TreeNode } from 'react-organizational-chart'
+import { TeamMember } from './TeamMember'
 
 export default function TeamPageComp() {
+  // Assuming teamMembers is structured with hierarchy information
+  // For this example, let's assume the first member is the CEO and others report to them
+  const ceo = teamMembers[0]
+  const leadership = teamMembers.slice(1, 3)
+  const managers = teamMembers.slice(3, 6)
+  const staff = teamMembers.slice(6)
+
   return (
     <motion.div
       variants={staggerContainer}
@@ -27,15 +35,70 @@ export default function TeamPageComp() {
           <div className="w-24 h-1 rounded-full bg-gradient-to-r from-green-600 to-yellow-400 mx-auto mt-6"></div>
         </motion.div>
 
-        {/* Team Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {teamMembers.map((member, index) => (
-            <TeamMember key={index} index={index} highlight={false} {...member} />
-          ))}
-        </div>
-
-        {/* Departments Section */}
+        {/* Organizational Chart */}
         <motion.div
+          variants={fadeIn('up', 'tween', 0.4, 1)}
+          className="mt-10 overflow-x-auto"
+        >
+          <div className="min-w-max lg:min-w-0 py-10">
+            <Tree
+              lineWidth={'2px'}
+              lineColor={'#84cc16'}
+              lineBorderRadius={'10px'}
+              label={
+                <div className="inline-block">
+                  <TeamMember {...ceo} index={0} highlight={false} />
+                </div>
+              }
+            >
+              {/* Leadership Team */}
+              <TreeNode label={
+                <div className="inline-block w-full">
+                  <div className="text-center mb-2 w-full text-sm font-semibold text-green-700">
+                    Leadership Team
+                  </div>
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    {leadership.map((member, index) => (
+                      <TeamMember key={index} {...member} index={index + 1} highlight={member.highlight || false} />
+                    ))}
+                  </div>
+                </div>
+              }>
+                {/* Managers */}
+                <TreeNode label={
+                  <div className="inline-block w-full">
+                    <div className="text-center mb-2 w-full text-sm font-semibold text-green-700">
+                      Department Managers
+                    </div>
+                    <div className="flex flex-wrap gap-4 justify-center">
+                      {managers.map((member, index) => (
+                        <TeamMember key={index} {...member} index={index + 4} highlight={member.highlight || false} />
+                      ))}
+                    </div>
+                  </div>
+                }>
+                  {/* Staff */}
+                  <TreeNode label={
+                    <div className="inline-block w-full">
+                      <div className="text-center mb-2 w-full text-sm font-semibold text-green-700">
+                        Team Members
+                      </div>
+                      <div className="flex flex-wrap gap-4 justify-center">
+                        {staff.map((member, index) => (
+                          <TeamMember key={index} {...member} index={index + 7} />
+                        ))}
+                      </div>
+                    </div>
+                  } />
+                </TreeNode>
+              </TreeNode>
+            </Tree>
+          </div>
+
+        </motion.div>
+
+        {/* Departments Section (unchanged) */}
+        {/* <motion.div
           variants={fadeIn('up', 'tween', 0.4, 1)}
           className="mt-20 bg-gradient-to-r from-green-100 to-yellow-100 p-10 rounded-3xl border border-green-300 shadow-inner"
         >
@@ -63,7 +126,7 @@ export default function TeamPageComp() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   )

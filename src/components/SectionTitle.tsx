@@ -64,7 +64,7 @@ export default function SectionTitle({
             {subtitle && (
                 <motion.p
                     variants={itemVariants()}
-                    className="text-sm bg-white p-2 rounded-lg font-semibold tracking-wide text-gray-500 uppercase mb-3"
+                    className="text-sm  p-2 rounded-lg font-semibold tracking-wide text-gray-500 uppercase mb-3"
                 >
                     {subtitle}
                 </motion.p>
@@ -72,7 +72,7 @@ export default function SectionTitle({
 
             <motion.h2
                 variants={itemVariants()}
-                className="bg-white p-2 rounded-lg shadow-green-300 shadow-lg border-green-600 border-2 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5 leading-tight relative"
+                className=" p-2 rounded-lg shadow-green-300 shadow-lg border-green-600 text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-5 leading-tight relative"
             >
                 {title.split(' ').map((word, i) => (
                     <span key={i} className="relative inline-block mr-2 ">
