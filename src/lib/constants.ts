@@ -73,7 +73,6 @@ export const teamMembers = [
   }
 ]
 
-
 export const testimonials = [
   {
     quote: "Banglar Choya delivered exactly what they promised. The plot location is perfect!",

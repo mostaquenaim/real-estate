@@ -1,10 +1,7 @@
 'use client'
 import { Card, CardHeader, CardContent } from './ui/card'
-import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar'
 import { motion } from 'framer-motion'
 import { fadeIn } from './animations'
-import { Mail, Phone } from 'lucide-react'
-import { Button } from './ui/button'
 
 interface TeamMemberProps {
   name: string
@@ -18,7 +15,6 @@ interface TeamMemberProps {
   className?: string
 }
 
-
 export function TeamMember({
   name,
   role,
@@ -30,8 +26,6 @@ export function TeamMember({
   highlight = false,
   className = ''
 }: TeamMemberProps) {
-
-  // console.log(className,'kjsdbj');
 
   return (
     <motion.div
@@ -52,34 +46,8 @@ export function TeamMember({
           </div>
         </CardHeader>
 
-
         <CardContent className="pt-4 text-sm sm:text-base">
           <p className="text-green-800 mb-5 leading-relaxed">{description}</p>
-
-          {/* {contact && (
-            <div className="flex items-center gap-3 mb-3 text-green-700">
-              <Phone className="h-5 w-5" />
-              <a href={`tel:${contact}`} className="hover:text-yellow-500 transition-colors">
-                {contact}
-              </a>
-            </div>
-          )} */}
-
-          {/* {email && (
-            <div className="flex items-center gap-3 text-green-700">
-              <Mail className="h-5 w-5" />
-              <a href={`mailto:${email}`} className="hover:text-yellow-500 transition-colors">
-                {email}
-              </a>
-            </div>
-          )}
-
-          <Button
-            variant="outline"
-            className="mt-6 w-full border-yellow-400 text-yellow-600 hover:bg-yellow-100 transition"
-          >
-            Contact {name.split(' ')[0]}
-          </Button> */}
         </CardContent>
       </Card>
     </motion.div>

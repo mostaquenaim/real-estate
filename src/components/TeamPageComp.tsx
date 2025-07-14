@@ -7,7 +7,6 @@ import { TeamMember } from './TeamMember'
 
 export default function TeamPageComp() {
   // Assuming teamMembers is structured with hierarchy information
-  // For this example, let's assume the first member is the CEO and others report to them
   const ceo = teamMembers[0]
   const leadership = teamMembers.slice(1, 3)
   const managers = teamMembers.slice(3, 6)
@@ -96,37 +95,6 @@ export default function TeamPageComp() {
           </div>
 
         </motion.div>
-
-        {/* Departments Section (unchanged) */}
-        {/* <motion.div
-          variants={fadeIn('up', 'tween', 0.4, 1)}
-          className="mt-20 bg-gradient-to-r from-green-100 to-yellow-100 p-10 rounded-3xl border border-green-300 shadow-inner"
-        >
-          <h2 className="text-2xl font-semibold mb-8 text-green-900 text-center">
-            Our Departments
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {[
-              'Chairman',
-              'Vice Chairman',
-              'Managing Director',
-              'CEO',
-              'Directors',
-              'General Manager',
-              'Engineers',
-              'Accountant',
-              'HR & Admin',
-              'Operations'
-            ].map((dept) => (
-              <div
-                key={dept}
-                className="bg-white p-4 rounded-xl text-center shadow-sm hover:shadow-md transition-shadow cursor-default text-green-700 font-semibold"
-              >
-                {dept}
-              </div>
-            ))}
-          </div>
-        </motion.div> */}
       </div>
     </motion.div>
   )
