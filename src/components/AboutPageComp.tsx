@@ -58,7 +58,7 @@ export default function AboutComponent() {
                 {[
                   'Transparent and ethical business practices',
                   'Prime location selection',
-                  'Flexible plot sizing options (3-10 katha)',
+                  'Flexible plot sizing options: 3–10 decimal (also 3, 5, 10 katha)',
                   'Customizable plot configurations',
                   'Comprehensive after-sales support',
                 ].map((item, i) => (

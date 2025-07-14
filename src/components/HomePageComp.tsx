@@ -1,17 +1,12 @@
 'use client'
 
 import { fadeIn, staggerContainer } from '@/components/animations'
-import PropertyCard from '@/components/PropertyCard'
-import { projects } from '@/lib/constants'
 import Link from 'next/link'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import { useRef } from 'react'
-import AutoSlidingProjects from './AutoSlidingProjects '
 import { StatsSection } from './StatsSection'
 import { Testimonials } from './Testimonials'
-import SectionTitle from './SectionTitle'
 import FeaturedProjects from './FeaturedProjects'
-import InitialLoading from './InitialLoading'
 
 export default function HomeComponent() {
   const heroRef = useRef(null)
@@ -131,7 +126,7 @@ export default function HomeComponent() {
                 Established on 20th October 2023, Banglar Choya Model City Ltd. is a premier real estate developer in Dhaka, specializing in land and plot sales with a legacy of trust and quality.
               </p>
               <p className="text-green-700 mb-12 leading-relaxed text-lg max-w-lg tracking-wide">
-                We offer plots ranging from 3 to 10 kathas, customizable to your needs. Our projects are strategically located with excellent connectivity and promising future growth.
+                We primarily offer plots ranging from 3 to 10 decimal. Selected options are also available in 3, 5, and 10 katha — all customizable as per your needs. Our projects are strategically located with excellent connectivity and promising future growth.
               </p>
 
               <Link href={'/about'}>

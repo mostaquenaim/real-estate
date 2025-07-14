@@ -94,7 +94,7 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mt-1 text-yellow-400 flex-shrink-0 h-6 w-6" />
                 <address className="not-italic">
                   <a
-                    href='https://maps.app.goo.gl/4mopBn5iJ6aH8vtA7'
+                    href='https://maps.app.goo.gl/aWFSKQykjrCaS6t88'
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-700 hover:underline">

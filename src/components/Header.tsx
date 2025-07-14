@@ -46,7 +46,7 @@ export default function Header() {
             </span>
           </span>
         </a>
-        <a href="https://maps.app.goo.gl/4mopBn5iJ6aH8vtA7"
+        <a href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2">

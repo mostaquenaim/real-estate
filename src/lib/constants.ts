@@ -4,7 +4,7 @@ export const projects = [
     location: "Nawabganj, koliail-Dhaka-01",
     description: "Premium residential plots in a prime location with excellent connectivity and future growth potential.",
     landSize: "675 Bigha",
-    plotSizes: "3-10 Katha (Customizable)",
+    plotSizes: "Customizable Decimal /  Katha",
     image: "/lands/nawabganj-project.jpg",
     slug: "nawabganj",
     coordinates: [90.411885, 23.792588]
@@ -14,7 +14,7 @@ export const projects = [
     location: "Borakoir, Dhamrai-Dhaka-20",
     description: "Beautifully designed plots with modern amenities and peaceful surroundings for your dream home.",
     landSize: "425 Bigha",
-    plotSizes: "3-10 Katha (Customizable)",
+    plotSizes: "Customizable Decimal /  Katha",
     image: "/lands/dhamrai-project.jpg",
     slug: "borakoir",
     coordinates: [90.411885, 23.792588]

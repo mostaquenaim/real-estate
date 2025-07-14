@@ -37,9 +37,9 @@ export default function TeamPageComp() {
         {/* Organizational Chart */}
         <motion.div
           variants={fadeIn('up', 'tween', 0.4, 1)}
-          className="mt-10 overflow-x-auto"
+          className="mt-10"
         >
-          <div className="min-w-max lg:min-w-0 py-10">
+          <div className="min-w-0 py-10">
             <Tree
               lineWidth={'2px'}
               lineColor={'#84cc16'}

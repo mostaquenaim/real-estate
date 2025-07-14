@@ -44,16 +44,11 @@ export default function ProjectPageComp() {
             <h2 className="text-2xl font-semibold mb-8 text-green-900 text-center">
               Plot Sizes Available
             </h2>
+
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-6">
               {[
-                '3 Katha',
-                '4 Katha',
-                '5 Katha',
-                '6 Katha',
-                '7 Katha',
-                '8 Katha',
-                '9 Katha',
-                '10 Katha',
+                '3 Decimal', '4 Decimal', '5 Decimal', '6 Decimal', '7 Decimal', '8 Decimal', '9 Decimal', '10 Decimal',
+                '3 Katha', '5 Katha', '10 Katha',
               ].map((size) => (
                 <div
                   key={size}
@@ -63,8 +58,9 @@ export default function ProjectPageComp() {
                 </div>
               ))}
             </div>
+
             <p className="mt-8 text-center text-green-700 italic text-sm">
-              * Custom sizes also available upon request
+              * Custom plot sizes and configurations available upon request.
             </p>
           </Card>
         </motion.div>

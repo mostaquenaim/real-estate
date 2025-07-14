@@ -33,58 +33,66 @@ const InitialLoading = () => {
         <AnimatePresence>
             {!hideLoader && (
                 <motion.div
-                    className="fixed inset-0 md:flex items-center justify-center z-[9999] backdrop-blur-3xl "
-                    //   style={{ backgroundImage: `url('/backgrounds/ft-projects.jpg')` }}
+                    className="fixed inset-0 md:flex items-center justify-center z-[9999]"
+                    style={{
+                        backgroundImage: `url('/rsz_cover_photo.png')`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'center'
+                    }}
                     initial={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    // transition={{ duration: 0.1 }}
                 >
-                    <motion.div
-                        className="w-64 h-64 absolute"
-                        initial={{ scale: 1 }}
-                        animate={{
-                            top: startTransition ? '12%' : '50%',
-                            left: startTransition ? '20%' : '50%',
-                            scale: startTransition ? 0.5 : 1,
-                            translateX: '-50%',
-                            translateY: '-50%',
-                        }}
-                        transition={{ duration: 0.8, ease: 'easeInOut' }}
-                    >
-                        <svg className="w-full h-full" viewBox="0 0 100 100">
-                            <circle
-                                cx="50"
-                                cy="50"
-                                r="40"
-                                stroke="#d1d5db"
-                                strokeWidth="10"
-                                fill="none"
-                            />
-                            <motion.circle
-                                cx="50"
-                                cy="50"
-                                r="40"
-                                stroke="#16a34a"
-                                strokeWidth="10"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeDasharray="251.2"
-                                strokeDashoffset="251.2"
-                                animate={{ strokeDashoffset: 0 }}
-                                transition={{ duration: 2, ease: 'easeInOut' }}
-                            />
-                        </svg>
-
-                        <motion.img
-                            src="/rsz_banglar-choya-logo.png"
-                            alt="Banglar Choya Logo"
-                            className="absolute top-1/2 left-1/2 w-64 h-64 -translate-x-1/2 -translate-y-1/2 
-                            object-contain pointer-events-none"
+                    <div className="absolute inset-0 bg-blue-900/40 z-0" />
+                    <div className=" z-10">
+                        <motion.div
+                            className="w-64 h-64 absolute"
                             initial={{ scale: 1 }}
-                            animate={{ scale: startTransition ? 0.9 : 1 }}
-                            transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.1 }}
-                        />
-                    </motion.div>
+                            animate={{
+                                top: startTransition ? '12%' : '50%',
+                                left: startTransition ? '20%' : '50%',
+                                scale: startTransition ? 0.5 : 1,
+                                translateX: '-50%',
+                                translateY: '-50%',
+                            }}
+                            transition={{ duration: 0.8, ease: 'easeInOut' }}
+                        >
+                            <svg className="w-full h-full" viewBox="0 0 100 100">
+                                <circle
+                                    cx="50"
+                                    cy="50"
+                                    r="40"
+                                    stroke="#d1d5db"
+                                    strokeWidth="10"
+                                    fill="none"
+                                />
+                                <motion.circle
+                                    cx="50"
+                                    cy="50"
+                                    r="40"
+                                    stroke="#16a34a"
+                                    strokeWidth="10"
+                                    fill="none"
+                                    strokeLinecap="round"
+                                    strokeDasharray="251.2"
+                                    strokeDashoffset="251.2"
+                                    animate={{ strokeDashoffset: 0 }}
+                                    transition={{ duration: 2, ease: 'easeInOut' }}
+                                />
+                            </svg>
+
+                            <motion.img
+                                src="/rsz_banglar-choya-logo.png"
+                                alt="Banglar Choya Logo"
+                                className="absolute top-1/2 left-1/2 w-64 h-64 -translate-x-1/2 -translate-y-1/2 
+                            object-contain pointer-events-none"
+                                initial={{ scale: 1 }}
+                                animate={{ scale: startTransition ? 0.9 : 1 }}
+                                transition={{ duration: 0.6, ease: 'easeInOut', delay: 0.1 }}
+                            />
+                        </motion.div>
+                    </div>
                 </motion.div>
             )}
         </AnimatePresence>

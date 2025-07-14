@@ -1,5 +1,4 @@
 import HomeComponent from '@/components/HomePageComp';
-import InitialLoading from '@/components/InitialLoading';
 import React from 'react';
 
 const Home = () => {
