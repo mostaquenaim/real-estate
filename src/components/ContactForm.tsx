@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
-import { Button } from './ui/button'
-import { Input } from './ui/input'
-import { Textarea } from './ui/textarea'
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 import {
   Form,
   FormControl,
@@ -13,49 +13,52 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from './ui/form'
-import { motion } from 'framer-motion'
-import { fadeIn } from './animations'
-import { Mail, Phone, User } from 'lucide-react'
+} from "./ui/form";
+import { motion } from "framer-motion";
+import { fadeIn } from "./animations";
+import { Mail, Phone, User } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
-    message: 'Name must be at least 2 characters.',
+    message: "Name must be at least 2 characters.",
   }),
   email: z.string().email({
-    message: 'Please enter a valid email address.',
+    message: "Please enter a valid email address.",
   }),
   phone: z.string().min(11, {
-    message: 'Phone number must be at least 11 digits.',
+    message: "Phone number must be at least 11 digits.",
   }),
   message: z.string().min(10, {
-    message: 'Message must be at least 10 characters.',
+    message: "Message must be at least 10 characters.",
   }),
-})
+});
 
 export function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+    console.log(values);
     // Add your form submission logic here
   }
 
   return (
     <motion.div
-      variants={fadeIn('up', 'tween', 0.2, 1)}
+      variants={fadeIn("up", "tween", 0.2, 1)}
       className="w-full max-w-2xl"
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 p-6 md:p-8 bg-white border border-gray-200 rounded-2xl shadow-lg">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="space-y-8 p-6 md:p-8 bg-white border border-gray-200 rounded-2xl shadow-lg"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField
               control={form.control}
@@ -66,7 +69,11 @@ export function ContactForm() {
                     <User className="h-4 w-4 text-green-600" /> Full Name
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" className="bg-gray-50 focus:ring-2 focus:ring-green-400" {...field} />
+                    <Input
+                      placeholder="Your name"
+                      className="bg-gray-50 focus:ring-2 focus:ring-green-400"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -82,7 +89,11 @@ export function ContactForm() {
                     <Mail className="h-4 w-4 text-green-600" /> Email
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="your@email.com" className="bg-gray-50 focus:ring-2 focus:ring-green-400" {...field} />
+                    <Input
+                      placeholder="your@email.com"
+                      className="bg-gray-50 focus:ring-2 focus:ring-green-400"
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,7 +110,11 @@ export function ContactForm() {
                   <Phone className="h-4 w-4 text-green-600" /> Phone Number
                 </FormLabel>
                 <FormControl>
-                  <Input placeholder="01XXXXXXXXX" className="bg-gray-50 focus:ring-2 focus:ring-green-400" {...field} />
+                  <Input
+                    placeholder="01XXXXXXXXX"
+                    className="bg-gray-50 focus:ring-2 focus:ring-green-400"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -111,7 +126,9 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-sm font-semibold text-gray-700">Your Message</FormLabel>
+                <FormLabel className="text-sm font-semibold text-gray-700">
+                  Your Message
+                </FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Tell us about your requirements..."
@@ -135,5 +152,5 @@ export function ContactForm() {
         </form>
       </Form>
     </motion.div>
-  )
+  );
 }

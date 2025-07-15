@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import {
   FaFacebook,
-  FaTwitter,
+  FaYoutube,
   FaLinkedin,
   FaInstagram,
   FaPhone,
@@ -24,16 +24,42 @@ export default function Footer() {
               Premium real estate developer in Dhaka offering carefully selected lands and plots in prime locations.
             </p>
             <div className="flex space-x-5">
-              {[FaFacebook, FaTwitter, FaLinkedin, FaInstagram].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  aria-label="Social media link"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
-                >
-                  <Icon className="h-6 w-6" />
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/profile.php?id=61578295138265"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+              >
+                <FaFacebook className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.instagram.com/banglarchoyamodelcityltd/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+              >
+                <FaInstagram className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UCHvv-Y2xwHS_2bve9ioFFbA"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+              >
+                <FaYoutube className="h-6 w-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/banglar-choya-model-city-ltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
+              >
+                <FaLinkedin className="h-6 w-6" />
+              </a>
             </div>
           </div>
 
@@ -94,10 +120,11 @@ export default function Footer() {
                 <FaMapMarkerAlt className="mt-1 text-yellow-400 flex-shrink-0 h-6 w-6" />
                 <address className="not-italic">
                   <a
-                    href='https://maps.app.goo.gl/aWFSKQykjrCaS6t88'
+                    href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-green-700 hover:underline">
+                    className="text-green-700 hover:underline"
+                  >
                     1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
                   </a>
                 </address>

@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 
 export default function ContactComponent() {
   return (
@@ -196,6 +197,47 @@ export default function ContactComponent() {
             </Card>
           </motion.div>
         </div>
+
+        <motion.div
+          variants={fadeIn("up", "spring", 1, 1)}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">Follow Us</h3>
+          <div className="flex justify-center gap-6">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578295138265"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 transition text-3xl"
+            >
+              <FaFacebook className="transition duration-300 hover:scale-105 hover:text-[#0d66ff]"/>
+            </a>
+            <a
+              href="https://www.instagram.com/banglarchoyamodelcityltd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-500 hover:text-pink-700 transition text-3xl"
+            >
+              <FaInstagram className="transition duration-300 hover:scale-105 hover:text-[#f6016a]"/>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCHvv-Y2xwHS_2bve9ioFFbA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-red-600 hover:text-red-800 transition text-3xl"
+            >
+              <FaYoutube className="transition duration-300 hover:scale-105 hover:text-[#ff0032]"/>
+            </a>
+            <a
+              href="https://www.linkedin.com/company/banglar-choya-model-city-ltd"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-700 hover:text-blue-900 transition text-3xl"
+            >
+              <FaLinkedin className="transition duration-300 hover:scale-105 hover:text-[#0c65c1]"/>
+            </a>
+          </div>
+        </motion.div>
 
         {/* Map Section */}
         <motion.div variants={fadeIn("up", "spring", 0.8, 1)} className="mt-20">
