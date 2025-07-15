@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/card";
 import { ContactForm } from "@/components/ContactForm";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
-import Image from "next/image";
 import BannerSection from "./BannerSection";
 
 export default function ContactComponent() {
@@ -36,8 +35,7 @@ export default function ContactComponent() {
 
         <SectionTitle
           title="Your Vision, Our Expertise"
-          subtitle="Whether you're looking to invest or find your dream property, our team is ready to guide you every step of the way."
-          // subtitle='Explore our premium residential projects in Dhaka&apos;s most promising locations'
+          subtitle="Discover white-glove service, personalized consultations, and investment-ready properties tailored to your goals."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -46,8 +44,8 @@ export default function ContactComponent() {
             variants={fadeIn("right", "spring", 0.5, 1)}
             className="relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-green-500 to-yellow-400 rounded-2xl opacity-20 blur-md"></div>
-            <Card className="relative p-10 rounded-2xl shadow-xl border border-gray-100 bg-white z-10">
+            <div className="absolute -inset-1 bg-gradient-to-r from-green-400 to-yellow-400 rounded-3xl opacity-30 blur-lg"></div>
+            <Card className="relative p-10 rounded-3xl shadow-2xl border border-yellow-200 bg-gradient-to-br from-white to-yellow-50 z-10">
               <h3 className="text-2xl font-bold text-gray-900 mb-2">
                 Send Us a Message
               </h3>
@@ -65,7 +63,7 @@ export default function ContactComponent() {
             className="space-y-8"
           >
             {/* Office Information */}
-            <Card className="p-10 rounded-2xl shadow-lg border border-gray-200 bg-white">
+            <Card className="p-10 rounded-3xl shadow-xl border border-green-100 bg-gradient-to-bl from-white to-green-50 hover:shadow-2xl transition">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                   <MapPin className="w-6 h-6 text-green-600" />
@@ -77,7 +75,7 @@ export default function ContactComponent() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-5">
-                  <div className="p-3 bg-gray-100 rounded-lg text-green-600 mt-1">
+                  <div className="p-3 bg-green-50 border border-green-200 rounded-xl text-green-600 shadow-sm">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -98,7 +96,7 @@ export default function ContactComponent() {
                 </div>
 
                 <div className="flex items-start gap-5">
-                  <div className="p-3 bg-gray-100 rounded-lg text-green-600 mt-1">
+                  <div className="p-3 bg-green-50 border border-green-200 rounded-xl text-green-600 shadow-sm">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
@@ -117,7 +115,7 @@ export default function ContactComponent() {
                 </div>
 
                 <div className="flex items-start gap-5">
-                  <div className="p-3 bg-gray-100 rounded-lg text-green-600 mt-1">
+                  <div className="p-3 bg-green-50 border border-green-200 rounded-xl text-green-600 shadow-sm">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
@@ -136,7 +134,7 @@ export default function ContactComponent() {
                 </div>
 
                 <div className="flex items-start gap-5">
-                  <div className="p-3 bg-gray-100 rounded-lg text-green-600 mt-1">
+                  <div className="p-3 bg-green-50 border border-green-200 rounded-xl text-green-600 shadow-sm">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
@@ -152,7 +150,7 @@ export default function ContactComponent() {
             </Card>
 
             {/* Project Locations */}
-            <Card className="p-10 rounded-2xl shadow-lg border border-gray-200 bg-white">
+            <Card className="p-10 rounded-3xl shadow-xl border border-green-100 bg-gradient-to-bl from-white to-green-50 hover:shadow-2xl transition">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
                   <MapPin className="w-6 h-6 text-green-600" />
@@ -164,7 +162,7 @@ export default function ContactComponent() {
 
               <div className="space-y-6">
                 <motion.div whileHover={{ x: 5 }} className="group">
-                  <Card className="p-6 rounded-xl shadow-sm border border-gray-200 hover:border-green-400 transition-all cursor-default group-hover:shadow-md">
+                  <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-green-400 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-green-50">
                     <div className="flex justify-between items-center">
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-green-600 transition-colors">
@@ -180,17 +178,17 @@ export default function ContactComponent() {
                 </motion.div>
 
                 <motion.div whileHover={{ x: 5 }} className="group">
-                  <Card className="p-6 rounded-xl shadow-sm border border-gray-200 hover:border-yellow-400 transition-all cursor-default group-hover:shadow-md">
+                  <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-yellow-500 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-yellow-50">
                     <div className="flex justify-between items-center">
                       <div>
-                        <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-yellow-600 transition-colors">
+                        <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-yellow-500 transition-colors">
                           Borakoir Project
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           Borakoir, Dhamrai-Dhaka-20
                         </p>
                       </div>
-                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-yellow-600 transition-colors" />
+                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-yellow-500 transition-colors" />
                     </div>
                   </Card>
                 </motion.div>
@@ -201,9 +199,9 @@ export default function ContactComponent() {
 
         {/* Map Section */}
         <motion.div variants={fadeIn("up", "spring", 0.8, 1)} className="mt-20">
-          <Card className="rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+          <Card className="rounded-3xl shadow-2xl overflow-hidden bg-white/70 backdrop-blur-md border border-green-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.793759917115!2d90.4061113154316!3d23.7508268845871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sGulshan%202%2C%20Dhaka%201212!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.732456590783!2d90.4125895!3d23.7925397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7006ea4d381%3A0x43c87969ff42379e!2sBanglar%20Choya%20Model%20City%20Ltd!5e0!3m2!1sen!2sbd!4v1752577974213!5m2!1sen!2sbd"
               width="100%"
               height="450"
               style={{ border: 0 }}
