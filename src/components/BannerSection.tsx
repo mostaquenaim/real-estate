@@ -34,14 +34,14 @@ const BannerSection = ({
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const titleStyle =
-    "text-2xl md:text-4xl font-extrabold text-white leading-tight max-w-3xl mx-auto md:mx-0 tracking-tight drop-shadow-lg";
+    "text-2xl md:text-4xl font-extrabold text-white leading-tight mx-auto md:mx-0 tracking-tight drop-shadow-lg";
   const homeStyle =
-    "lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out";
+    "max-w-3xl lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out";
 
   return (
     <section
       ref={heroRef}
-      className="md:min-h-screen relative h-[85vh] sm:h-[80vh] md:h-[90vh] flex items-center overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition"
+      className={` ${!isHome ? "md:max-h-screen h-[50vh]" : "md:min-h-screen h-[80vh] md:h-[90vh]"} relative flex items-center overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
       style={{
         backgroundImage: `url('${image}')`,
       }}
@@ -50,7 +50,9 @@ const BannerSection = ({
       <div className="absolute inset-0 bg-black/60 z-10"></div>
 
       {/* Content Container */}
-      <div className="relative z-20 container mx-auto px-6 max-w-7xl text-center md:text-left">
+      <div
+        className={`relative z-20 container mx-auto text-center max-w-5xl ${isHome && " md:text-left "}`}
+      >
         <motion.div variants={fadeIn("up", "tween", 0.3, 1)}>
           {isHome ? (
             <h1
@@ -74,8 +76,8 @@ const BannerSection = ({
 
           {subtitle && (
             <p
-              className={`mt-6 text-md text-yellow-100 max-w-2xl mx-auto md:mx-0 leading-relaxed drop-shadow-md
-              ${isHome && "lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out delay-300"}`}
+              className={`mt-6 text-md text-yellow-100 mx-auto md:mx-0 leading-relaxed drop-shadow-md
+              ${isHome && "lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"}`}
             >
               {subtitle}
             </p>
