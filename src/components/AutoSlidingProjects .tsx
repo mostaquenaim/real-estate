@@ -1,24 +1,24 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Grid, Navigation, Thumbs } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/grid'
-import 'swiper/css/autoplay'
-import 'swiper/css/navigation'
-import 'swiper/css/thumbs'
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Grid, Navigation, Thumbs } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/autoplay";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
-import PropertyCard from '@/components/PropertyCard'
-import { projects } from '@/lib/constants'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
+import PropertyCard from "@/components/PropertyCard";
+import { projects } from "@/lib/constants";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const AutoSlidingProjects = () => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null)
+  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
 
   // Extend projects for infinite loop
-  const extendedProjects = [...projects, ...projects]
+  const extendedProjects = [...projects, ...projects];
 
   return (
     <div className="relative max-w-7xl mx-auto px-4">
@@ -29,7 +29,7 @@ const AutoSlidingProjects = () => {
         slidesPerView={1}
         grid={{
           rows: 1,
-          fill: 'row',
+          fill: "row",
         }}
         breakpoints={{
           768: {
@@ -45,8 +45,8 @@ const AutoSlidingProjects = () => {
           disableOnInteraction: false,
         }}
         navigation={{
-          nextEl: '.custom-next',
-          prevEl: '.custom-prev',
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
         }}
         spaceBetween={30}
       >
@@ -90,7 +90,7 @@ const AutoSlidingProjects = () => {
                 className="cursor-pointer overflow-hidden rounded-lg border-2 border-transparent hover:border-yellow-500 transition"
               >
                 <Image
-                  src={project.image || '/images/default-thumb.jpg'}
+                  src={project.image || "/images/default-thumb.jpg"}
                   alt={`Thumbnail of ${project.title}`}
                   width={120}
                   height={80}
@@ -102,7 +102,7 @@ const AutoSlidingProjects = () => {
         </Swiper>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AutoSlidingProjects
+export default AutoSlidingProjects;

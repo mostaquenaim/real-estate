@@ -13,10 +13,18 @@ export const Testimonials = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Parallax background */}
-      <div
-        className="absolute inset-0 z-0 bg-fixed bg-center bg-cover opacity-50"
-        style={{ backgroundImage: `url('/images/happy-client.jpg')` }}
+        <div
+        className="absolute inset-0 z-0 md:bg-fixed bg-center bg-cover "
+        style={{
+          backgroundImage: `url('/images/happy-client.jpg')`,
+        }}
       ></div>
+
+      {/* Top black fade */}
+      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
+
+      {/* Bottom black fade */}
+      <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
 
       <div className="relative z-10 container mx-auto px-6 max-w-7xl">
 
@@ -24,6 +32,7 @@ export const Testimonials = () => {
         <SectionTitle
           title='Client Testimonials'
           subtitle="Real words from the people we proudly serve"
+          isPage={false}
         />
 
         {/* swiper */}

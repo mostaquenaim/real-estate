@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { fadeIn, staggerContainer } from '@/components/animations'
 import { Tree, TreeNode } from 'react-organizational-chart'
 import { TeamMember } from './TeamMember'
+import SectionTitle from './SectionTitle'
 
 export default function TeamPageComp() {
   // Assuming teamMembers is structured with hierarchy information
@@ -21,7 +22,7 @@ export default function TeamPageComp() {
     >
       <div className="container mx-auto px-6 max-w-7xl md:py-20">
         {/* Heading */}
-        <motion.div
+        {/* <motion.div
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
@@ -32,7 +33,12 @@ export default function TeamPageComp() {
             Meet the dedicated professionals behind Banglar Choya Model City Ltd.
           </p>
           <div className="w-24 h-1 rounded-full bg-gradient-to-r from-green-600 to-yellow-400 mx-auto mt-6"></div>
-        </motion.div>
+        </motion.div> */}
+
+        <SectionTitle
+          title='Our Team'
+          subtitle='Meet the dedicated professionals behind Banglar Choya Model City Ltd.'
+        />
 
         {/* Organizational Chart */}
         <motion.div
@@ -84,7 +90,7 @@ export default function TeamPageComp() {
                       </div>
                       <div className="flex flex-wrap gap-4 justify-center">
                         {staff.map((member, index) => (
-                          <TeamMember key={index} {...member} index={index + 7} highlight={member.highlight || false}/>
+                          <TeamMember key={index} {...member} index={index + 7} highlight={member.highlight || false} />
                         ))}
                       </div>
                     </div>

@@ -5,6 +5,7 @@ import { fadeIn, staggerContainer } from '@/components/animations'
 import { Card } from '@/components/ui/card'
 import { ContactForm } from '@/components/ContactForm'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import SectionTitle from './SectionTitle'
 
 export default function ContactComponent() {
   return (
@@ -15,7 +16,7 @@ export default function ContactComponent() {
       className="py-20 bg-green-50"
     >
       <div className="container mx-auto px-6 max-w-7xl md:py-20">
-        <motion.div
+        {/* <motion.div
           variants={fadeIn('up', 'tween', 0.2, 1)}
           className="text-center mb-14"
         >
@@ -26,7 +27,12 @@ export default function ContactComponent() {
             Reach out to us for inquiries, site visits, or any assistance.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-yellow-400 mx-auto mt-6 rounded-full"></div>
-        </motion.div>
+        </motion.div> */}
+
+        <SectionTitle
+          title='Contact Us'
+          subtitle='Reach out to us for inquiries, site visits, or any assistance.'
+        />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.div variants={fadeIn('right', 'spring', 0.2, 1)}>
