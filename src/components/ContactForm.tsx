@@ -55,18 +55,18 @@ export function ContactForm() {
       className="w-full max-w-2xl"
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 p-6 md:p-8 bg-white border border-gray-200 rounded-2xl shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <User className="h-4 w-4" /> Full Name
+                  <FormLabel className="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                    <User className="h-4 w-4 text-green-600" /> Full Name
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="Your name" {...field} />
+                    <Input placeholder="Your name" className="bg-gray-50 focus:ring-2 focus:ring-green-400" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -78,11 +78,11 @@ export function ContactForm() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center gap-2">
-                    <Mail className="h-4 w-4" /> Email
+                  <FormLabel className="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                    <Mail className="h-4 w-4 text-green-600" /> Email
                   </FormLabel>
                   <FormControl>
-                    <Input placeholder="your@email.com" {...field} />
+                    <Input placeholder="your@email.com" className="bg-gray-50 focus:ring-2 focus:ring-green-400" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -95,11 +95,11 @@ export function ContactForm() {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" /> Phone Number
+                <FormLabel className="flex items-center gap-2 text-sm font-semibold text-gray-700">
+                  <Phone className="h-4 w-4 text-green-600" /> Phone Number
                 </FormLabel>
                 <FormControl>
-                  <Input placeholder="01XXXXXXXXX" {...field} />
+                  <Input placeholder="01XXXXXXXXX" className="bg-gray-50 focus:ring-2 focus:ring-green-400" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -111,11 +111,11 @@ export function ContactForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Your Message</FormLabel>
+                <FormLabel className="text-sm font-semibold text-gray-700">Your Message</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Tell us about your requirements..."
-                    className="min-h-[120px]"
+                    className="min-h-[140px] bg-gray-50 focus:ring-2 focus:ring-green-400"
                     {...field}
                   />
                 </FormControl>
@@ -127,7 +127,7 @@ export function ContactForm() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-primary-500 to-premium-500 hover:from-primary-600 hover:to-premium-600 text-white"
+              className="cursor-pointer w-full py-4 text-lg font-semibold bg-gradient-to-r from-zinc-800 to-green-500 hover:from-zinc-900 hover:to-green-600 text-white rounded-xl shadow-lg"
             >
               Submit Inquiry
             </Button>
