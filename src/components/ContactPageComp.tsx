@@ -1,11 +1,12 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { fadeIn, staggerContainer } from '@/components/animations'
-import { Card } from '@/components/ui/card'
-import { ContactForm } from '@/components/ContactForm'
-import { MapPin, Phone, Mail } from 'lucide-react'
-import SectionTitle from './SectionTitle'
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "@/components/animations";
+import { Card } from "@/components/ui/card";
+import { ContactForm } from "@/components/ContactForm";
+import { MapPin, Phone, Mail } from "lucide-react";
+import SectionTitle from "./SectionTitle";
+import BannerSection from "./BannerSection";
 
 export default function ContactComponent() {
   return (
@@ -13,33 +14,21 @@ export default function ContactComponent() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="py-20 bg-green-50"
+      className="bg-green-50"
     >
-      <div className="container mx-auto px-6 max-w-7xl md:py-20">
-        {/* <motion.div
-          variants={fadeIn('up', 'tween', 0.2, 1)}
-          className="text-center mb-14"
-        >
-          <h1 className="text-4xl font-extrabold text-green-900 mb-4 tracking-tight">
-            Contact <span className="text-yellow-400">Us</span>
-          </h1>
-          <p className="text-green-800 max-w-xl mx-auto text-lg">
-            Reach out to us for inquiries, site visits, or any assistance.
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-yellow-400 mx-auto mt-6 rounded-full"></div>
-        </motion.div> */}
 
+      <div className="container mx-auto px-6 max-w-7xl md:py-20">
         <SectionTitle
-          title='Contact Us'
-          subtitle='Reach out to us for inquiries, site visits, or any assistance.'
+          title="Contact Us"
+          subtitle="Reach out to us for inquiries, site visits, or any assistance."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <motion.div variants={fadeIn('right', 'spring', 0.2, 1)}>
+          <motion.div variants={fadeIn("right", "spring", 0.2, 1)}>
             <ContactForm />
           </motion.div>
 
-          <motion.div variants={fadeIn('left', 'spring', 0.4, 1)}>
+          <motion.div variants={fadeIn("left", "spring", 0.4, 1)}>
             <Card className="p-10 rounded-3xl shadow-lg border border-green-200 bg-white flex flex-col justify-between h-full">
               <section className="mb-12">
                 <h2 className="text-3xl font-semibold text-green-900 mb-6 border-b border-green-200 pb-4">
@@ -57,10 +46,11 @@ export default function ContactComponent() {
                       </h3>
                       <p className="leading-relaxed">
                         <a
-                          href='https://maps.app.goo.gl/aWFSKQykjrCaS6t88'
+                          href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-green-700 hover:underline">
+                          className="text-green-700 hover:underline"
+                        >
                           1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
                         </a>
                       </p>
@@ -76,7 +66,9 @@ export default function ContactComponent() {
                         Contact Numbers
                       </h3>
                       <p>
-                        <a href="tel:01337938322" className="leading-relaxed">01337-938322</a>
+                        <a href="tel:01337938322" className="leading-relaxed">
+                          01337-938322
+                        </a>
                       </p>
                     </div>
                   </div>
@@ -90,7 +82,7 @@ export default function ContactComponent() {
                         Email
                       </h3>
                       <p className="leading-relaxed">
-                        <a href='mailto:banglarchoyamodelcity@gmail.com'>
+                        <a href="mailto:banglarchoyamodelcity@gmail.com">
                           banglarchoyamodelcity@gmail.com
                         </a>
                       </p>
@@ -127,5 +119,5 @@ export default function ContactComponent() {
         </div>
       </div>
     </motion.div>
-  )
+  );
 }

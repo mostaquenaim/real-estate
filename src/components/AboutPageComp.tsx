@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/components/animations";
 import { Card } from "@/components/ui/card";
 import SectionTitle from "./SectionTitle";
+import BannerSection from "./BannerSection";
 
 export default function AboutComponent() {
   return (
@@ -11,8 +12,15 @@ export default function AboutComponent() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="py-16 bg-green-50"
+      className="bg-green-50"
     >
+      {/* banner section  */}
+      <BannerSection
+        image="/rsz_cover_photo.png"
+        title="Crafting the Future of Premium Living in Bangladesh"
+        subtitle="At Banglar Choya Model City Ltd., we redefine urban excellence through visionary planning, legal assurance, and a passion for community-focused development."
+      />
+
       <div className="container mx-auto max-w-7xl md:py-20 text-center">
         <motion.div
           variants={fadeIn("up", "tween", 0.2, 1)}
