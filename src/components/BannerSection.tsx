@@ -41,7 +41,7 @@ const BannerSection = ({
   return (
     <section
       ref={heroRef}
-      className={` ${!isHome ? "md:max-h-screen h-[50vh]" : "md:min-h-screen h-[80vh] md:h-[90vh]"} relative flex items-center overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
+      className={` ${!isHome ? "md:max-h-screen h-[65vh]" : "md:min-h-screen h-[80vh] md:h-[90vh] items-center"} relative flex overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
       style={{
         backgroundImage: `url('${image}')`,
       }}
@@ -53,11 +53,11 @@ const BannerSection = ({
       <div
         className={`relative z-20 container mx-auto text-center max-w-5xl ${isHome && " md:text-left "}`}
       >
-        <motion.div variants={fadeIn("up", "tween", 0.3, 1)}>
+        <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className={`${!isHome && 'absolute bottom-1/6 lg:left-1/2 lg:-translate-x-1/2'}`}>
           {isHome ? (
             <h1
               className={`${titleStyle}
-              ${isHome && homeStyle}`}
+              ${isHome ? homeStyle : ''}`}
             >
               Your Gateway to Premium Land, Plots & Apartments
               <span className="text-yellow-400">
