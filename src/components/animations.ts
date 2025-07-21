@@ -48,7 +48,12 @@ export const lineVariants = (): Variants => ({
   },
 })
 
-export const fadeIn = (direction: 'up' | 'down' | 'left' | 'right', type: AnimationGeneratorType, delay: number, duration: number): Variants => ({
+export const fadeIn = (
+  direction: 'up' | 'down' | 'left' | 'right', 
+  type: AnimationGeneratorType, 
+  delay: number, 
+  duration: number
+): Variants => ({
   hidden: {
     x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
     y: direction === 'up' ? 100 : direction === 'down' ? -100 : 0,

@@ -13,6 +13,10 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkedAlt,
+  FaTwitter,
+  FaFacebook,
+  FaLinkedin,
+  FaRegCopy,
 } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -50,25 +54,37 @@ interface PropertyCardProps {
   project: Project;
 }
 
-export default function ExploreProjectsPageComp({
-  project,
-}: PropertyCardProps) {
-  // console.log(project);
+export default function ExploreProjectsPageComp({ project }: PropertyCardProps) {
+  if (!project) return notFound();
 
-  if (!project) {
-    return notFound();
-  }
-
+  const [isShareOpen, setIsShareOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  const allImages =
-    project.gallery && project.gallery.length > 0 ? [...project.gallery] : [];
+  const allImages = project.gallery?.length ? [...project.gallery] : [];
   const slides = allImages.map((img) => ({ src: img }));
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
+  };
+
+  const handleSocialShare = (platform: string) => {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent("Check out this project!");
+
+    const platforms = {
+      twitter: `https://twitter.com/intent/tweet?url=${url}&text=${title}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+    };
+
+    window.open(platforms[platform as keyof typeof platforms], "_blank");
+  };
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href);
+    alert("Link copied to clipboard!");
   };
 
   const amenities = [
@@ -79,38 +95,41 @@ export default function ExploreProjectsPageComp({
   ];
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      // variants={fadeIn("up", "tween", 0.1, 0.6)}
-    >
-      <BannerSection
-        image={project.image}
-        title={project.title}
-        isProject={true}
-      />
+    <motion.div initial="hidden" animate="show" variants={fadeIn("up", "tween", 0.1, 0.6)}>
+      <BannerSection image={project.image} title={project.title} isProject={true} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Project Header */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          // variants={fadeIn("up", "tween", 0.1, 0.6)}
-          className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
-        >
-          <div className="flex gap-3">
-            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
-              <FiShare2 />
-              Share
-            </button>
-          </div>
+        <motion.div className="relative flex flex-wrap md:flex-nowrap justify-between items-start gap-4 mb-8">
+          <button
+            onClick={() => setIsShareOpen(!isShareOpen)}
+            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 shadow-md"
+          >
+            <FiShare2 /> Share
+          </button>
+
+          {isShareOpen && (
+            <div className="absolute z-20 bg-white border border-gray-200 rounded-lg shadow-lg top-full mt-2 left-0 w-56 p-2">
+              <button onClick={() => handleSocialShare("twitter")} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+                <FaTwitter className="text-blue-500" /> Share on Twitter
+              </button>
+              <button onClick={() => handleSocialShare("facebook")} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+                <FaFacebook className="text-blue-700" /> Share on Facebook
+              </button>
+              <button onClick={() => handleSocialShare("linkedin")} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+                <FaLinkedin className="text-blue-600" /> Share on LinkedIn
+              </button>
+              <button onClick={copyLink} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+                <FaRegCopy className="text-gray-600" /> Copy Link
+              </button>
+            </div>
+          )}
         </motion.div>
 
         {/* Gallery Section */}
         {allImages.length > 0 && (
           <motion.div
             initial="hidden"
-            animate="visible"
+            animate="show"
             // variants={fadeIn("up", "tween", 0.1, 0.6)}
             className="mb-12"
           >
@@ -170,7 +189,7 @@ export default function ExploreProjectsPageComp({
             {/* Description */}
             <motion.div
               initial="hidden"
-              animate="visible"
+              animate="show"
               // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 mb-8"
             >
@@ -185,7 +204,7 @@ export default function ExploreProjectsPageComp({
             {/* Features */}
             <motion.div
               initial="hidden"
-              animate="visible"
+              animate="show"
               // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 mb-8"
             >
@@ -241,7 +260,7 @@ export default function ExploreProjectsPageComp({
             {project.coordinates && (
               <motion.div
                 initial="hidden"
-                animate="visible"
+                animate="show"
                 // variants={fadeIn("up", "tween", 0.1, 0.6)}
                 className="bg-white rounded-xl shadow-sm p-6 mb-8"
               >
@@ -274,7 +293,7 @@ export default function ExploreProjectsPageComp({
             {/* Contact Card */}
             <motion.div
               initial="hidden"
-              animate="visible"
+              animate="show"
               // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 sticky top-6 mb-8"
             >
@@ -324,7 +343,7 @@ export default function ExploreProjectsPageComp({
             {/* Brochure Download */}
             <motion.div
               initial="hidden"
-              animate="visible"
+              animate="show"
               // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-sm p-6 text-white"
             >
