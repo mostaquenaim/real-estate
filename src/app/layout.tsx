@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,6 +64,8 @@ export default function RootLayout({
         <div className="w-full mx-auto">
           <Footer />
         </div>
+
+        <Toaster position="top-right" reverseOrder={false} />
       </body>
     </html>
   );

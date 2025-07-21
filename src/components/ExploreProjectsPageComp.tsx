@@ -34,6 +34,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { fadeIn } from "./animations";
+import toast from 'react-hot-toast';
 
 export interface Project {
   title: string;
@@ -82,10 +83,16 @@ export default function ExploreProjectsPageComp({ project }: PropertyCardProps) 
     window.open(platforms[platform as keyof typeof platforms], "_blank");
   };
 
-  const copyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    alert("Link copied to clipboard!");
-  };
+const copyLink = () => {
+  navigator.clipboard.writeText(window.location.href)
+    .then(() => {
+      toast.success("Link copied to clipboard!");
+    })
+    .catch(() => {
+      toast.error("Failed to copy the link.");
+    });
+};
+
 
   const amenities = [
     { icon: <FaShieldAlt />, text: "Security" },
@@ -102,7 +109,7 @@ export default function ExploreProjectsPageComp({ project }: PropertyCardProps) 
         <motion.div className="relative flex flex-wrap md:flex-nowrap justify-between items-start gap-4 mb-8">
           <button
             onClick={() => setIsShareOpen(!isShareOpen)}
-            className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 shadow-md"
+            className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 shadow-md"
           >
             <FiShare2 /> Share
           </button>
