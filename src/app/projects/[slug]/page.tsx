@@ -21,8 +21,8 @@ export default async function ShowProjects({ params }: { params: Params }) {
   }
 
   return (
-    <>
+    <div>
       <ExploreProjectsPageComp project={project}/>
-    </>
+    </div>
   );
 }

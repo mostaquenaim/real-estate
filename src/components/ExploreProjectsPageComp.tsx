@@ -19,7 +19,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { motion } from "framer-motion";
-import { fadeIn } from "@/components/animations";
 import { ContactForm } from "./ContactForm";
 import { MdOutlineZoomOutMap } from "react-icons/md";
 import { FiShare2 } from "react-icons/fi";
@@ -30,6 +29,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import { fadeIn } from "./animations";
 
 export interface Project {
   title: string;
@@ -53,7 +53,7 @@ interface PropertyCardProps {
 export default function ExploreProjectsPageComp({
   project,
 }: PropertyCardProps) {
-  console.log(project);
+  // console.log(project);
 
   if (!project) {
     return notFound();
@@ -79,7 +79,11 @@ export default function ExploreProjectsPageComp({
   ];
 
   return (
-    <div className="bg-gray-50">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      // variants={fadeIn("up", "tween", 0.1, 0.6)}
+    >
       <BannerSection
         image={project.image}
         title={project.title}
@@ -91,18 +95,9 @@ export default function ExploreProjectsPageComp({
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={fadeIn("up", "spring", 0.6, 1)}
+          // variants={fadeIn("up", "tween", 0.1, 0.6)}
           className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
         >
-          <div>
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-              {project.title}
-            </h1>
-            <div className="flex items-center mt-2 text-gray-600">
-              <FaMapMarkerAlt className="mr-2 text-red-500" />
-              <span>{project.location}</span>
-            </div>
-          </div>
           <div className="flex gap-3">
             <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
               <FiShare2 />
@@ -116,7 +111,7 @@ export default function ExploreProjectsPageComp({
           <motion.div
             initial="hidden"
             animate="visible"
-            variants={fadeIn("up", "spring", 0.6, 1)}
+            // variants={fadeIn("up", "tween", 0.1, 0.6)}
             className="mb-12"
           >
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -176,7 +171,7 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={fadeIn("up", "spring", 0.6, 1)}
+              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 mb-8"
             >
               <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -191,7 +186,7 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={fadeIn("up", "spring", 0.6, 1)}
+              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 mb-8"
             >
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
@@ -247,7 +242,7 @@ export default function ExploreProjectsPageComp({
               <motion.div
                 initial="hidden"
                 animate="visible"
-                variants={fadeIn("up", "spring", 0.6, 1)}
+                // variants={fadeIn("up", "tween", 0.1, 0.6)}
                 className="bg-white rounded-xl shadow-sm p-6 mb-8"
               >
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -280,7 +275,7 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={fadeIn("up", "spring", 0.6, 1)}
+              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 sticky top-6 mb-8"
             >
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
@@ -330,7 +325,7 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="visible"
-              variants={fadeIn("up", "spring", 0.6, 1)}
+              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-sm p-6 text-white"
             >
               <h2 className="text-xl font-semibold mb-4">
@@ -346,6 +341,6 @@ export default function ExploreProjectsPageComp({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

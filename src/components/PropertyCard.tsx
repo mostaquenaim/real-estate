@@ -94,7 +94,7 @@ export default function PropertyCard({ project, index }: PropertyCardProps) {
         )}
 
         {/* Luxury CTA Button */}
-        <Link href={`/projects/${project.slug}`}>
+        {/* <Link href={`/projects/${project.slug}`}>
           <motion.button
             whileHover={{ 
               scale: 1.02,
@@ -108,7 +108,7 @@ export default function PropertyCard({ project, index }: PropertyCardProps) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </motion.button>
-        </Link>
+        </Link> */}
       </div>
 
       {/* Hover Effect Border */}
