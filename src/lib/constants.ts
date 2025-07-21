@@ -1,25 +1,50 @@
 export const projects = [
   {
     title: "Nawabganj Project",
-    location: "Nawabganj, koliail-Dhaka-01",
+    location: "Nawabganj, Koliail-Dhaka-01",
     description: "Premium residential plots in a prime location with excellent connectivity and future growth potential.",
     landSize: "675 Bigha",
-    plotSizes: "Customizable Decimal /  Katha",
+    landSizeKatha: Math.round(675 * 20), // approx. 1 Bigha = 20 Katha
+    landSizeShotangsho: Math.round(675 * 33), // approx. 1 Bigha = 33 Shotangsho
+    plotSizes: "Customizable (Decimal / Katha)",
     image: "/lands/Land-Demarcation-1.jpg",
     slug: "nawabganj",
-    coordinates: [90.411885, 23.792588]
+    coordinates: [90.411885, 23.792588],
+    // gallery:[]
   },
   {
     title: "Borakoir Project",
     location: "Borakoir, Dhamrai-Dhaka-20",
     description: "Beautifully designed plots with modern amenities and peaceful surroundings for your dream home.",
     landSize: "425 Bigha",
-    plotSizes: "Customizable Decimal /  Katha",
+    landSizeKatha: Math.round(425 * 20),
+    landSizeShotangsho: Math.round(425 * 33),
+    plotSizes: "Customizable (Decimal / Katha)",
     image: "/lands/Land-Demarcation-2.jpg",
     slug: "borakoir",
     coordinates: [90.411885, 23.792588]
+  },
+  {
+    title: "Kolatia Project",
+    location: "Near Kolatia College",
+    description: "Conveniently located land near Kolatia College, perfect for residential or investment purposes.",
+    landSize: "525 Shotangsho",
+    landSizeKatha: Math.round(525 * 0.603), // 1 Shotangsho ≈ 0.603 Katha
+    landSizeShotangsho: 525,
+    plotSizes: "Customizable (Decimal / Katha)",
+    image: "/lands/Land-Demarcation-1.jpg",
+    slug: "kolatia",
+    coordinates: [90.320000, 23.700000], // Update with exact coords if needed
+    gallery:[
+      "/gallery/kolatia/WhatsApp Image 2025-07-16 at 12.20.13_5c8b5cb3.jpg",
+      "/gallery/kolatia/WhatsApp Image 2025-07-16 at 12.20.14_64ab010d.jpg",
+      "/gallery/kolatia/WhatsApp Image 2025-07-16 at 12.20.14_e51420f8.jpg",
+      "/gallery/kolatia/WhatsApp Image 2025-07-16 at 12.20.16_d013a908.jpg",
+      "/gallery/kolatia/WhatsApp Image 2025-07-16 at 12.20.12_60f7833b.jpg"
+    ]
   }
-]
+];
+
 
 export const teamMembers = [
   {

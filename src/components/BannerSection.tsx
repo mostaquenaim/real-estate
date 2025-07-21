@@ -9,6 +9,7 @@ import { ChevronDown } from "lucide-react";
 interface BannerSectionProps {
   image: string;
   isHome?: boolean;
+  isProject?: boolean;
   title?: string;
   subtitle?: string;
   button1?: string;
@@ -20,6 +21,7 @@ interface BannerSectionProps {
 const BannerSection = ({
   image,
   isHome = false,
+  isProject= false,
   title,
   subtitle,
   button1,
@@ -51,9 +53,9 @@ const BannerSection = ({
 
       {/* Content Container */}
       <div
-        className={`relative z-20 container mx-auto text-center max-w-5xl ${isHome && " md:text-left "}`}
+        className={`relative z-20 container mx-auto text-center max-w-5xl ${isHome && "md:text-left "}`}
       >
-        <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className={`${!isHome && 'absolute bottom-1/6 lg:left-1/2 lg:-translate-x-1/2'}`}>
+        <motion.div variants={fadeIn("up", "tween", 0.3, 1)} className={`${!isHome && 'absolute bottom-1/6'} ${isProject ? 'left-1/2 -translate-x-1/2' : 'lg:left-1/2 lg:-translate-x-1/2'}`}>
           {isHome ? (
             <h1
               className={`${titleStyle}

@@ -4,17 +4,7 @@ import { motion } from 'framer-motion'
 import { fadeIn } from './animations'
 import Link from 'next/link'
 import Image from 'next/image'
-
-interface Project {
-  title: string
-  image: string
-  location: string
-  description: string
-  landSize: string
-  plotSizes: string
-  slug: string
-  amenities?: string[]
-}
+import { Project } from './ExploreProjectsPageComp'
 
 interface PropertyCardProps {
   project: Project

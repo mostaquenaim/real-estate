@@ -1,6 +1,5 @@
-'use client'
+"use client";
 import BannerSection from "@/components/BannerSection";
-import { projects } from "@/lib/constants";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
@@ -15,457 +14,338 @@ import {
   FaEnvelope,
   FaMapMarkedAlt,
 } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/animations";
+import { ContactForm } from "./ContactForm";
+import { MdOutlineZoomOutMap } from "react-icons/md";
+import { FiShare2 } from "react-icons/fi";
+import { IoIosArrowForward } from "react-icons/io";
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 
-export default async function ExploreProjectsPageComp({ project }) {
-    console.log(project,'ssd');
+export interface Project {
+  title: string;
+  image: string;
+  location: string;
+  description: string;
+  landSize: string;
+  landSizeKatha?: number;
+  landSizeShotangsho?: number;
+  plotSizes: string;
+  slug: string;
+  coordinates?: number[];
+  gallery?: string[];
+  amenities?: string[];
+}
+
+interface PropertyCardProps {
+  project: Project;
+}
+
+export default function ExploreProjectsPageComp({
+  project,
+}: PropertyCardProps) {
+  console.log(project);
 
   if (!project) {
     return notFound();
   }
 
-  const galleryImages = [
-    project.image,
-    
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const allImages =
+    project.gallery && project.gallery.length > 0 ? [...project.gallery] : [];
+  const slides = allImages.map((img) => ({ src: img }));
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const amenities = [
+    { icon: <FaShieldAlt />, text: "Security" },
+    { icon: <FaTree />, text: "Green Environment" },
+    { icon: <FaWater />, text: "Water Supply" },
+    { icon: <FaCar />, text: "Parking Space" },
   ];
 
   return (
-    <>
-      <BannerSection image={project.image} />
-      <div className="container mx-auto py-16 px-4 max-w-6xl space-y-16">
-        {/* Title & Location */}
+    <div className="bg-gray-50">
+      <BannerSection
+        image={project.image}
+        title={project.title}
+        isProject={true}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Project Header */}
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="space-y-4 text-center"
+          variants={fadeIn("up", "spring", 0.6, 1)}
+          className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4"
         >
-          <h1 className="text-5xl font-bold text-green-900 font-serif tracking-tight">
-            {project.title}
-          </h1>
-          <div className="flex items-center justify-center gap-2 text-lg text-gray-600">
-            <FaMapMarkerAlt className="text-green-700" />
-            <span>{project.location}</span>
-            <span className="ml-4 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
-              {project?.status || "Ongoing"}
-            </span>
+          <div>
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+              {project.title}
+            </h1>
+            <div className="flex items-center mt-2 text-gray-600">
+              <FaMapMarkerAlt className="mr-2 text-red-500" />
+              <span>{project.location}</span>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors">
+              <FiShare2 />
+              Share
+            </button>
           </div>
         </motion.div>
 
-        {/* Image Gallery */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="relative rounded-2xl overflow-hidden shadow-2xl"
-        >
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000 }}
-            loop
-            className="h-[500px]"
+        {/* Gallery Section */}
+        {allImages.length > 0 && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn("up", "spring", 0.6, 1)}
+            className="mb-12"
           >
-            {galleryImages.map((img, index) => (
-              <SwiperSlide key={index}>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="md:col-span-2 h-96 relative rounded-xl overflow-hidden">
                 <Image
-                  src={img}
-                  alt={`${project.title} - Image ${index + 1}`}
+                  src={allImages[0]}
+                  alt={project.title}
                   fill
-                  className="object-cover"
-                  priority={index === 0}
+                  className="object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                  onClick={() => openLightbox(0)}
+                  priority
                 />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </motion.div>
-
-        {/* Project Highlights */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center"
-        >
-          <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
-            <FaRulerCombined className="text-3xl mx-auto text-green-700 mb-2" />
-            <h3 className="font-semibold">Area</h3>
-            <p className="text-gray-600">{project.landSize}</p>
-          </div>
-          <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
-            <FaHome className="text-3xl mx-auto text-green-700 mb-2" />
-            <h3 className="font-semibold">Plots Available</h3>
-            <p className="text-gray-600">{project.plotSizes}</p>
-          </div>
-          <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
-            <FaWater className="text-3xl mx-auto text-green-700 mb-2" />
-            <h3 className="font-semibold">Utilities</h3>
-            <p className="text-gray-600">Water & Electricity</p>
-          </div>
-          <div className="bg-white p-4 rounded-xl shadow-md border border-gray-100">
-            <FaCar className="text-3xl mx-auto text-green-700 mb-2" />
-            <h3 className="font-semibold">Road Width</h3>
-            <p className="text-gray-600">20-30 ft</p>
-          </div>
-        </motion.div>
-
-        {/* Description */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="max-w-4xl mx-auto space-y-6"
-        >
-          <h2 className="text-3xl font-bold text-green-900 font-serif">
-            Project Overview
-          </h2>
-          <div className="prose prose-lg text-gray-700">
-            <p>{project.description}</p>
-            <p className="mt-4">
-              Strategically located with excellent connectivity to major
-              highways and business districts,
-              {project.title} offers premium residential plots with all modern
-              amenities. Our gated community ensures security and privacy while
-              providing a serene living environment.
-            </p>
-          </div>
-        </motion.div>
-
-        {/* Key Features */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="bg-green-50 rounded-2xl p-8 shadow-lg"
-        >
-          <h2 className="text-3xl font-bold text-green-900 font-serif mb-6">
-            Premium Amenities
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                icon: <FaShieldAlt size={24} />,
-                title: "24/7 Security",
-                desc: "Gated community with CCTV surveillance",
-              },
-              {
-                icon: <FaTree size={24} />,
-                title: "Landscaped Gardens",
-                desc: "Beautifully designed green spaces",
-              },
-              {
-                icon: <FaWater size={24} />,
-                title: "Water Supply",
-                desc: "Deep tube well with overhead tank",
-              },
-              {
-                icon: <FaCar size={24} />,
-                title: "Wide Roads",
-                desc: "30ft wide internal roads with street lights",
-              },
-              {
-                icon: <FaHome size={24} />,
-                title: "Community Center",
-                desc: "Dedicated space for events",
-              },
-              {
-                icon: <FaMapMarkedAlt size={24} />,
-                title: "Prime Location",
-                desc: "Close to schools, hospitals & markets",
-              },
-            ].map((feature, idx) => (
-              <div key={idx} className="flex items-start gap-4">
-                <div className="bg-green-100 p-3 rounded-full text-green-700">
-                  {feature.icon}
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg text-gray-800">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.desc}</p>
+                <div className="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full flex items-center gap-1 text-sm">
+                  <MdOutlineZoomOutMap />
+                  Click to enlarge
                 </div>
               </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Location Map */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="space-y-6"
-        >
-          <h2 className="text-3xl font-bold text-green-900 font-serif">
-            Strategic Location
-          </h2>
-          <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-xl">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.862004095952!2d90.3782773154316!3d23.750767884587126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1620000000000!5m2!1sen!2sbd"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              className="rounded-2xl"
-            ></iframe>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="font-bold text-lg mb-3">Accessibility</h3>
-              <ul className="space-y-2">
-                <li>• 5 mins from main highway</li>
-                <li>• 15 mins to city center</li>
-                <li>• Nearby public transport</li>
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="font-bold text-lg mb-3">Nearby Facilities</h3>
-              <ul className="space-y-2">
-                <li>• International schools (2km)</li>
-                <li>• Shopping malls (3km)</li>
-                <li>• Hospitals (4km)</li>
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="font-bold text-lg mb-3">Future Development</h3>
-              <ul className="space-y-2">
-                <li>• Metro rail extension (2025)</li>
-                <li>• New commercial hub planned</li>
-                <li>• Road widening project</li>
-              </ul>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Investment Highlights */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="bg-gradient-to-r from-green-800 to-green-600 text-white rounded-2xl p-8 shadow-2xl"
-        >
-          <h2 className="text-3xl font-bold font-serif mb-6">
-            Investment Potential
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Why Invest Here?</h3>
-              <ul className="space-y-3">
-                <li className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    1
-                  </span>
-                  <span>High appreciation potential (15-20% annually)</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    2
-                  </span>
-                  <span>Government-approved land zoning</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="bg-green-100 text-green-800 rounded-full w-6 h-6 flex items-center justify-center flex-shrink-0">
-                    3
-                  </span>
-                  <span>Flexible payment plans available</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Payment Options</h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-medium">Down Payment</h4>
-                  <div className="w-full bg-green-700 rounded-full h-2.5 mt-1">
-                    <div
-                      className="bg-green-300 h-2.5 rounded-full"
-                      style={{ width: "30%" }}
-                    ></div>
+              <div className="grid grid-cols-2 gap-4 h-96">
+                {allImages.slice(1, 5).map((img, index) => (
+                  <div
+                    key={index}
+                    className="relative rounded-xl overflow-hidden"
+                  >
+                    <Image
+                      src={img}
+                      alt={`${project.title} ${index + 1}`}
+                      fill
+                      className="object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                      onClick={() => openLightbox(index + 1)}
+                    />
+                    {index === 3 && allImages.length > 5 && (
+                      <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white font-bold text-xl">
+                        +{allImages.length - 5} more
+                      </div>
+                    )}
                   </div>
-                  <p className="text-green-200 text-sm mt-1">
-                    30% down payment
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-medium">Installment Plan</h4>
-                  <div className="w-full bg-green-700 rounded-full h-2.5 mt-1">
-                    <div
-                      className="bg-green-300 h-2.5 rounded-full"
-                      style={{ width: "70%" }}
-                    ></div>
-                  </div>
-                  <p className="text-green-200 text-sm mt-1">
-                    70% in 24 months (0% interest)
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
-          </div>
-        </motion.div>
 
-        {/* Testimonials */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="space-y-6"
-        >
-          <h2 className="text-3xl font-bold text-green-900 font-serif">
-            Client Testimonials
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                quote:
-                  "The investment process was smooth and transparent. The location is perfect for my future home.",
-                author: "Mr. Rahman",
-                role: "Investor",
-              },
-              {
-                quote:
-                  "Excellent customer service and clear documentation. The project is developing as promised.",
-                author: "Ms. Khan",
-                role: "Homeowner",
-              },
-            ].map((testimonial, idx) => (
-              <div
-                key={idx}
-                className="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-              >
-                <div className="text-yellow-400 mb-3">★★★★★</div>
-                <p className="italic text-gray-700 mb-4">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="bg-green-100 text-green-800 rounded-full w-10 h-10 flex items-center justify-center font-bold">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-medium">{testimonial.author}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+            <Lightbox
+              open={lightboxOpen}
+              close={() => setLightboxOpen(false)}
+              slides={slides}
+              index={lightboxIndex}
+              plugins={[Zoom, Thumbnails]}
+              animation={{ fade: 500 }}
+              controller={{ closeOnBackdropClick: true }}
+            />
+          </motion.div>
+        )}
 
-        {/* Contact CTA */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn("up", "tween", 0.2, 1)}
-          className="bg-white rounded-2xl shadow-2xl overflow-hidden"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-8 md:p-10 bg-green-900 text-white">
-              <h2 className="text-3xl font-bold font-serif mb-4">
-                Schedule a Visit
+        {/* Project Details */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            {/* Description */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn("up", "spring", 0.6, 1)}
+              className="bg-white rounded-xl shadow-sm p-6 mb-8"
+            >
+              <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                Project Details
               </h2>
-              <p className="mb-6">
-                Our sales team is ready to show you the property and discuss
-                investment opportunities.
+              <p className="text-gray-600 leading-relaxed">
+                {project.description}
               </p>
+            </motion.div>
 
+            {/* Features */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn("up", "spring", 0.6, 1)}
+              className="bg-white rounded-xl shadow-sm p-6 mb-8"
+            >
+              <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+                Key Features
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
+                    <FaRulerCombined size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Land Size</h3>
+                    <p className="text-gray-600">{project.landSize}</p>
+                    {project.landSizeKatha && (
+                      <p className="text-gray-600">
+                        {project.landSizeKatha} Katha
+                      </p>
+                    )}
+                    {project.landSizeShotangsho && (
+                      <p className="text-gray-600">
+                        {project.landSizeShotangsho} Shotangsho
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="bg-green-100 p-3 rounded-full text-green-600">
+                    <FaHome size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-medium text-gray-900">Plot Sizes</h3>
+                    <p className="text-gray-600">{project.plotSizes}</p>
+                  </div>
+                </div>
+                {amenities.map((amenity, index) => (
+                  <div key={index} className="flex items-start gap-4">
+                    <div className="bg-purple-100 p-3 rounded-full text-purple-600">
+                      {amenity.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-medium text-gray-900">
+                        {amenity.text}
+                      </h3>
+                      <p className="text-gray-600">Available</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Location Map */}
+            {project.coordinates && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={fadeIn("up", "spring", 0.6, 1)}
+                className="bg-white rounded-xl shadow-sm p-6 mb-8"
+              >
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Location
+                </h2>
+                <div className="h-96 w-full bg-gray-200 rounded-lg overflow-hidden relative">
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${project.coordinates[1]},${project.coordinates[0]}&z=15&output=embed`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <div className="absolute bottom-4 left-4 bg-white px-3 py-2 rounded-lg shadow-md flex items-center gap-2">
+                    <FaMapMarkedAlt className="text-blue-500" />
+                    <span className="text-sm font-medium">
+                      {project.location}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </div>
+
+          {/* Sidebar */}
+          <div>
+            {/* Contact Card */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn("up", "spring", 0.6, 1)}
+              className="bg-white rounded-xl shadow-sm p-6 sticky top-6 mb-8"
+            >
+              <h2 className="text-2xl font-semibold mb-6 text-gray-800">
+                Contact Us
+              </h2>
               <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <FaPhoneAlt className="text-green-300 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium">Call Us</h3>
-                    <a href="tel:+8801XXXXXXXXX" className="hover:underline">
-                      +880 1XXXXXXXXX
-                    </a>
+                <div className="flex items-center gap-3">
+                  <div className="bg-blue-100 p-3 rounded-full text-blue-600">
+                    <FaPhoneAlt />
                   </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <FaEnvelope className="text-green-300 flex-shrink-0" />
                   <div>
-                    <h3 className="font-medium">Email Us</h3>
+                    <p className="text-gray-500 text-sm">Phone</p>
                     <a
-                      href="mailto:info@yourcompany.com"
-                      className="hover:underline"
+                      href="tel:+8801337938322"
+                      className="font-medium hover:text-blue-600 transition-colors"
                     >
-                      info@yourcompany.com
+                      +88 01337938322
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <FaMapMarkedAlt className="text-green-300 flex-shrink-0" />
+                <div className="flex items-center gap-3">
+                  <div className="bg-green-100 p-3 rounded-full text-green-600">
+                    <FaEnvelope />
+                  </div>
                   <div>
-                    <h3 className="font-medium">Visit Office</h3>
-                    <p>House #123, Road #4, Dhanmondi, Dhaka</p>
+                    <p className="text-gray-500 text-sm">Email</p>
+                    <a
+                      href="mailto:banglarchoyamodelcity@gmail.com"
+                      className="font-medium hover:text-blue-600 transition-colors"
+                    >
+                      banglarchoyamodelcity@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="p-8 md:p-10">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                Request Information
-              </h3>
-              <form className="space-y-4">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="interest"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Interest
-                  </label>
-                  <select
-                    id="interest"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                  >
-                    <option>Plot Purchase</option>
-                    <option>Investment Info</option>
-                    <option>Site Visit</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-green-700 hover:bg-green-800 text-white py-3 px-6 rounded-lg font-semibold transition duration-300"
-                >
-                  Submit Request
-                </button>
-              </form>
-            </div>
+              <div className="mt-6">
+                <h3 className="font-medium mb-3 flex items-center gap-2">
+                  <IoIosArrowForward className="text-blue-500" />
+                  Request More Information
+                </h3>
+                <ContactForm />
+              </div>
+            </motion.div>
+
+            {/* Brochure Download */}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn("up", "spring", 0.6, 1)}
+              className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-sm p-6 text-white"
+            >
+              <h2 className="text-xl font-semibold mb-4">
+                Download Project Brochure
+              </h2>
+              <p className="mb-4 opacity-90">
+                Get complete details about pricing, payment plans, and more.
+              </p>
+              <button className="w-full bg-white text-blue-600 py-3 px-4 rounded-lg font-medium hover:bg-opacity-90 transition-colors">
+                Download PDF
+              </button>
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
