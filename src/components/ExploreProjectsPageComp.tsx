@@ -17,6 +17,7 @@ import {
   FaFacebook,
   FaLinkedin,
   FaRegCopy,
+  FaCheckCircle,
 } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -34,7 +35,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { fadeIn } from "./animations";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 export interface Project {
   title: string;
@@ -55,12 +56,15 @@ interface PropertyCardProps {
   project: Project;
 }
 
-export default function ExploreProjectsPageComp({ project }: PropertyCardProps) {
+export default function ExploreProjectsPageComp({
+  project,
+}: PropertyCardProps) {
   if (!project) return notFound();
 
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [copied, setCopied] = useState(false);
 
   const allImages = project.gallery?.length ? [...project.gallery] : [];
   const slides = allImages.map((img) => ({ src: img }));
@@ -83,16 +87,18 @@ export default function ExploreProjectsPageComp({ project }: PropertyCardProps) 
     window.open(platforms[platform as keyof typeof platforms], "_blank");
   };
 
-const copyLink = () => {
-  navigator.clipboard.writeText(window.location.href)
-    .then(() => {
-      toast.success("Link copied to clipboard!");
-    })
-    .catch(() => {
-      toast.error("Failed to copy the link.");
-    });
-};
-
+  const copyLink = () => {
+    navigator.clipboard
+      .writeText(window.location.href)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // revert after 2s
+      })
+      .catch(() => {
+        // fallback if needed
+        toast.error("Failed to copy the link.");
+      });
+  };
 
   const amenities = [
     { icon: <FaShieldAlt />, text: "Security" },
@@ -102,8 +108,16 @@ const copyLink = () => {
   ];
 
   return (
-    <motion.div initial="hidden" animate="show" variants={fadeIn("up", "tween", 0.1, 0.6)}>
-      <BannerSection image={project.image} title={project.title} isProject={true} />
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={fadeIn("up", "tween", 0.1, 0.6)}
+    >
+      <BannerSection
+        image={project.image}
+        title={project.title}
+        isProject={true}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div className="relative flex flex-wrap md:flex-nowrap justify-between items-start gap-4 mb-8">
@@ -116,17 +130,39 @@ const copyLink = () => {
 
           {isShareOpen && (
             <div className="absolute z-20 bg-white border border-gray-200 rounded-lg shadow-lg top-full mt-2 left-0 w-56 p-2">
-              <button onClick={() => handleSocialShare("twitter")} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+              <button
+                onClick={() => handleSocialShare("twitter")}
+                className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100"
+              >
                 <FaTwitter className="text-blue-500" /> Share on Twitter
               </button>
-              <button onClick={() => handleSocialShare("facebook")} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+              <button
+                onClick={() => handleSocialShare("facebook")}
+                className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100"
+              >
                 <FaFacebook className="text-blue-700" /> Share on Facebook
               </button>
-              <button onClick={() => handleSocialShare("linkedin")} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
+              <button
+                onClick={() => handleSocialShare("linkedin")}
+                className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100"
+              >
                 <FaLinkedin className="text-blue-600" /> Share on LinkedIn
               </button>
-              <button onClick={copyLink} className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100">
-                <FaRegCopy className="text-gray-600" /> Copy Link
+              <button
+                onClick={copyLink}
+                className="cursor-pointer flex items-center gap-2 w-full px-3 py-2 rounded hover:bg-gray-100 transition-colors duration-200"
+              >
+                {copied ? (
+                  <>
+                    <FaCheckCircle className="text-green-600" />
+                    <span className="text-green-600 font-medium">Copied</span>
+                  </>
+                ) : (
+                  <>
+                    <FaRegCopy className="text-gray-600" />
+                    <span className="text-gray-700">Copy Link</span>
+                  </>
+                )}
               </button>
             </div>
           )}

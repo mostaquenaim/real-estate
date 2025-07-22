@@ -17,6 +17,8 @@ import {
 import { motion } from "framer-motion";
 import { fadeIn } from "./animations";
 import { Mail, Phone, User } from "lucide-react";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -44,9 +46,20 @@ export function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Add your form submission logic here
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsSubmitting(true);
+    try {
+      // simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Your message has been sent!");
+      form.reset();
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -144,9 +157,10 @@ export function ContactForm() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               type="submit"
+              disabled={isSubmitting}
               className="cursor-pointer w-full py-4 text-lg font-semibold bg-gradient-to-r from-zinc-800 to-green-500 hover:from-zinc-900 hover:to-green-600 text-white rounded-xl shadow-lg"
             >
-              Submit Inquiry
+              {isSubmitting ? "Sending..." : "Submit Inquiry"}
             </Button>
           </motion.div>
         </form>
