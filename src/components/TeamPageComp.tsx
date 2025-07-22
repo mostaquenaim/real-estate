@@ -19,7 +19,7 @@ export default function TeamPageComp() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="bg-green-50"
+      className=""
     >
       {/* banner section  */}
       <BannerSection

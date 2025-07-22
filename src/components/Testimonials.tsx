@@ -1,24 +1,31 @@
-'use client'
+"use client";
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow, Pagination, Navigation, Autoplay } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import SectionTitle from './SectionTitle'
-import { testimonials } from '@/lib/constants'
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  EffectCoverflow,
+  Pagination,
+  Navigation,
+  Autoplay,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import SectionTitle from "./SectionTitle";
+import { testimonials } from "@/lib/constants";
 
 export const Testimonials = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Parallax background */}
-        <div
+      <div
         className="absolute inset-0 z-0 md:bg-fixed bg-center bg-cover "
         style={{
           backgroundImage: `url('/images/happy-client.jpg')`,
         }}
       ></div>
+      {/* over the background image inset */}
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
 
       {/* Top black fade */}
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent z-10"></div>
@@ -27,10 +34,9 @@ export const Testimonials = () => {
       <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-10"></div>
 
       <div className="relative z-10 container mx-auto px-6 max-w-7xl">
-
         {/* heading */}
         <SectionTitle
-          title='Client Testimonials'
+          title="Client Testimonials"
           subtitle="Real words from the people we proudly serve"
           isPage={false}
         />
@@ -86,5 +92,5 @@ export const Testimonials = () => {
         </Swiper>
       </div>
     </section>
-  )
-}
+  );
+};

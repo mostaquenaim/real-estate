@@ -55,18 +55,6 @@ const AutoSlidingProjects = () => {
             <PropertyCard project={project} index={index % projects.length} />
           </SwiperSlide>
         ))}
-
-        {/* Custom Navigation Buttons */}
-        {/* <div className="absolute top-1/2 -left-6 z-50 transform -translate-y-1/2">
-          <button className="custom-prev bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold rounded-full p-3 shadow-lg transition">
-            ◀
-          </button>
-        </div>
-        <div className="absolute top-1/2 -right-6 z-50 transform -translate-y-1/2">
-          <button className="custom-next bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold rounded-full p-3 shadow-lg transition">
-            ▶
-          </button>
-        </div> */}
       </Swiper>
 
       {/* Thumbnails Swiper */}
@@ -83,7 +71,7 @@ const AutoSlidingProjects = () => {
             1024: { slidesPerView: 7 },
           }}
         >
-          {projects.map((project, index) => (
+          {/* {projects.map((project, index) => (
             <SwiperSlide key={index}>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -98,7 +86,7 @@ const AutoSlidingProjects = () => {
                 />
               </motion.div>
             </SwiperSlide>
-          ))}
+          ))} */}
         </Swiper>
       </div>
     </div>

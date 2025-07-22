@@ -12,7 +12,7 @@ export default function AboutComponent() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="bg-green-50"
+      className=""
     >
       {/* banner section  */}
       <BannerSection
@@ -34,7 +34,6 @@ export default function AboutComponent() {
         <SectionTitle
           title="The Banglar Choya Legacy"
           subtitle="Redefining luxury living through exceptional craftsmanship and visionary urban development"
-          // subtitle='Explore our premium residential projects in Dhaka&apos;s most promising locations'
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">

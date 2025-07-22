@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${manrope.className} min-h-screen flex flex-col bg-white text-gray-900 items-center`}
+        className={`${geistSans.variable} ${geistMono.variable} ${manrope.className} min-h-screen flex flex-col bg-green-50 text-gray-900 items-center`}
       >
         <ParticleBackground />
         {/* <ParticlesBackground></ParticlesBackground> */}

@@ -16,7 +16,7 @@ export default function ContactComponent() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="bg-gradient-to-b from-gray-50 to-white"
+      className=""
     >
       {/* banner section  */}
       <BannerSection

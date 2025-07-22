@@ -13,7 +13,7 @@ export default function ProjectPageComp() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className="bg-gradient-to-b from-green-50 via-white to-green-50"
+      className=""
     >
       {/* banner section  */}
       <BannerSection
