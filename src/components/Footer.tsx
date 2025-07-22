@@ -97,6 +97,7 @@ export default function Footer() {
               {[
                 { href: '/projects/nawabganj', label: 'Nawabganj Project' },
                 { href: '/projects/borakoir', label: 'Borakoir Project' },
+                { href: '/projects/kolatia', label: 'Kolatia Project' },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link

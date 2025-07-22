@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   // themeColor: "#1ab31a",
   openGraph: {
     title: "Banglar Choya Model City Ltd.",
-    description: "Buy land and plots with confidence in Dhaka. Explore Nawabganj & Dhamrai projects.",
+    description: "Buy land and plots with confidence in Dhaka. Explore our projects.",
     type: "website",
     locale: "en_BD",
     siteName: "Banglar Choya",

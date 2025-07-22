@@ -8,6 +8,7 @@ import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import Link from "next/link";
 
 export default function ContactComponent() {
   return (
@@ -164,7 +165,7 @@ export default function ContactComponent() {
               <div className="space-y-6">
                 <motion.div whileHover={{ x: 5 }} className="group">
                   <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-green-400 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-green-50">
-                    <div className="flex justify-between items-center">
+                    <Link href={`/projects/nawabganj`} className="flex justify-between items-center">
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-green-600 transition-colors">
                           Nawabganj Project
@@ -174,13 +175,13 @@ export default function ContactComponent() {
                         </p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors" />
-                    </div>
+                    </Link>
                   </Card>
                 </motion.div>
 
                 <motion.div whileHover={{ x: 5 }} className="group">
                   <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-yellow-500 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-yellow-50">
-                    <div className="flex justify-between items-center">
+                    <Link href={`/projects/borakoir`} className="flex justify-between items-center">
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-yellow-500 transition-colors">
                           Borakoir Project
@@ -190,7 +191,23 @@ export default function ContactComponent() {
                         </p>
                       </div>
                       <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-yellow-500 transition-colors" />
-                    </div>
+                    </Link>
+                  </Card>
+                </motion.div>
+
+                <motion.div whileHover={{ x: 5 }} className="group">
+                  <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-green-400 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-green-50">
+                    <Link href={`/projects/kolatia`} className="flex justify-between items-center">
+                      <div>
+                        <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-green-600 transition-colors">
+                          Kolatia Project
+                        </h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">
+                          Near Kolatia School
+                        </p>
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-gray-400 group-hover:text-green-600 transition-colors" />
+                    </Link>
                   </Card>
                 </motion.div>
               </div>
