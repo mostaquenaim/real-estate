@@ -12,7 +12,6 @@ export default function AboutComponent() {
       variants={staggerContainer}
       initial="hidden"
       animate="show"
-      className=""
     >
       {/* banner section  */}
       <BannerSection

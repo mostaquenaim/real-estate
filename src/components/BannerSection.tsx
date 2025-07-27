@@ -38,7 +38,7 @@ const BannerSection = ({
   const titleStyle =
     "text-2xl md:text-4xl font-extrabold text-white leading-tight mx-auto md:mx-0 tracking-tight drop-shadow-lg";
   const homeStyle =
-    "max-w-3xl lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out";
+    "max-w-3xl lg:group-hover:scale-125 lg:group-hover:translate-x-40 transform transition-transform duration-500 ease-in-out pt-20";
 
   return (
     <section
@@ -82,14 +82,14 @@ const BannerSection = ({
           {subtitle && (
             <p
               className={`mt-6 text-md text-yellow-100 mx-auto md:mx-0 leading-relaxed drop-shadow-md
-              ${isHome && "lg:group-hover:scale-125 lg:group-hover:translate-x-40 lg:group-hover:-translate-y-10 transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"}`}
+              ${isHome && "lg:group-hover:scale-125 lg:group-hover:translate-x-40 transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"}`}
             >
               {subtitle}
             </p>
           )}
 
           <div
-            className="mt-12 flex flex-col sm:flex-row justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
+            className="mt-12 flex md:flex-col flex-row justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
             lg:group-hover:scale-125 lg:group-hover:translate-x-80 transform transition-transform duration-500 ease-in-out delay-500"
           >
             {button1 && button1Link && (
