@@ -5,6 +5,7 @@ import { useRef } from "react";
 import { fadeIn } from "./animations";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import SocialPlatforms from "./SocialPlatforms";
 
 interface BannerSectionProps {
   image: string;
@@ -36,14 +37,15 @@ const BannerSection = ({
   });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const titleStyle =
-    "text-2xl md:text-4xl font-extrabold text-white leading-tight mx-auto md:mx-0 tracking-tight drop-shadow-lg";
+    "text-2xl md:text-4xl font-extrabold text-opacity-80 leading-tight mx-auto md:mx-0 tracking-tight drop-shadow-lg text-white";
   const homeStyle =
     "max-w-3xl lg:group-hover:scale-125 lg:group-hover:translate-x-40 transform transition-transform duration-500 ease-in-out pt-20";
 
   return (
     <section
       ref={heroRef}
-      className={` ${!isHome ? "md:max-h-screen h-[65vh]" : "md:min-h-screen h-[80vh] md:h-[90vh] items-center"} relative flex overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
+      className={` ${!isHome ? "md:max-h-screen h-[65vh]" : "md:min-h-screen h-[80vh] md:h-[90vh] items-center"} 
+      relative flex overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
       style={{
         backgroundImage: `url('${image}')`,
       }}
@@ -89,7 +91,7 @@ const BannerSection = ({
           )}
 
           <div
-            className="mt-12 flex md:flex-col flex-row justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
+            className="mt-12 flex justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
             lg:group-hover:scale-125 lg:group-hover:translate-x-80 transform transition-transform duration-500 ease-in-out delay-500"
           >
             {button1 && button1Link && (
@@ -97,7 +99,7 @@ const BannerSection = ({
                 <motion.button
                   whileHover={{ scale: 1.06 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-yellow-300 to-yellow-600 hover:shadow-lg shadow-white border-white border-2 text-green-900 font-semibold p-4 cursor-pointer rounded-lg transition-transform duration-300"
+                  className="bg-gradient-to-r from-yellow-300 to-yellow-600 hover:shadow-lg shadow-white border-white border-2 text-green-900 font-semibold p-2 md:p-4 cursor-pointer rounded-lg transition-transform duration-300"
                 >
                   {button1}
                 </motion.button>
@@ -109,7 +111,7 @@ const BannerSection = ({
                 <motion.button
                   whileHover={{ scale: 1.06 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-green-700 shadow-white border-white border-2 font-semibold p-4 cursor-pointer rounded-lg shadow hover:shadow-lg transition duration-300"
+                  className="bg-white text-green-700 shadow-white border-white border-2 font-semibold p-2 md:p-4 cursor-pointer rounded-lg shadow hover:shadow-lg transition duration-300"
                 >
                   {button2}
                 </motion.button>
@@ -127,6 +129,13 @@ const BannerSection = ({
       >
         <ChevronDown className="w-8 h-8 md:w-16 md:h-16 text-yellow-200 drop-shadow-xl" />
       </motion.div>
+
+      {/* social media */}
+      <SocialPlatforms
+        classes="flex md:flex-col gap-4 top-0 right-0 absolute m-5 z-50"
+        iconStyle="text-white opacity-50 hover:opacity-100"
+        textSize="2xl"
+      />
     </section>
   );
 };

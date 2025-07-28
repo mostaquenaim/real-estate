@@ -9,6 +9,7 @@ import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
+import SocialPlatforms from "./SocialPlatforms";
 
 export default function ContactComponent() {
   return (
@@ -165,7 +166,10 @@ export default function ContactComponent() {
               <div className="space-y-6">
                 <motion.div whileHover={{ x: 5 }} className="group">
                   <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-green-400 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-green-50">
-                    <Link href={`/projects/nawabganj`} className="flex justify-between items-center">
+                    <Link
+                      href={`/projects/nawabganj`}
+                      className="flex justify-between items-center"
+                    >
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-green-600 transition-colors">
                           Nawabganj Project
@@ -181,7 +185,10 @@ export default function ContactComponent() {
 
                 <motion.div whileHover={{ x: 5 }} className="group">
                   <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-yellow-500 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-yellow-50">
-                    <Link href={`/projects/borakoir`} className="flex justify-between items-center">
+                    <Link
+                      href={`/projects/borakoir`}
+                      className="flex justify-between items-center"
+                    >
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-yellow-500 transition-colors">
                           Borakoir Project
@@ -197,7 +204,10 @@ export default function ContactComponent() {
 
                 <motion.div whileHover={{ x: 5 }} className="group">
                   <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-green-400 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-green-50">
-                    <Link href={`/projects/kolatia`} className="flex justify-between items-center">
+                    <Link
+                      href={`/projects/kolatia`}
+                      className="flex justify-between items-center"
+                    >
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-green-600 transition-colors">
                           Kolatia Project
@@ -220,40 +230,7 @@ export default function ContactComponent() {
           className="mt-16 text-center"
         >
           <h3 className="text-2xl font-bold text-gray-800 mb-6">Follow Us</h3>
-          <div className="flex justify-center gap-6">
-            <a
-              href="https://www.facebook.com/profile.php?id=61578295138265"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 transition text-3xl"
-            >
-              <FaFacebook className="transition duration-300 hover:scale-105 hover:text-[#0d66ff]"/>
-            </a>
-            <a
-              href="https://www.instagram.com/banglarchoyamodelcityltd/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 hover:text-pink-700 transition text-3xl"
-            >
-              <FaInstagram className="transition duration-300 hover:scale-105 hover:text-[#f6016a]"/>
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCHvv-Y2xwHS_2bve9ioFFbA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-red-600 hover:text-red-800 transition text-3xl"
-            >
-              <FaYoutube className="transition duration-300 hover:scale-105 hover:text-[#ff0032]"/>
-            </a>
-            <a
-              href="https://www.linkedin.com/company/banglar-choya-model-city-ltd"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700 hover:text-blue-900 transition text-3xl"
-            >
-              <FaLinkedin className="transition duration-300 hover:scale-105 hover:text-[#0c65c1]"/>
-            </a>
-          </div>
+          <SocialPlatforms classes={"flex justify-center gap-6"} textSize="3xl"/>
         </motion.div>
 
         {/* Map Section */}

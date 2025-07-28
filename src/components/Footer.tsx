@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from "next/link";
 import {
   FaFacebook,
   FaYoutube,
@@ -7,60 +7,24 @@ import {
   FaPhone,
   FaMapMarkerAlt,
   FaEnvelope,
-} from 'react-icons/fa'
+} from "react-icons/fa";
+import SocialPlatforms from "./SocialPlatforms";
 
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8 select-none">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-
           {/* Brand & Social */}
           <div>
             <h3 className="text-2xl font-extrabold mb-5 text-yellow-400 tracking-wide">
               Banglar Choya
             </h3>
             <p className="mb-6 text-gray-400 leading-relaxed">
-              Premium real estate developer in Dhaka offering carefully selected lands and plots in prime locations.
+              Premium real estate developer in Dhaka offering carefully selected
+              lands and plots in prime locations.
             </p>
-            <div className="flex space-x-5">
-              <a
-                href="https://www.facebook.com/profile.php?id=61578295138265"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
-              >
-                <FaFacebook className="h-6 w-6" />
-              </a>
-              <a
-                href="https://www.instagram.com/banglarchoyamodelcityltd/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
-              >
-                <FaInstagram className="h-6 w-6" />
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCHvv-Y2xwHS_2bve9ioFFbA"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube"
-                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
-              >
-                <FaYoutube className="h-6 w-6" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/banglar-choya-model-city-ltd"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-gray-400 hover:text-yellow-400 transition-colors transform hover:scale-110"
-              >
-                <FaLinkedin className="h-6 w-6" />
-              </a>
-            </div>
+            <SocialPlatforms classes="flex gap-5" textSize="2xl" />
           </div>
 
           {/* Quick Links */}
@@ -70,11 +34,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { href: '/home', label: 'Home' },
-                { href: '/projects', label: 'Projects' },
-                { href: '/about', label: 'About Us' },
-                { href: '/team', label: 'Our Team' },
-                { href: '/contact', label: 'Contact' },
+                { href: "/home", label: "Home" },
+                { href: "/projects", label: "Projects" },
+                { href: "/about", label: "About Us" },
+                { href: "/team", label: "Our Team" },
+                { href: "/contact", label: "Contact" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -95,9 +59,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               {[
-                { href: '/projects/nawabganj', label: 'Nawabganj Project' },
-                { href: '/projects/borakoir', label: 'Borakoir Project' },
-                { href: '/projects/kolatia', label: 'Kolatia Project' },
+                { href: "/projects/nawabganj", label: "Nawabganj Project" },
+                { href: "/projects/borakoir", label: "Borakoir Project" },
+                { href: "/projects/kolatia", label: "Kolatia Project" },
               ].map(({ href, label }) => (
                 <li key={href}>
                   <Link
@@ -154,10 +118,13 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm tracking-wide select-text">
-          <p>&copy; {new Date().getFullYear()} Banglar Choya Model City Ltd. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Banglar Choya Model City Ltd. All
+            rights reserved.
+          </p>
           <p>Established: 20th October 2023</p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
