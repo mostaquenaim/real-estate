@@ -7,7 +7,7 @@ const SocialPlatforms = ({
     textSize = "3xl"
 }) => {
     const hrefClass = `transition text-${textSize}`
-    const iconClass = `transition duration-300 hover:scale-105 ${iconStyle}`
+    const iconClass = `transition duration-50 hover:scale-105 ${iconStyle}`
     return (
             <div className={classes}>
             <a

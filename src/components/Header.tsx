@@ -27,37 +27,64 @@ export default function Header() {
   return (
     <div className="flex flex-col items-center justify-center">
       {/* Top Info Bar */}
-      <Marquee
-        gradient={false}
-        speed={50}
-        pauseOnHover={true}
-        className="bg-green-800 text-white w-full py-2"
-      >
-        <div className="flex gap-10 items-center text-xs md:text-sm font-medium px-2 md:px-0">
-          <a href="tel:01337938314" className="flex items-center gap-2 mr-10">
-            <Phone className="w-4 h-4 text-white md:text-green-600" />
-            <span className="hidden md:inline">+88 01337938322</span>
+      {/* For medium and above (marquee active) */}
+      <div className="hidden md:block">
+        <Marquee
+          gradient={false}
+          speed={50}
+          pauseOnHover={true}
+          className="bg-green-800 text-white w-full py-2"
+        >
+          <div className="flex gap-10 items-center text-xs md:text-sm font-medium px-2 md:px-0">
+            <a href="tel:01337938314" className="flex items-center gap-2 mr-10">
+              <Phone className="w-4 h-4 text-white md:text-green-600" />
+              <span className="hidden md:inline">+88 01337938322</span>
+            </a>
+            <a
+              href="mailto:banglarchoyamodelcity@gmail.com"
+              className="flex items-center gap-2 mr-10"
+            >
+              <Mail className="w-4 h-4 text-white md:text-green-600" />
+              <span className="hidden md:inline">
+                banglarchoyamodelcity@gmail.com
+              </span>
+            </a>
+            <a
+              href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 mr-10"
+            >
+              <MapPin className="w-4 h-4 text-white md:text-green-600" />
+              <span>Gulshan-2, Dhaka</span>
+            </a>
+          </div>
+        </Marquee>
+      </div>
+
+      {/* For small devices (static content) */}
+      <div className="block md:hidden bg-green-800 text-white w-full py-2">
+        <div className="flex gap-2 items-start px-4 text-xs font-medium justify-end">
+          <a href="tel:01337938314" className="flex items-center gap-2">
+            <Phone className="w-4 h-4 text-white" />
           </a>
           <a
             href="mailto:banglarchoyamodelcity@gmail.com"
-            className="flex items-center gap-2 mr-10"
+            className="flex items-center gap-2"
           >
-            <Mail className="w-4 h-4 text-white md:text-green-600" />
-            <span className="hidden md:inline">
-              banglarchoyamodelcity@gmail.com
-            </span>
+            <Mail className="w-4 h-4 text-white" />
           </a>
           <a
             href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 mr-10"
+            className="flex items-center gap-2"
           >
-            <MapPin className="w-4 h-4 text-white md:text-green-600" />
+            <MapPin className="w-4 h-4 text-white" />
             <span>Gulshan-2, Dhaka</span>
           </a>
         </div>
-      </Marquee>
+      </div>
 
       <header className="p-5 md:p-0 absolute top-10 z-50  md:backdrop-blur md:shadow-lg md:shadow-green-200 md:border-b-2 border-green-200 w-full md:w-5/6 lg:w-3/4 rounded-lg">
         {/* Main Navbar */}

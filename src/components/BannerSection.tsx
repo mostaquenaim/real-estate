@@ -39,16 +39,18 @@ const BannerSection = ({
   const titleStyle =
     "text-2xl md:text-4xl font-extrabold text-opacity-80 leading-tight mx-auto md:mx-0 tracking-tight drop-shadow-lg text-white";
   const homeStyle =
-    "max-w-3xl lg:group-hover:scale-125 lg:group-hover:translate-x-40 transform transition-transform duration-500 ease-in-out pt-20";
+    "max-w-3xl transform transition-transform duration-500 ease-in-out pt-20";
 
   return (
-    <section
+    <motion.section
       ref={heroRef}
       className={` ${!isHome ? "md:max-h-screen h-[65vh]" : "md:min-h-screen h-[80vh] md:h-[90vh] items-center"} 
       relative flex overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
       style={{
         backgroundImage: `url('${image}')`,
       }}
+      initial="initial"
+      whileHover="hover"
     >
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60 z-10"></div>
@@ -62,11 +64,28 @@ const BannerSection = ({
           className={`${!isHome && (isProject ? "absolute bottom-1/6 left-1/2 -translate-x-1/2" : "lg:left-1/2 lg:-translate-x-1/2 absolute bottom-1/6")} `}
         >
           {isHome ? (
-            <h1
-              className={`${titleStyle}
-              ${isHome ? homeStyle : ""}`}
-            >
-              Your Gateway to Premium Land, Plots & Apartments
+            <h1 className={`${titleStyle} ${isHome ? homeStyle : ""}`}>
+              <span className="inline-block">
+                {"Your Gateway to Premium Land, Plots & Apartments ".split("").map((letter, index) => (
+                  <motion.span
+                    key={`main-${index}`}
+                    className="inline-block"
+                    custom={index}
+                    variants={{
+                      initial: { scale: 1 },
+                      hover: (i) => ({
+                        scale: [1, 1.5, 1.1],
+                        transition: {
+                          delay: i * 0.01,
+                          duration: 0.5
+                        }
+                      })
+                    }}
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </motion.span>
+                ))}
+              </span>
               <span className="text-yellow-400">
                 {" "}
                 Across
@@ -84,7 +103,7 @@ const BannerSection = ({
           {subtitle && (
             <p
               className={`mt-6 text-md text-yellow-100 mx-auto md:mx-0 leading-relaxed drop-shadow-md
-              ${isHome && "lg:group-hover:scale-125 lg:group-hover:translate-x-40 transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"}`}
+              ${isHome && " transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"}`}
             >
               {subtitle}
             </p>
@@ -92,7 +111,7 @@ const BannerSection = ({
 
           <div
             className="mt-12 flex justify-center md:justify-start gap-6 max-w-xs mx-auto md:mx-0
-            lg:group-hover:scale-125 lg:group-hover:translate-x-80 transform transition-transform duration-500 ease-in-out delay-500"
+             transform transition-transform duration-500 ease-in-out delay-500"
           >
             {button1 && button1Link && (
               <Link href={button1Link}>
@@ -134,9 +153,9 @@ const BannerSection = ({
       <SocialPlatforms
         classes="flex md:flex-col gap-4 top-0 right-0 absolute m-5 z-50"
         iconStyle="text-white opacity-50 hover:opacity-100"
-        textSize="2xl"
+        textSize="lg lg:2xl "
       />
-    </section>
+    </motion.section>
   );
 };
 
