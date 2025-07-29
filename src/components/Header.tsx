@@ -65,7 +65,7 @@ export default function Header() {
       {/* For small devices (static content) */}
       <div className="block md:hidden bg-green-800 text-white w-full py-2">
         <div className="flex gap-2 items-start px-4 text-xs font-medium justify-end">
-          <a href="tel:01337938314" className="flex items-center gap-2">
+          <a href="tel:01337938322" className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-white" />
           </a>
           <a
