@@ -36,7 +36,7 @@ export default function Header() {
           className="bg-green-800 text-white w-full py-2"
         >
           <div className="flex gap-10 items-center text-xs md:text-sm font-medium px-2 md:px-0">
-            <a href="tel:01337938314" className="flex items-center gap-2 mr-10">
+            <a href="tel:01337938322" className="flex items-center gap-2 mr-10">
               <Phone className="w-4 h-4 text-white md:text-green-600" />
               <span className="hidden md:inline">+88 01337938322</span>
             </a>
