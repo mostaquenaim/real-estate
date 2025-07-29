@@ -22,7 +22,7 @@ export default function ProjectPageComp() {
         subtitle="Discover premium land, plots, and apartments curated by Banglar Choya Model City Ltd. in prime locations across Bangladesh."
       />
 
-      <div className="container mx-auto px-6 max-w-7xl md:py-20">
+      <div className="container mx-auto px-6 max-w-7xl py-10 md:py-20">
         <div className="mb-16 text-center">
           <motion.div
             variants={fadeIn("up", "tween", 0.2, 1)}

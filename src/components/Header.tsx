@@ -21,11 +21,11 @@ export default function Header() {
     { name: "Projects", path: "/projects" },
     { name: "About", path: "/about" },
     { name: "Team", path: "/team" },
-    { name: "Contact", path: "/contact" },
+    // { name: "Contact", path: "/contact" },
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="bg-green-800 flex flex-col items-center justify-center">
       {/* Top Info Bar */}
       {/* For medium and above (marquee active) */}
       <div className="hidden md:block">
