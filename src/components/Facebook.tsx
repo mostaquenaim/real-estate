@@ -12,11 +12,16 @@ const Facebook = () => {
         <div className='fixed bottom-5 right-5 z-40'>
             <button 
                 onClick={handleClick}
-                className='text-white rounded-full cursor-pointer shadow-lg transition-colors duration-300'
+                className='relative  rounded-full cursor-pointer shadow-lg transition-colors duration-300'
                 aria-label="Chat with us on Messenger"
             >
-                {/* Messenger icon - you can use an SVG or emoji */}
-                <img src={'/messenger.png'} className='w-10 h-10' />
+                {/* Messenger Icon */}
+                <img src={'/messenger-external.png'} className='w-16 h-16 rounded-4xl' alt="Messenger Chat" />
+                
+                {/* Tooltip */}
+                <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 px-2 py-1 bg-black text-white text-xs rounded-md opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    Chat with us on Messenger
+                </div>
             </button>
         </div>
     );
