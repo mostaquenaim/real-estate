@@ -2,14 +2,28 @@
 import React from 'react';
 import { FaFacebookMessenger, FaWhatsapp } from 'react-icons/fa';
 
-const SocialMediaPlugin = ({ phoneNumber, message, label, social, messengerId }) => {
-  const formattedNumber = phoneNumber?.replace(/\D/g, '');
-  const whatsappUrl = `https://wa.me/${formattedNumber}?text=${encodeURIComponent(message || '')}`;
+interface SocialMediaPluginProps {
+  phoneNumber?: string;
+  message?: string;
+  label?: string;
+  social?: 'whatsapp' | 'messenger';
+  messengerId?: string;
+}
+
+const SocialMediaPlugin: React.FC<SocialMediaPluginProps> = ({
+  phoneNumber = '1234567890',
+  message = 'Hello, I would like to get more information',
+  label = '',
+  social = 'whatsapp',
+  messengerId = '639110919296610',
+}) => {
+  const formattedNumber = phoneNumber.replace(/\D/g, '');
+  const whatsappUrl = `https://wa.me/${formattedNumber}?text=${encodeURIComponent(message)}`;
   const messengerUrl = `https://m.me/${messengerId}`;
 
   if (social === 'whatsapp') {
     return (
-      <div className="fixed bottom-18 right-5 z-40">
+      <div className="fixed bottom-20 right-5 z-40">
         <a
           href={whatsappUrl}
           target="_blank"
@@ -40,14 +54,6 @@ const SocialMediaPlugin = ({ phoneNumber, message, label, social, messengerId })
   }
 
   return null;
-};
-
-SocialMediaPlugin.defaultProps = {
-  phoneNumber: '1234567890',
-  message: 'Hello, I would like to get more information',
-  label: '',
-  social: 'whatsapp', // default
-  messengerId: '639110919296610'
 };
 
 export default SocialMediaPlugin;
