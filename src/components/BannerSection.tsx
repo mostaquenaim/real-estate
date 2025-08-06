@@ -65,8 +65,9 @@ const BannerSection = ({
         >
           {isHome ? (
             <h1 className={`${titleStyle} ${isHome ? homeStyle : ""}`}>
-              <span className="inline-block">
-                {"Your Gateway to Premium Land, Plots & Apartments ".split("").map((letter, index) => (
+              {"Your Gateway to Premium Land, Plots & Apartments "
+                .split("")
+                .map((letter, index) => (
                   <motion.span
                     key={`main-${index}`}
                     className="inline-block"
@@ -77,15 +78,22 @@ const BannerSection = ({
                         scale: [1, 1.5, 1.1],
                         transition: {
                           delay: i * 0.01,
-                          duration: 0.5
-                        }
-                      })
+                          duration: 0.5,
+                        },
+                      }),
                     }}
                   >
-                    {letter === " " ? "\u00A0" : letter}
+                    {
+                    // letter === "&" ? (
+                    //   <br></br>
+                    // ) : 
+                    letter === " " ? (
+                      "\u00A0"
+                    ) : (
+                      letter
+                    )}
                   </motion.span>
                 ))}
-              </span>
               <span className="text-yellow-400">
                 {" "}
                 Across

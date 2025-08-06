@@ -7,6 +7,7 @@ import { StatsSection } from "./StatsSection";
 import { Testimonials } from "./Testimonials";
 import FeaturedProjects from "./FeaturedProjects";
 import BannerSection from "./BannerSection";
+import Facebook from "./Facebook";
 
 export default function HomeComponent() {
   return (
@@ -103,6 +104,9 @@ export default function HomeComponent() {
 
       {/* stats / statistics  */}
       <StatsSection></StatsSection>
+
+      {/* facebook  */}
+      {/* <Facebook /> */}
     </motion.div>
   );
 }

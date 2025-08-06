@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, useAnimation } from "framer-motion";
 import { Phone, MapPin, Menu, X, Mail } from "lucide-react";
 import { useRef, useState } from "react";
-import { containerVariants, fadeIn, lineVariants, slideIn } from "./animations";
+import { slideIn } from "./animations";
 import { Button } from "./ui/button";
 import Marquee from "react-fast-marquee";
 
