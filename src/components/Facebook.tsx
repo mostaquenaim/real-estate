@@ -12,7 +12,7 @@ const Facebook = () => {
         <div className='fixed bottom-5 right-5 z-40'>
             <button 
                 onClick={handleClick}
-                className='relative  rounded-full cursor-pointer shadow-lg transition-colors duration-300'
+                className='relative rounded-full cursor-pointer shadow-lg transition-colors duration-300'
                 aria-label="Chat with us on Messenger"
             >
                 {/* Messenger Icon */}

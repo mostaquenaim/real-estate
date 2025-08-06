@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
 import { Toaster } from "react-hot-toast";
 import Facebook from "@/components/Facebook";
+import SocialMediaPlugin from "@/components/WhatsappContact";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,14 +20,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Banglar Choya Model City Ltd.",
-  description: "Trusted real estate company for land, plots, and flats in Dhaka.",
+  description:
+    "Trusted real estate company for land, plots, and flats in Dhaka.",
   icons: {
     icon: "/favicon.ico",
   },
   // themeColor: "#1ab31a",
   openGraph: {
     title: "Banglar Choya Model City Ltd.",
-    description: "Buy land and plots with confidence in Dhaka. Explore our projects.",
+    description:
+      "Buy land and plots with confidence in Dhaka. Explore our projects.",
     type: "website",
     locale: "en_BD",
     siteName: "Banglar Choya",
@@ -34,10 +37,10 @@ export const metadata: Metadata = {
 };
 
 const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '800'],
-  display: 'swap',
-})
+  subsets: ["latin"],
+  weight: ["400", "500", "700", "800"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -66,7 +69,21 @@ export default function RootLayout({
           <Footer />
         </div>
 
-        <Facebook></Facebook>
+        {/* <Facebook></Facebook> */}
+
+        <SocialMediaPlugin
+          phoneNumber="+8801337938322"
+          message="Hello, I'm interested in your services"
+          label="Contact Us"
+          social={'whatsapp'}
+        />
+
+        <SocialMediaPlugin
+          message="Hello, I'm interested in your services"
+          label="Contact Us"
+          social={'messenger'}
+          messengerId='639110919296610'
+        />
 
         <Toaster position="top-right" reverseOrder={false} />
       </body>
