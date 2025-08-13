@@ -10,6 +10,7 @@ import BannerSection from "./BannerSection";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import SocialPlatforms from "./SocialPlatforms";
+import BankDetails from "./BankDetails";
 
 export default function ContactComponent() {
   return (
@@ -149,6 +150,8 @@ export default function ContactComponent() {
                     </p>
                   </div>
                 </div>
+
+                <BankDetails></BankDetails>
               </div>
             </Card>
 
