@@ -41,12 +41,15 @@ export default function ProjectPageComp() {
             isPage={true}
           />
         </div>
-        {/* Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+        {/* Projects Grid */}
+        <motion.div
+          variants={fadeIn("up", "tween", 0.2, 1)}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
+        >
           {projects.map((project, index) => (
             <PropertyCard key={index} project={project} index={index} />
           ))}
-        </div>
+        </motion.div>
 
         {/* Premium Plot Sizes Section */}
         <motion.div variants={fadeIn("up", "tween", 0.6, 1)} className="mt-24">

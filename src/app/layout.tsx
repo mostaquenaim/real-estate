@@ -7,6 +7,7 @@ import ParticleBackground from "@/components/ParticleBackground";
 import { Toaster } from "react-hot-toast";
 import Facebook from "@/components/Facebook";
 import SocialMediaPlugin from "@/components/WhatsappContact";
+import FloatingChat from "@/components/FloatingChat";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,19 +72,7 @@ export default function RootLayout({
 
         {/* <Facebook></Facebook> */}
 
-        <SocialMediaPlugin
-          phoneNumber="+8801337938322"
-          message="Hello, I'm interested in your services"
-          label="Contact Us"
-          social={'whatsapp'}
-        />
-
-        <SocialMediaPlugin
-          message="Hello, I'm interested in your services"
-          label="Contact Us"
-          social={'messenger'}
-          messengerId='639110919296610'
-        />
+        <FloatingChat />
 
         <Toaster position="top-right" reverseOrder={false} />
       </body>

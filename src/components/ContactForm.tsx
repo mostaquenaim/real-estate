@@ -24,9 +24,9 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
-  email: z.string().email({
-    message: "Please enter a valid email address.",
-  }),
+  // email: z.string().email({
+  //   message: "Please enter a valid email address.",
+  // }),
   phone: z.string().min(11, {
     message: "Phone number must be at least 11 digits.",
   }),
@@ -51,7 +51,7 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      const response = await fetch("https://formspree.io/f/xzzjyyon", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_FORMSPREE_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
