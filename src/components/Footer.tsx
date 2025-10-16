@@ -154,17 +154,17 @@ export default function Footer() {
             {[
               {
                 href: "/projects/nawabganj",
-                label: "Nawabganj Heights",
+                label: "Nawabganj Projects",
                 location: "Nawabganj, Dhaka",
               },
               {
                 href: "/projects/borakoir",
-                label: "Borakoir Greens",
+                label: "Borakoir Projects",
                 location: "Borakoir, Dhaka",
               },
               {
                 href: "/projects/kolatia",
-                label: "Kolatia Meadows",
+                label: "Kolatia Projects",
                 location: "Kolatia, Dhaka",
               },
               // {

@@ -51,12 +51,27 @@ export function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      // simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Your message has been sent!");
-      form.reset();
+      const response = await fetch("https://formspree.io/f/xzzjyyon", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          message: values.message,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success("Your message has been sent!");
+        form.reset();
+      } else {
+        toast.error("Failed to send message. Please try again.");
+      }
     } catch (error) {
-      toast.error("Failed to send message. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -73,6 +88,7 @@ export function ContactForm() {
           className="space-y-8 p-6 md:p-8 bg-white border border-gray-200 rounded-2xl shadow-lg"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Name */}
             <FormField
               control={form.control}
               name="name"
@@ -93,6 +109,7 @@ export function ContactForm() {
               )}
             />
 
+            {/* Email */}
             <FormField
               control={form.control}
               name="email"
@@ -114,6 +131,7 @@ export function ContactForm() {
             />
           </div>
 
+          {/* Phone */}
           <FormField
             control={form.control}
             name="phone"
@@ -134,6 +152,7 @@ export function ContactForm() {
             )}
           />
 
+          {/* Message */}
           <FormField
             control={form.control}
             name="message"
@@ -154,6 +173,7 @@ export function ContactForm() {
             )}
           />
 
+          {/* Submit Button */}
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               type="submit"

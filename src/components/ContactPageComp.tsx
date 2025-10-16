@@ -11,8 +11,11 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import SocialPlatforms from "./SocialPlatforms";
 import BankDetails from "./BankDetails";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactComponent() {
+  const [state, handleSubmit] = useForm("xzzjyyon");
+
   return (
     <motion.div
       variants={staggerContainer}
@@ -36,12 +39,10 @@ export default function ContactComponent() {
             Get In Touch
           </span>
         </motion.div>
-
         <SectionTitle
           title="Your Vision, Our Expertise"
           subtitle="Discover white-glove service, personalized consultations, and investment-ready properties tailored to your goals."
         />
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
@@ -227,15 +228,17 @@ export default function ContactComponent() {
             </Card>
           </motion.div>
         </div>
-
+        {/* social platforms */}
         <motion.div
           variants={fadeIn("up", "spring", 1, 1)}
           className="mt-16 text-center"
         >
           <h3 className="text-2xl font-bold text-gray-800 mb-6">Follow Us</h3>
-          <SocialPlatforms classes={"flex justify-center gap-6"} textSize="3xl"/>
+          <SocialPlatforms
+            classes={"flex justify-center gap-6"}
+            textSize="3xl"
+          />
         </motion.div>
-
         {/* Map Section */}
         <motion.div variants={fadeIn("up", "spring", 0.8, 1)} className="mt-20">
           <Card className="rounded-3xl shadow-2xl overflow-hidden bg-white/70 backdrop-blur-md border border-green-100">
