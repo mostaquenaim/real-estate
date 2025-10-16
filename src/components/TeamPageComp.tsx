@@ -6,6 +6,7 @@ import { Tree, TreeNode } from "react-organizational-chart";
 import { TeamMember } from "./TeamMember";
 import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
+import { useState } from "react";
 
 export default function TeamPageComp() {
   // Assuming teamMembers is structured with hierarchy information
@@ -13,6 +14,7 @@ export default function TeamPageComp() {
   const leadership = teamMembers.slice(1, 3);
   const managers = teamMembers.slice(3, 6);
   const staff = teamMembers.slice(6);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <motion.div
@@ -27,6 +29,22 @@ export default function TeamPageComp() {
         title="Meet the Minds Behind Banglar Choya"
         subtitle="Our team blends deep real estate expertise with a shared passion for creating iconic, investment-worthy communities across Bangladesh."
       />
+
+      {/* Team group photo */}
+      <div className="container mx-auto px-6 max-w-7xl mt-10 flex items-center justify-center">
+        {!imageLoaded && (
+          <div className="w-2/3 h-80 rounded-lg bg-gray-200 animate-pulse" />
+        )}
+
+        <img
+          src="https://i.postimg.cc/XYWhVJbG/team-photo.jpg"
+          alt="Banglar Choya Team"
+          onLoad={() => setImageLoaded(true)}
+          className={`w-2/3 rounded-lg shadow-lg shadow-green-800 border-2 border-green-950 transition-opacity duration-700 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      </div>
 
       <div className="container mx-auto px-6 max-w-7xl md:py-20">
         <SectionTitle
