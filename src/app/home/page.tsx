@@ -1,12 +1,14 @@
-import HomeComponent from '@/components/HomePageComp';
-import React from 'react';
+import HomeComponent from "@/components/HomePageComp";
+import React, { Suspense } from "react";
 
 const Home = () => {
-    return (
-        <div>
-            <HomeComponent/>
-        </div>
-    );
+  return (
+    <div>
+      <Suspense>
+        <HomeComponent />
+      </Suspense>
+    </div>
+  );
 };
 
 export default Home;
