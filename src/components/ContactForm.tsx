@@ -24,9 +24,14 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
-  // email: z.string().email({
-  //   message: "Please enter a valid email address.",
-  // }),
+  email: z
+    .string()
+    .optional()
+    .or(z.literal(""))
+    .refine(
+      (val) => !val || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+      "Please enter a valid email address."
+    ),
   phone: z.string().min(11, {
     message: "Phone number must be at least 11 digits.",
   }),
@@ -63,7 +68,6 @@ export function ContactForm() {
           message: values.message,
         }),
       });
-
       if (response.ok) {
         toast.success("Your message has been sent!");
         form.reset();

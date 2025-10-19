@@ -7,6 +7,54 @@ import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
 
 export default function AboutComponent() {
+  const leadershipMessages = [
+    {
+      role: "ব্যবস্থাপনা পরিচালক",
+      name: "মোঃ মাকসুদুল মোমিন মাসুদ",
+      message: `আসসালামু আলাইকুম,
+বাংলার ছোঁয়া মডেল সিটি লিমিটেড একটি ডেভেলপিং প্রতিষ্ঠান, যার লক্ষ্য শুধু ভবন এস্থেট ব্যবসা নয়, বরং মানুষের বাড়ি ও সম্পত্তির কোনো স্বপ্নকে সহজ, নিরাপদ ও হালাল উপায়ে বাস্তব রূপ দেওয়া।
+
+বর্তমান সময়ে জমি ও ফ্ল্যাট কেনা অনেকের কাছেই জটিল ও ভয়ের বিষয়। আমরা সেই ভয় ও অনিশ্চয়তার অবসান ঘটিয়ে মানুষের দোরগোড়ায় আস্থার সাথে স্বচ্ছ কার্যপ্রণালী ও সঠিক মালিকানা নিশ্চিত করে জমি ও ফ্ল্যাট পৌঁছে দিতে প্রতিশ্রুতিবদ্ধ।
+
+আমাদের প্রতিটি প্রজেক্টই পরিকল্পিত, রেজিস্ট্রেশন নিশ্চিত এবং শরিয়াহ অনুসারী পরিচালিত। আমরা চাই, একজন সাধারণ মানুষও যেন নির্ভয়ে তার স্বপ্নের ঠিকানার মালিক হতে পারেন।`,
+      color: "from-blue-50 to-blue-100",
+      borderColor: "border-blue-200",
+      icon: "M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m2-1l-2-1m2 1v2.5",
+    },
+    {
+      role: "প্রধান নির্বাহী কর্মকর্তা (সিইও)",
+      name: "এস মাহমুদ",
+      message: `বাংলার ছোঁয়া মডেল সিটি লিমিটেড এর সিইও হিসেবে আমি গভীর কৃতজ্ঞতা ও দায়িত্ববোধ নিয়ে এই কথাগুলো বলছি। এই প্রতিষ্ঠান গড়ে তোলার পেছনে আমাদের একটি সুদূরপ্রসারী লক্ষ্য ছিল—মানুষের জন্য জমি ও আবাসন সুবিধাকে সহজ, নিরাপদ এবং হালাল উপায়ে বাস্তবায়ন করা।
+
+আমাদের প্রতিটি প্রকল্প বিনিয়োগকারীর অর্থ সুরক্ষিত রাখার সাথে সাথে রেজিস্ট্রি, পাওয়ার অফ অ্যাটর্নি ও শরিয়াহসম্মত প্রক্রিয়া অনুসরণ করা হয়। আমরা বিশ্বাস করি, জমি বা ফ্ল্যাট কেনা একটি আর্থিক বিনিয়োগ নয়, এটি একটি আবেগ, একটি স্বপ্ন—নিজের ঠিকানা, নিজের পরিশ্রমের আশ্রয়।`,
+      color: "from-green-50 to-green-100",
+      borderColor: "border-green-200",
+      icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    },
+    {
+      role: "পরিচালক (বিক্রয় ও বিপণন)",
+      name: "এম এম শরিফুল",
+      message: `প্রিয় গ্রাহকবৃন্দ,
+
+বাংলার ছোঁয়া মডেল সিটি লিমিটেড-এর লক্ষ্য হলো আমাদের আত্মবিশ্বাসে ভরপুর আপনাদের নিজের "বাড়ি", "জমি" স্বপ্ন পূরণে নির্ভরযোগ্য সহযাত্রী হওয়া। আমরা সর্বদা চেষ্টা করি যেন গ্রাহকরা নিরাপদ ও শরিয়াহসম্মত উপায়ে তাদের স্বপ্নের ঠিকানার মালিক হতে পারেন।
+
+আমাদের প্রতিটি প্রকল্প আমরা পরিকল্পিতভাবে দিই—সঠিক লোকেশন ও নির্ভরযোগ্য বিনিয়োগের মাধ্যমে যাতে, স্বচ্ছতা ও সঠিকতার দিক থেকে গ্রাহকদের সম্পূর্ণ আস্থা বজায় থাকে।`,
+      color: "from-amber-50 to-amber-100",
+      borderColor: "border-amber-200",
+      icon: "M9 12l2 2 4-4m7 0a9 9 0 11-18 0 9 9 0 0118 0z",
+    },
+    {
+      role: "পরিচালক",
+      name: "আফিক চৌধুরী",
+      message: `বাংলার ছোঁয়া মডেল সিটি লিমিটেড এমন একটি স্বপ্ন বাস্তবায়নের প্রতিষ্ঠান, যা মানুষের বাসস্থান নির্মাণের পাশাপাশি সমাজের শান্তি, সচ্ছলতা ও বিশ্বাস স্থাপন করতে দৃঢ় প্রতিজ্ঞাবদ্ধ। আমাদের লক্ষ্য—"জমি ও ফ্ল্যাট কেনা সহজ, নিরাপদ, হালাল ও ইসলামী বিধান অনুযায়ী বাস্তবায়নের নিশ্চয়তা প্রদান।"
+
+আমরা বিশ্বাস করি, একজন গ্রাহকের পূর্ণ আস্থা অর্জনই আমাদের বড় লক্ষ্য। তাই প্রতিটি প্রকল্পে স্বচ্ছতা, নির্ভরযোগ্যতা এবং গ্রাহক সন্তুষ্টি নিশ্চিত করতে আমরা নিরলসভাবে কাজ করে যাচ্ছি।`,
+      color: "from-purple-50 to-purple-100",
+      borderColor: "border-purple-200",
+      icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+    },
+  ];
+
   return (
     <motion.div
       variants={staggerContainer}
@@ -189,6 +237,64 @@ export default function AboutComponent() {
           </motion.div>
         </div>
 
+        {/* Leadership Messages Section */}
+        <motion.div variants={fadeIn("up", "tween", 0.5, 1)} className="mb-20">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="inline-block mb-6"
+          >
+            <span className="text-xs uppercase tracking-widest text-green-600 font-semibold bg-green-100 py-2 px-4 rounded-full">
+              Leadership Voices
+            </span>
+          </motion.div>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+            Messages from Our Leadership
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {leadershipMessages.map((leader, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeIn("up", "spring", 0.1 * (idx + 1), 1)}
+                whileHover={{ y: -4 }}
+              >
+                <Card className={`relative p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border-2 ${leader.borderColor} h-full bg-gradient-to-br ${leader.color} overflow-hidden`}>
+                  {/* Icon Background */}
+                  <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
+                    <svg
+                      className="w-full h-full"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d={leader.icon} />
+                    </svg>
+                  </div>
+
+                  <div className="relative z-10">
+                    {/* Header */}
+                    <div className="mb-4">
+                      <h3 className="text-lg font-bold text-gray-900">
+                        {leader.role}
+                      </h3>
+                      {leader.name && (
+                        <p className="text-sm font-semibold text-gray-700">
+                          {leader.name}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Message */}
+                    <p className="text-gray-800 leading-relaxed text-sm whitespace-pre-line">
+                      {leader.message}
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Why Choose Us - Premium Section */}
         <motion.div variants={fadeIn("up", "spring", 0.6, 1)}>
           <Card className="relative p-4 md:p-12 rounded-3xl bg-gradient-to-br from-gray-50 to-white shadow-2xl overflow-hidden border border-gray-200">
@@ -201,7 +307,7 @@ export default function AboutComponent() {
                 whileHover={{ scale: 1.05 }}
                 className="inline-block mb-6"
               >
-                <span className="text-xs uppercase tracking-widest text-green-600 font-semibold bg-green-100 py-2 rounded-full shadow-sm">
+                <span className="text-xs uppercase tracking-widest text-green-600 font-semibold bg-green-100 py-2 px-4 rounded-full shadow-sm">
                   The Banglar Choya Difference
                 </span>
               </motion.div>

@@ -195,7 +195,7 @@ export default function ContactComponent() {
                     >
                       <div>
                         <h4 className="font-bold text-gray-800 text-xl mb-1 group-hover:text-yellow-500 transition-colors">
-                          Borakoir Project
+                          Dhamrai Project
                         </h4>
                         <p className="text-gray-600 text-sm leading-relaxed">
                           Borakoir, Dhamrai-Dhaka-20

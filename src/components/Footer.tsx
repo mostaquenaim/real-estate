@@ -25,7 +25,8 @@ export default function Footer() {
             <div className="flex items-center mb-5">
               <FaLandmark className="text-yellow-500 text-3xl mr-3" />
               <h3 className="text-2xl font-bold text-white tracking-wide">
-                Banglar Choya <span className="text-yellow-500">Model City</span>
+                Banglar Choya{" "}
+                <span className="text-yellow-500">Model City</span>
               </h3>
             </div>
             <p className="mb-6 text-gray-400 leading-relaxed text-justify">
@@ -159,8 +160,8 @@ export default function Footer() {
               },
               {
                 href: "/projects/borakoir",
-                label: "Borakoir Projects",
-                location: "Borakoir, Dhaka",
+                label: "Dhamrai Projects",
+                location: "Dhamrai, Dhaka",
               },
               {
                 href: "/projects/kolatia",
