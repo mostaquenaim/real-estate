@@ -11,6 +11,7 @@ export const projects = [
     image: "/lands/Land-Demarcation-1.jpg",
     slug: "nawabganj",
     coordinates: [90.411885, 23.792588],
+    layout: "/layouts/layout-nawabganj.jpg",
     // gallery: [],
   },
   {
@@ -25,6 +26,7 @@ export const projects = [
     image: "/lands/Land-Demarcation-2.jpg",
     slug: "borakoir",
     coordinates: [90.411885, 23.792588],
+    layout: "",
     gallery: [
       "/gallery/dhamrai/dhamrai-photo.jpg",
       "/gallery/dhamrai/dhamrai-photo-0.jpg",
@@ -42,6 +44,7 @@ export const projects = [
     image: "/lands/Land-Demarcation-1.jpg",
     slug: "kolatia",
     coordinates: [90.32, 23.7], // Update with exact coords if needed
+    layout: "",
     gallery: [
       "/gallery/kolatia/kolatia-1.jpg",
       "/gallery/kolatia/kolatia-2.jpg",

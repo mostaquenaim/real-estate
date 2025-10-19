@@ -48,7 +48,9 @@ export interface Project {
   plotSizes: string;
   slug: string;
   coordinates?: number[];
+  layout?: string;
   gallery?: string[];
+  layouts?: string[];
   amenities?: string[];
 }
 
@@ -64,14 +66,24 @@ export default function ExploreProjectsPageComp({
   const [isShareOpen, setIsShareOpen] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [layoutLightboxOpen, setLayoutLightboxOpen] = useState(false);
+  const [layoutLightboxIndex, setLayoutLightboxIndex] = useState(0);
   const [copied, setCopied] = useState(false);
 
   const allImages = project.gallery?.length ? [...project.gallery] : [];
   const slides = allImages.map((img) => ({ src: img }));
 
+  // const layoutImages = project.layouts?.length ? [...project.layouts] : [];
+  // const layoutSlides = layoutImages.map((img) => ({ src: img }));
+
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
     setLightboxOpen(true);
+  };
+
+  const openLayoutLightbox = (index: number) => {
+    setLayoutLightboxIndex(index);
+    setLayoutLightboxOpen(true);
   };
 
   const handleSocialShare = (platform: string) => {
@@ -92,10 +104,9 @@ export default function ExploreProjectsPageComp({
       .writeText(window.location.href)
       .then(() => {
         setCopied(true);
-        setTimeout(() => setCopied(false), 2000); // revert after 2s
+        setTimeout(() => setCopied(false), 2000);
       })
       .catch(() => {
-        // fallback if needed
         toast.error("Failed to copy the link.");
       });
   };
@@ -170,12 +181,7 @@ export default function ExploreProjectsPageComp({
 
         {/* Gallery Section */}
         {allImages.length > 0 && (
-          <motion.div
-            initial="hidden"
-            animate="show"
-            // variants={fadeIn("up", "tween", 0.1, 0.6)}
-            className="mb-12"
-          >
+          <motion.div initial="hidden" animate="show" className="mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="md:col-span-2 h-96 relative rounded-xl overflow-hidden">
                 <Image
@@ -226,6 +232,49 @@ export default function ExploreProjectsPageComp({
           </motion.div>
         )}
 
+        {/* Layout Section */}
+        {project.layout && (
+          <motion.div initial="hidden" animate="show" className="mb-12">
+            <div className="mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                Project Layout
+              </h2>
+              <p className="text-gray-600">
+                View our professionally designed site layout and floor plan
+              </p>
+            </div>
+
+            <motion.div whileHover={{ y: -5 }} className="group">
+              <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 bg-transparent max-w-xl mx-auto">
+                <Image
+                  src={project.layout}
+                  alt="Project Layout"
+                  fill
+                  className="object-contain cursor-pointer group-hover:scale-105 transition-transform duration-300 p-4"
+                  onClick={() => openLayoutLightbox(0)}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                  <button
+                    onClick={() => openLayoutLightbox(0)}
+                    className="w-full bg-white text-gray-900 py-3 px-4 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <MdOutlineZoomOutMap /> Click to Enlarge
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+            <Lightbox
+              open={layoutLightboxOpen}
+              close={() => setLayoutLightboxOpen(false)}
+              slides={project.layout ? [{ src: project.layout }] : []}
+              index={layoutLightboxIndex}
+              plugins={[Zoom, Thumbnails]}
+              animation={{ fade: 500 }}
+              controller={{ closeOnBackdropClick: true }}
+            />
+          </motion.div>
+        )}
+
         {/* Project Details */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
@@ -233,7 +282,6 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="show"
-              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 mb-8"
             >
               <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -248,7 +296,6 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="show"
-              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 mb-8"
             >
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
@@ -304,7 +351,6 @@ export default function ExploreProjectsPageComp({
               <motion.div
                 initial="hidden"
                 animate="show"
-                // variants={fadeIn("up", "tween", 0.1, 0.6)}
                 className="bg-white rounded-xl shadow-sm p-6 mb-8"
               >
                 <h2 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -337,7 +383,6 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="show"
-              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-white rounded-xl shadow-sm p-6 sticky top-6 mb-8"
             >
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
@@ -387,7 +432,6 @@ export default function ExploreProjectsPageComp({
             <motion.div
               initial="hidden"
               animate="show"
-              // variants={fadeIn("up", "tween", 0.1, 0.6)}
               className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-sm p-6 text-white"
             >
               <h2 className="text-xl font-semibold mb-4">

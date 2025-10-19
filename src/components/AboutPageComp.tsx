@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
 import { MdVoiceChat } from "react-icons/md";
+import Brochure from "./Brochure";
 
 export default function AboutComponent() {
   const leadershipMessages = [
@@ -57,11 +58,7 @@ export default function AboutComponent() {
   ];
 
   return (
-    <motion.div
-      variants={staggerContainer}
-      initial="hidden"
-      animate="show"
-    >
+    <motion.div variants={staggerContainer} initial="hidden" animate="show">
       {/* banner section  */}
       <BannerSection
         image="/rsz_cover_photo.png"
@@ -260,10 +257,12 @@ export default function AboutComponent() {
                 variants={fadeIn("up", "spring", 0.1 * (idx + 1), 1)}
                 whileHover={{ y: -4 }}
               >
-                <Card className={`relative p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border-2 ${leader.borderColor} h-full bg-gradient-to-br ${leader.color} overflow-hidden`}>
+                <Card
+                  className={`relative p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all border-2 ${leader.borderColor} h-full bg-gradient-to-br ${leader.color} overflow-hidden`}
+                >
                   {/* Icon Background */}
                   <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
-                   <MdVoiceChat className="w-full h-full text-gray-900" />
+                    <MdVoiceChat className="w-full h-full text-gray-900" />
                   </div>
 
                   <div className="relative z-10">
@@ -289,6 +288,9 @@ export default function AboutComponent() {
             ))}
           </div>
         </motion.div>
+
+        {/* brochure  */}
+        <Brochure />
 
         {/* Why Choose Us - Premium Section */}
         <motion.div variants={fadeIn("up", "spring", 0.6, 1)}>

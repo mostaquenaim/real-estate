@@ -8,11 +8,12 @@ import { Testimonials } from "./Testimonials";
 import FeaturedProjects from "./FeaturedProjects";
 import BannerSection from "./BannerSection";
 import { useSearchParams } from "next/navigation";
+import Brochure from "./Brochure";
 
 export default function HomeComponent() {
   const searchParams = useSearchParams();
   const isInitial = searchParams.get("initial") === "true";
-  console.log(isInitial,'isInitial');
+  console.log(isInitial, "isInitial");
 
   return (
     <motion.div
@@ -51,7 +52,9 @@ export default function HomeComponent() {
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row items-center gap-24">
             <motion.div
-              variants={isInitial ? fadeIn("right", "tween", 0.3, 1) : undefined}
+              variants={
+                isInitial ? fadeIn("right", "tween", 0.3, 1) : undefined
+              }
               className="md:w-1/2 rounded-3xl overflow-hidden shadow-xl ring-4 ring-yellow-400 ring-opacity-70 transition-shadow duration-500 hover:shadow-2xl"
             >
               <img
@@ -108,6 +111,9 @@ export default function HomeComponent() {
 
       {/* Stats */}
       <StatsSection />
+
+      {/* brochure */}
+      {/* <Brochure></Brochure> */}
     </motion.div>
   );
 }
