@@ -12,7 +12,7 @@ export const projects = [
     slug: "nawabganj",
     coordinates: [90.411885, 23.792588],
     layout: "/layouts/layout-nawabganj.jpg",
-    // gallery: [],
+    gallery: ["/gallery/nawabganj/nobabganj-signboard.jpg"],
   },
   {
     title: "Dhamrai Project",
@@ -29,7 +29,7 @@ export const projects = [
     layout: "",
     gallery: [
       "/gallery/dhamrai/dhamrai-photo.jpg",
-      "/gallery/dhamrai/dhamrai-photo-0.jpg",
+      // "/gallery/dhamrai/dhamrai-photo-0.jpg",
     ],
   },
   {

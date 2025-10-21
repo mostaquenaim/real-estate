@@ -182,8 +182,12 @@ export default function ExploreProjectsPageComp({
         {/* Gallery Section */}
         {allImages.length > 0 && (
           <motion.div initial="hidden" animate="show" className="mb-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="md:col-span-2 h-96 relative rounded-xl overflow-hidden">
+            <div
+              className={`grid grid-cols-1 ${allImages.length > 1 && "md:grid-cols-3"} gap-4`}
+            >
+              <div
+                className={` ${allImages.length > 1 ? "md:col-span-2  h-96" : "h-[500px]"} relative rounded-xl overflow-hidden`}
+              >
                 <Image
                   src={allImages[0]}
                   alt={project.title}
@@ -197,7 +201,9 @@ export default function ExploreProjectsPageComp({
                   Click to enlarge
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4 h-96">
+              <div
+                className={`grid grid-cols-2 gap-4 h-96  ${allImages.length == 1 && "hidden"}`}
+              >
                 {allImages.slice(1, 5).map((img, index) => (
                   <div
                     key={index}
