@@ -290,7 +290,9 @@ export default function AboutComponent() {
         </motion.div>
 
         {/* brochure  */}
-        <Brochure />
+        <section className="mb-20">
+          <Brochure />
+        </section>
 
         {/* Why Choose Us - Premium Section */}
         <motion.div variants={fadeIn("up", "spring", 0.6, 1)}>

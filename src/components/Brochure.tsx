@@ -6,7 +6,7 @@ const Brochure = () => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", 0.6, 1)}
-      className="mb-20 text-center"
+      className="text-center bg-sky-300/20 py-16 px-6 shadow-lg border border-sky-300"
     >
       <div className="inline-block mb-6">
         <span className="text-xs uppercase tracking-widest text-green-600 font-semibold bg-green-100 py-2 px-4 rounded-full">

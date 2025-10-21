@@ -106,6 +106,8 @@ export default function HomeComponent() {
         </div>
       </motion.section>
 
+      <Brochure></Brochure>
+
       {/* Testimonials */}
       <Testimonials />
 

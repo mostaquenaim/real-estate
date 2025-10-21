@@ -97,7 +97,7 @@ export default function PropertyCard({ project, index }: PropertyCardProps) {
           <motion.button
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg font-medium text-sm transition-colors duration-300 flex items-center justify-center gap-2"
+            className="cursor-pointer w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg font-medium text-sm transition-colors duration-300 flex items-center justify-center gap-2"
           >
             View Details
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
