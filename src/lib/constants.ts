@@ -119,6 +119,22 @@ export const teamMembers = [
     image:
       "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80",
   },
+  {
+    name: "Syda Ayesha",
+    role: "Sales and Marketing Officer",
+    description:
+      "Contributes to sales growth and marketing campaigns with creativity and enthusiasm.",
+    image:
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    name: "Md. Swapon Ali",
+    role: "Sales and Marketing Officer",
+    description:
+      "Plays an active role in achieving sales targets and supporting marketing initiatives.",
+    image:
+      "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  },
 ];
 
 export const testimonials = [
