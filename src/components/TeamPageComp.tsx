@@ -79,157 +79,158 @@ export default function TeamPageComp() {
       </div>
 
       <div className="container mx-auto px-6 max-w-7xl py-10 md:py-20">
-       <div className="hidden lg:block">
-         <SectionTitle
-          title="Our Organizational Structure"
-          subtitle="Meet the dedicated professionals behind Banglar Choya Model City Ltd."
-        />
+        <div className="hidden lg:block">
+          <SectionTitle
+            title="Our Organizational Structure"
+            subtitle="Meet the dedicated professionals behind Banglar Choya Model City Ltd."
+          />
 
-        {/* Organizational Chart */}
-        <motion.div
-          variants={fadeIn("up", "tween", 0.4, 1)}
-          className="hidden lg:block mt-10 w-full overflow-x-auto overflow-y-hidden"
-        >
-          <div className="py-10 min-w-[900px] sm:min-w-[1200px] md:min-w-[1500px] lg:min-w-full flex justify-center">
-            <div className="scale-[0.8] sm:scale-90 md:scale-100 origin-top">
-              <Tree
-                lineWidth={"2px"}
-                lineColor={"#16a34a"}
-                lineBorderRadius={"10px"}
-                label={
-                  organizationalStructure.chairman && (
-                    <div className="inline-block">
-                      <TeamMember
-                        {...organizationalStructure.chairman}
-                        index={0}
-                        highlight={false}
-                      />
-                    </div>
-                  )
-                }
-              >
-                {/* Vice Chairman */}
-                {organizationalStructure.viceChairman && (
-                  <TreeNode
-                    label={
+          {/* Organizational Chart */}
+          <motion.div
+            variants={fadeIn("up", "tween", 0.4, 1)}
+            className="hidden lg:block mt-10 w-full overflow-x-auto overflow-y-hidden"
+          >
+            <div className="py-10 min-w-[900px] sm:min-w-[1200px] md:min-w-[1500px] lg:min-w-full flex justify-center">
+              <div className="scale-[0.8] sm:scale-90 md:scale-100 origin-top">
+                <Tree
+                  lineWidth={"2px"}
+                  lineColor={"#16a34a"}
+                  lineBorderRadius={"10px"}
+                  label={
+                    organizationalStructure.chairman && (
                       <div className="inline-block">
                         <TeamMember
-                          {...organizationalStructure.viceChairman}
-                          index={1}
+                          {...organizationalStructure.chairman}
+                          index={0}
                           highlight={false}
                         />
                       </div>
-                    }
-                  >
-                    {/* Managing Director */}
-                    {organizationalStructure.managingDirector && (
-                      <TreeNode
-                        label={
-                          <div className="inline-block">
-                            <TeamMember
-                              {...organizationalStructure.managingDirector}
-                              index={2}
-                              highlight={
-                                organizationalStructure.managingDirector
-                                  .highlight || false
-                              }
-                            />
-                          </div>
-                        }
-                      >
-                        {/* CEO */}
-                        {organizationalStructure.ceo && (
-                          <TreeNode
-                            label={
-                              <div className="inline-block">
-                                <TeamMember
-                                  {...organizationalStructure.ceo}
-                                  index={3}
-                                  highlight={false}
-                                />
-                              </div>
-                            }
-                          >
-                            {/* Directors */}
-                            {organizationalStructure.directors.length > 0 && (
-                              <TreeNode
-                                label={
-                                  <div className="inline-block w-full">
-                                    <div className="text-center mb-4 w-full text-lg font-bold text-green-800">
-                                      Board of Directors
-                                    </div>
-                                    <div className="flex flex-col md:flex-row gap-6 justify-center">
-                                      {organizationalStructure.directors.map(
-                                        (director, index) => (
-                                          <TeamMember
-                                            key={director.name}
-                                            {...director}
-                                            index={index + 4}
-                                            highlight={
-                                              director.highlight || false
-                                            }
-                                          />
-                                        )
-                                      )}
-                                    </div>
-                                  </div>
+                    )
+                  }
+                >
+                  {/* Vice Chairman */}
+                  {organizationalStructure.viceChairman && (
+                    <TreeNode
+                      label={
+                        <div className="inline-block">
+                          <TeamMember
+                            {...organizationalStructure.viceChairman}
+                            index={1}
+                            highlight={false}
+                          />
+                        </div>
+                      }
+                    >
+                      {/* Managing Director */}
+                      {organizationalStructure.managingDirector && (
+                        <TreeNode
+                          label={
+                            <div className="inline-block">
+                              <TeamMember
+                                {...organizationalStructure.managingDirector}
+                                index={2}
+                                highlight={
+                                  organizationalStructure.managingDirector
+                                    .highlight || false
                                 }
-                              >
-                                {/* General Manager */}
-                                {organizationalStructure.generalManager && (
-                                  <TreeNode
-                                    label={
-                                      <div className="inline-block">
-                                        <TeamMember
-                                          {...organizationalStructure.generalManager}
-                                          index={7}
-                                          highlight={false}
-                                        />
+                              />
+                            </div>
+                          }
+                        >
+                          {/* CEO */}
+                          {organizationalStructure.ceo && (
+                            <TreeNode
+                              label={
+                                <div className="inline-block">
+                                  <TeamMember
+                                    {...organizationalStructure.ceo}
+                                    index={3}
+                                    highlight={false}
+                                  />
+                                </div>
+                              }
+                            >
+                              {/* Directors */}
+                              {organizationalStructure.directors.length > 0 && (
+                                <TreeNode
+                                  label={
+                                    <div className="inline-block w-full">
+                                      <div className="text-center mb-4 w-full text-lg font-bold text-green-800">
+                                        Board of Directors
                                       </div>
-                                    }
-                                  >
-                                    {/* Sales & Marketing Team */}
-                                    {organizationalStructure
-                                      .salesMarketingOfficers.length > 0 && (
-                                      <TreeNode
-                                        label={
-                                          <div className="inline-block w-full">
-                                            <div className="text-center mb-4 w-full text-md font-semibold text-green-700">
-                                              Sales & Marketing Team
+                                      <div className="flex flex-col md:flex-row gap-6 justify-center">
+                                        {organizationalStructure.directors.map(
+                                          (director, index) => (
+                                            <TeamMember
+                                              key={director.name}
+                                              {...director}
+                                              index={index + 4}
+                                              highlight={
+                                                director.highlight || false
+                                              }
+                                            />
+                                          )
+                                        )}
+                                      </div>
+                                    </div>
+                                  }
+                                >
+                                  {/* General Manager */}
+                                  {organizationalStructure.generalManager && (
+                                    <TreeNode
+                                      label={
+                                        <div className="inline-block">
+                                          <TeamMember
+                                            {...organizationalStructure.generalManager}
+                                            index={7}
+                                            highlight={false}
+                                          />
+                                        </div>
+                                      }
+                                    >
+                                      {/* Sales & Marketing Team */}
+                                      {organizationalStructure
+                                        .salesMarketingOfficers.length > 0 && (
+                                        <TreeNode
+                                          label={
+                                            <div className="inline-block w-full">
+                                              <div className="text-center mb-4 w-full text-md font-semibold text-green-700">
+                                                Sales & Marketing Team
+                                              </div>
+                                              <div className="flex flex-wrap gap-4 justify-center">
+                                                {organizationalStructure.salesMarketingOfficers.map(
+                                                  (officer, index) => (
+                                                    <TeamMember
+                                                      key={officer.name}
+                                                      {...officer}
+                                                      index={index + 8}
+                                                      highlight={
+                                                        officer.highlight ||
+                                                        false
+                                                      }
+                                                    />
+                                                  )
+                                                )}
+                                              </div>
                                             </div>
-                                            <div className="flex flex-wrap gap-4 justify-center">
-                                              {organizationalStructure.salesMarketingOfficers.map(
-                                                (officer, index) => (
-                                                  <TeamMember
-                                                    key={officer.name}
-                                                    {...officer}
-                                                    index={index + 8}
-                                                    highlight={
-                                                      officer.highlight || false
-                                                    }
-                                                  />
-                                                )
-                                              )}
-                                            </div>
-                                          </div>
-                                        }
-                                      />
-                                    )}
-                                  </TreeNode>
-                                )}
-                              </TreeNode>
-                            )}
-                          </TreeNode>
-                        )}
-                      </TreeNode>
-                    )}
-                  </TreeNode>
-                )}
-              </Tree>
+                                          }
+                                        />
+                                      )}
+                                    </TreeNode>
+                                  )}
+                                </TreeNode>
+                              )}
+                            </TreeNode>
+                          )}
+                        </TreeNode>
+                      )}
+                    </TreeNode>
+                  )}
+                </Tree>
+              </div>
             </div>
-          </div>
-        </motion.div>
-       </div>
+          </motion.div>
+        </div>
 
         {/* Alternative Mobile-Friendly View */}
         <motion.div

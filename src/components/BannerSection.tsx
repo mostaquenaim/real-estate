@@ -41,6 +41,13 @@ const BannerSection = ({
   const homeStyle =
     "max-w-3xl transform transition-transform duration-500 ease-in-out pt-20";
 
+  const handleArrowClick = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <motion.section
       ref={heroRef}
@@ -84,14 +91,11 @@ const BannerSection = ({
                     }}
                   >
                     {
-                    // letter === "&" ? (
-                    //   <br></br>
-                    // ) : 
-                    letter === " " ? (
-                      "\u00A0"
-                    ) : (
-                      letter
-                    )}
+                      // letter === "&" ? (
+                      //   <br></br>
+                      // ) :
+                      letter === " " ? "\u00A0" : letter
+                    }
                   </motion.span>
                 ))}
               <span className="text-yellow-400">
@@ -153,8 +157,9 @@ const BannerSection = ({
         className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 text-white"
         animate={{ y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 1.5 }}
+        onClick={handleArrowClick}
       >
-        <ChevronDown className="w-8 h-8 md:w-16 md:h-16 text-yellow-200 drop-shadow-xl" />
+        <ChevronDown className="cursor-pointer w-8 h-8 md:w-16 md:h-16 text-yellow-200 drop-shadow-xl" />
       </motion.div>
 
       {/* social media */}
