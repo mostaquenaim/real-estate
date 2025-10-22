@@ -55,9 +55,9 @@ const OngoingDevelopment = () => {
                     alt="Nawabganj Project"
                     className="rounded-xl shadow-md object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
                   />
-                  <div className="absolute bottom-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  {/* <div className="absolute bottom-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Under Development
-                  </div>
+                  </div> */}
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center mb-2">
@@ -153,9 +153,9 @@ const OngoingDevelopment = () => {
                     alt="Dhamrai Project"
                     className="rounded-xl shadow-md object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
                   />
-                  <div className="absolute bottom-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  {/* <div className="absolute bottom-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                     Infrastructure Complete
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Card>
