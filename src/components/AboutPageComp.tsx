@@ -7,6 +7,8 @@ import SectionTitle from "./SectionTitle";
 import BannerSection from "./BannerSection";
 import { MdVoiceChat } from "react-icons/md";
 import Brochure from "./Brochure";
+import OngoingDevelopment from "./OngoingDevelopment";
+import Flats from "./Flats";
 
 export default function AboutComponent() {
   const leadershipMessages = [
@@ -81,6 +83,7 @@ export default function AboutComponent() {
           subtitle="Redefining luxury living through exceptional craftsmanship and visionary urban development"
         />
 
+        {/* story cards  */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {/* Our Story - Premium Card */}
           <motion.div variants={fadeIn("right", "spring", 0.2, 1)}>
@@ -288,6 +291,12 @@ export default function AboutComponent() {
             ))}
           </div>
         </motion.div>
+
+        {/* Ongoing Development Projects Section */}
+        <OngoingDevelopment></OngoingDevelopment>
+
+        {/* flats  */}
+        <Flats></Flats>
 
         {/* brochure  */}
         <section className="mb-20">

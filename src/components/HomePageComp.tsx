@@ -13,7 +13,7 @@ import Brochure from "./Brochure";
 export default function HomeComponent() {
   const searchParams = useSearchParams();
   const isInitial = searchParams.get("initial") === "true";
-  console.log(isInitial, "isInitial");
+  // console.log(isInitial, "isInitial");
 
   return (
     <motion.div
@@ -106,6 +106,7 @@ export default function HomeComponent() {
         </div>
       </motion.section>
 
+      {/* brochure  */}
       <Brochure></Brochure>
 
       {/* Testimonials */}
