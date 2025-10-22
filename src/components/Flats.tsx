@@ -41,7 +41,7 @@ const Flats = () => {
   const projects = [
     {
       name: "নবাবগঞ্জ প্রকল্প",
-      location: "ঢাকা-১১",
+      location: "ঢাকা-১ আসন",
       size: "১৮১ বিঘা",
       //   status: "Under Construction",
       description:
@@ -61,7 +61,7 @@ const Flats = () => {
     },
     {
       name: "ধামরাই প্রকল্প",
-      location: "ঢাকা-২০",
+      location: "ঢাকা-২০ আসন",
       size: "৪১০ বিঘা",
       //   status: "Infrastructure Complete",
       description:
