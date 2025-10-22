@@ -1,28 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const fadeIn = (direction, type, delay, duration) => ({
-  hidden: {
-    y: direction === "up" ? 40 : direction === "down" ? -40 : 0,
-    x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
-    opacity: 0,
-  },
-  show: {
-    y: 0,
-    x: 0,
-    opacity: 1,
-    transition: {
-      type,
-      delay,
-      duration,
-      ease: "easeOut",
-    },
-  },
-});
-
-const Card = ({ children, className }) => (
-  <div className={className}>{children}</div>
-);
+import { fadeIn } from "./animations";
+import { Card } from "./ui/card";
 
 const Flats = () => {
   const features = [
@@ -61,26 +40,26 @@ const Flats = () => {
   const projects = [
     {
       name: "নবাবগঞ্জ প্রকল্প",
-      location: "ঢাকা-১১ আগস্ট",
+      location: "ঢাকা-১১",
       size: "১৮১ বিঘা",
       status: "Under Construction",
       description: "১৮১ বিঘা জমির উপর গ্রাউন্ড উঠে এক বিশেষ প্রকল্প-যেখানে গৌরবের জন্য আধুনিক জীবনের আরাম মিলেমিশে একাকার।",
       details: "আজকের ব্যস্ত শহরে জীবন যেখানে একমুঠো খোলা জায়গায় ফ্লাটে খুঁজে পাওয়া কঠিন, সেখানে ১৮১ বিঘা এই প্রকল্প শুধু বসবাসের জন্য নয়, এটি একটি লাভজনক বিনিয়োগের ও দারুণ কমার্স তৈরি করার।",
       investment: "সময়ের সাথে ফ্লাটের মূল্য বৃদ্ধি বহন করে, যা আপনার জন্য সীমিত সম্পদকে নিশ্চয়তা দিয়ে যায়।",
       features: ["লাভজনক বিনিয়োগ", "আধুনিক জীবনের আরাম", "মূল্য বৃদ্ধির নিশ্চয়তা", "দারুণ কমার্স সুবিধা"],
-      image: "/api/placeholder/800/500",
+      image: "/gallery/Apartment Building.avif",
       color: "blue"
     },
     {
       name: "ধামরাই প্রকল্প",
-      location: "ঢাকা-২০ আগস্ট",
+      location: "ঢাকা-২০",
       size: "৪১০ বিঘা",
       status: "Infrastructure Complete",
       description: "৪১০ বিঘা এই প্রকল্প পরিকল্পিতভাবে সাজানো হয়েছে প্রশস্ত রাস্তা, নির্দিষ্টানুসারে প্লটসমূহ বিন্যাস, বিক্রয় প্রদর্শনী ব্যবস্থা, উন্মুক্ত স্থান এবং আধুনিক ইনফ্রাস্ট্রাকচার দিয়ে।",
       details: "পরিবার নিয়ে নিশ্চিত, শান্তিপূর্ণ ও আধুনিক জীবনযাপন করার জন্য এখান থেকে সব ধরনের সুযোগ-সুবিধাদি।",
       investment: "ঢাকা শহরের ক্রমবর্ধমান চাপের কারণে প্রকৃতি ফ্লাট মূল্য প্রতিনিয়ত বৃদ্ধি পাচ্ছে, ফলে আমাদের একটি সঠিক বিনিয়োগ-সিদ্ধান্ত আপনাকে দেবে আগামী সীমিত ভবিষ্যৎ ও আর্থিক সমৃদ্ধি।",
       features: ["প্রশস্ত রাস্তা", "পরিকল্পিত বিন্যাস", "আধুনিক ইনফ্রাস্ট্রাকচার", "শান্তিপূর্ণ পরিবেশ"],
-      image: "/api/placeholder/800/500",
+      image: "/gallery/flat-2.jpg",
       color: "green"
     }
   ];
@@ -183,7 +162,7 @@ const Flats = () => {
                         alt={project.name}
                         className="rounded-2xl shadow-xl object-cover w-full h-96 transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 scale-105 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     <div className={`absolute top-6 left-6 ${
                       project.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'
@@ -246,7 +225,7 @@ const Flats = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <button className={`w-full py-4 px-8 rounded-xl font-bold text-white transition-all duration-300 shadow-lg hover:shadow-xl ${
+                    {/* <button className={`w-full py-4 px-8 rounded-xl font-bold text-white transition-all duration-300 shadow-lg hover:shadow-xl ${
                       project.color === 'blue' 
                         ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800' 
                         : 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800'
@@ -256,7 +235,7 @@ const Flats = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
                       </svg>
                       {project.name} দেখুন
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

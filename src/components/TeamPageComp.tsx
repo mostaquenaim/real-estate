@@ -239,7 +239,6 @@ export default function TeamPageComp() {
           <SectionTitle
             title="Team Overview"
             subtitle="Our leadership and management team"
-            className="text-center"
           />
 
           <div className="space-y-8 mt-8">
