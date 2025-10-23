@@ -61,10 +61,10 @@ const leadershipMessages = [
 ];
 
 const LeadershipMessages = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(-1);
 
-  const toggleExpand = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? -1 : index);
   };
 
   return (
@@ -76,7 +76,7 @@ const LeadershipMessages = () => {
             <div className="h-1 w-20 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mx-auto mb-4"></div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            পরিচালনা পর্ষদের বার্তা
+            Messages from Our Leadership
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             আমাদের দূরদর্শী নেতৃত্বের পক্ষ থেকে অনুপ্রেরণামূলক বার্তা
@@ -99,7 +99,7 @@ const LeadershipMessages = () => {
                   {/* Avatar Section */}
                   <div className="flex-shrink-0">
                     <div className="relative">
-                      {msg.image && (
+                      {/* {msg?.image ? (
                         <div className="relative">
                           <div className={`absolute inset-0 bg-gradient-to-br ${msg.gradient} rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity`}></div>
                           <img
@@ -109,16 +109,18 @@ const LeadershipMessages = () => {
                           />
                         </div>
                       ) 
-                    //   : (
-                    //     <div className={`h-32 w-32 md:h-40 md:w-40 rounded-full bg-gradient-to-br ${msg.gradient} flex items-center justify-center shadow-xl border-4 border-white`}>
-                    //       <span className="text-white text-4xl font-bold">
-                    //         {msg.title.charAt(0)}
-                    //       </span>
-                    //     </div>
-                    //   )
-                      }
+                      : (
+                        <div className={`h-32 w-32 md:h-40 md:w-40 rounded-full bg-gradient-to-br ${msg.gradient} flex items-center justify-center shadow-xl border-4 border-white`}>
+                          <span className="text-white text-4xl font-bold">
+                            {msg.title.charAt(0)}
+                          </span>
+                        </div>
+                      )
+                      } */}
                       {/* Quote Icon */}
-                      <div className={`absolute -bottom-2 -right-2 h-12 w-12 bg-gradient-to-br ${msg.gradient} rounded-full flex items-center justify-center shadow-lg`}>
+                      <div
+                        className={`absolute -bottom-2 -right-2 h-12 w-12 bg-gradient-to-br ${msg.gradient} rounded-full flex items-center justify-center shadow-lg`}
+                      >
                         <Quote className="h-6 w-6 text-white" />
                       </div>
                     </div>
@@ -128,7 +130,9 @@ const LeadershipMessages = () => {
                   <div className="flex-1 min-w-0">
                     {/* Title and Position */}
                     <div className="mb-6">
-                      <h3 className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${msg.gradient} bg-clip-text text-transparent mb-2`}>
+                      <h3
+                        className={`text-2xl md:text-3xl font-bold bg-gradient-to-r ${msg.gradient} bg-clip-text text-transparent mb-2`}
+                      >
                         {msg.title}
                       </h3>
                       {msg.name && (
@@ -150,7 +154,7 @@ const LeadershipMessages = () => {
 
                       {/* Gradient Fade for collapsed state */}
                       {expandedIndex !== i && (
-                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white/60 to-transparent pointer-events-none"></div>
                       )}
                     </div>
 
@@ -160,7 +164,9 @@ const LeadershipMessages = () => {
                       className={`mt-6 flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r ${msg.gradient} text-white font-semibold shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
                     >
                       <span>
-                        {expandedIndex === i ? "সংক্ষিপ্ত করুন" : "সম্পূর্ণ পড়ুন"}
+                        {expandedIndex === i
+                          ? "সংক্ষিপ্ত করুন"
+                          : "সম্পূর্ণ পড়ুন"}
                       </span>
                       {expandedIndex === i ? (
                         <ChevronUp className="h-5 w-5" />
