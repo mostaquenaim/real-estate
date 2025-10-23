@@ -9,10 +9,9 @@ import { MdVoiceChat } from "react-icons/md";
 import Brochure from "./Brochure";
 import OngoingDevelopment from "./OngoingDevelopment";
 import Flats from "./Flats";
+import LeadershipMessages from "./LeadershipMessages";
 
 export default function AboutComponent() {
-
-
   return (
     <motion.div variants={staggerContainer} initial="hidden" animate="show">
       {/* banner section  */}
@@ -193,7 +192,7 @@ export default function AboutComponent() {
         </div>
 
         {/* Leadership Messages Section */}
-        
+        <LeadershipMessages></LeadershipMessages>
 
         {/* Ongoing Development Projects Section */}
         <OngoingDevelopment></OngoingDevelopment>
