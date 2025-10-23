@@ -14,7 +14,7 @@ const OngoingDevelopment = () => {
           whileHover={{ scale: 1.05 }}
           className="inline-block text-xs uppercase tracking-widest text-green-600 font-semibold bg-green-100 py-2 px-4 rounded-full mb-4 shadow-sm"
         >
-          চলমান উন্নয়নশীল প্রকল্প
+          আমাদের চলমান উন্নয়নশীল প্রকল্প
         </motion.span>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
           Ongoing Development Projects
@@ -28,20 +28,22 @@ const OngoingDevelopment = () => {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
         {/* Main Content - 3/4 Section */}
         <div className="lg:col-span-3 space-y-8">
-          {/* Intro Card */}
+          {/* Intro Card - Updated Content */}
           <motion.div
             variants={fadeIn("right", "spring", 0.2, 1)}
             className="relative p-6 rounded-2xl bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 shadow-lg"
           >
             <div className="absolute top-0 left-0 w-24 h-24 bg-green-200 rounded-full filter blur-[60px] opacity-30"></div>
             <p className="text-gray-700 text-lg leading-relaxed relative z-10">
-              বাংলার ছোঁয়া মডেল সিটি লিমিটেড বর্তমানে একাধিক প্রজেক্টে কাজ
-              করছে, যেখানে পরিকল্পিত অবকাঠামো, আধুনিক সুযোগ-সুবিধা এবং
-              শরিয়াহসম্মত বিনিয়োগের নিশ্চয়তা প্রদান করা হচ্ছে।
+              বাংলার ছোয়া মডেল সিটি লিমিটেডের জমি ও ফ্ল্যাটের চলমান প্রকল্পগুলো শুধু
+              বিনিয়োগ নয়, এটি আপনার জীবনের **নতুন স্বপ্নের বীজ ও নিরাপদ আশ্রয়**।
+              এখানে গড়ে উঠছে আধুনিকতা, নিরাপত্তা, আস্থা ও ভালোবাসা সমন্বয়ে এক
+              অনন্য আবাসন, যা আপনার পরিবারকে দেবে আগামী দিনের জন্য স্থায়ী সুখের
+              ও শান্তির ঠিকানা।
             </p>
           </motion.div>
 
-          {/* Nawabganj Project - Premium Card */}
+          {/* Nawabganj Project - Updated Content */}
           <motion.div
             variants={fadeIn("up", "spring", 0.3, 1)}
             whileHover={{ y: -4 }}
@@ -56,8 +58,8 @@ const OngoingDevelopment = () => {
                     className="rounded-xl shadow-md object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
                   />
                   {/* <div className="absolute bottom-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Under Development
-                  </div> */}
+                    Under Development
+                  </div> */}
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center mb-2">
@@ -81,19 +83,17 @@ const OngoingDevelopment = () => {
                     </h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed">
-                    নবাবগঞ্জের মনোরম প্রাকৃতিক পরিবেশে অবস্থিত এই প্রকল্পটি
-                    ঢাকার কাছাকাছি শান্তিপূর্ণ আবাসনের সুযোগ তৈরি করছে। সকল
-                    রাস্তাঘাট, পানি ও বিদ্যুৎ সংযোগের কাজ দ্রুতগতিতে চলছে।
+                    নবাবগঞ্জ আবাসন প্রকল্প আপনাকে দিচ্ছে **নিষ্কণ্টক জমি আর আধুনিক ফ্ল্যাটের মনোমুগ্ধকর মনোরম পরিবেশ**, নদীর ঘেরা প্রকৃতির ছোঁয়া, প্রশস্ত সড়ক, বিশুদ্ধ পানির সুবিধা, শিশুপার্ক, আধুনিক নিরাপত্তা ব্যবস্থা, টেকসই আধুনিক স্থাপত্য, কমিউনিটি সেন্টার সুবিধা, আর নাগরিক জীবনের সকল সুযোগ-সুবিধা নিয়ে গড়ে ওঠা এই পরিকল্পিত নগরী আপনার আগামীর প্রশান্তি। আজই ভবিষ্যৎ প্রজন্মের জন্য নিশ্চিত করুন এক নতুন দিগন্ত।
                   </p>
                   <div className="flex flex-wrap gap-2 pt-2">
                     <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
                       Prime Location
                     </span>
                     <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                      Infrastructure Work
+                      Modern Flats
                     </span>
                     <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
-                      Near Dhaka
+                      Child Park & Security
                     </span>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ const OngoingDevelopment = () => {
             </Card>
           </motion.div>
 
-          {/* Dhamrai Project - Premium Card */}
+          {/* Dhamrai Project - Updated Content */}
           <motion.div
             variants={fadeIn("up", "spring", 0.4, 1)}
             whileHover={{ y: -4 }}
@@ -131,19 +131,17 @@ const OngoingDevelopment = () => {
                     </h3>
                   </div>
                   <p className="text-gray-600 leading-relaxed">
-                    ধামরাইতে আমাদের চলমান প্রকল্পে আধুনিক প্লট ডেভেলপমেন্ট,
-                    রাস্তা ও ড্রেনেজ ব্যবস্থার কাজ সম্পন্ন হয়েছে। এটি
-                    বিনিয়োগের পাশাপাশি বসবাসের জন্য একটি উপযুক্ত স্থান।
+                    ধামরাই আবাসন প্রকল্প আপনাকে দিচ্ছে **পরিকল্পিত জমি**, যেখানে প্রতিটি পরিবার পাবেন স্বপ্নের নিরাপদ ঠিকানা। রাজধানীর সঙ্গে দ্রুত ও সহজ যোগাযোগ, টেকসই ও আধুনিক নির্মাণ, প্রশস্ত সড়ক ও সুপরিকল্পিত ড্রেনেজ, বিশুদ্ধ পানির নিশ্চয়তা এবং সিসি ক্যামেরা সমৃদ্ধ নিরাপত্তা ব্যবস্থা নিশ্চিত করে শান্তিপূর্ণ জীবন। এখানে রয়েছে সব বয়সী মানুষের জন্য বিনোদন ও খেলাধুলার সুবিধা।
                   </p>
                   <div className="flex flex-wrap gap-2 pt-2">
                     <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                      Plot Development
+                      Planned Plots
                     </span>
                     <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm">
-                      Road & Drainage
+                      Fast Connectivity
                     </span>
                     <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
-                      Ready for Investment
+                      Security & Recreation
                     </span>
                   </div>
                 </div>
@@ -154,15 +152,15 @@ const OngoingDevelopment = () => {
                     className="rounded-xl shadow-md object-cover w-full h-64 transition-transform duration-300 hover:scale-105"
                   />
                   {/* <div className="absolute bottom-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Infrastructure Complete
-                  </div> */}
+                    Infrastructure Complete
+                  </div> */}
                 </div>
               </div>
             </Card>
           </motion.div>
         </div>
 
-        {/* Sidebar - 1/4 Section */}
+        {/* Sidebar - 1/4 Section (No Content Change Requested) */}
         <motion.div
           variants={fadeIn("left", "spring", 0.5, 1)}
           className="lg:col-span-1"
