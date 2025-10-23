@@ -132,7 +132,7 @@ export const teamMembers = [
       "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
-    name: "Md. Swapon Ali",
+    name: "Md. Shwapon Ali",
     role: "Sales and Marketing Officer",
     description:
       "Plays an active role in achieving sales targets and supporting marketing initiatives.",
