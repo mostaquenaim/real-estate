@@ -3,7 +3,7 @@ export const projects = [
     title: "Nawabganj Project",
     location: "Nawabganj, Koliail-Dhaka-01",
     locationDetails:
-      'ঢাকা-১ আসন <br> ঢাকা গুলিস্তান থেকে মাত্র ২০ মিনিটের দূরত্বে ও নবাবগঞ্জ ইছামতি নদীর কল ঘেঁষে "শেখ কামাল আইটি ট্রেনিং অ্যান্ড ইনকিউবেশন সেন্টারের" ঠিক অপজিটে আমাদের সুবিধাল নান্দনিক সবুজে ঘেরা ১৭৮ বিঘার প্রকল্পটি অবস্থিত।',
+      'ঢাকা-১ আসন <br> ঢাকা গুলিস্তান থেকে মাত্র ২৫ মিনিটের দূরত্বে নবাবগঞ্জ ইছামতি নদীর কল ঘেঁষে "শেখ কামাল আইটি ট্রেনিং অ্যান্ড ইনকিউবেশন সেন্টারের” ঠিক অপজিটেই আমাদের সুবিশাল নান্দনিক সবুজে ঘেরা ৬৭৫ বিঘার প্রকল্পটি অবস্থিত।',
     description:
       "Premium residential plots in a prime location with excellent connectivity and future growth potential.",
     landSize: "675 Bigha",
@@ -19,12 +19,13 @@ export const projects = [
   {
     title: "Dhamrai Project",
     location: "Borakoir, Dhamrai-Dhaka-20",
-    locationDetails: 'ধামরাই (ঢাকা-২০ আসন) <br /> ঢাকা গাবতলী থেকে প্রায় ১৮ কিলোমিটার ও সাভার থানা স্ট্যান্ড থেকে ৬ কিলোমিটার দূরত্বে ঠিক "আলাদিন পার্ক" অতিক্রম করে ৫০০ মিটার সামনে আমাদের ৪১০ বিঘার আধুনিক আবাসন প্রকল্পটি অবস্থিত।',
+    locationDetails:
+      'ধামরাই (ঢাকা-২০ আসন) <br /> ঢাকা গাবতলী থেকে প্রায় ১৮ কিলোমিটার ও সাভার থানা স্ট্যান্ড থেকে ৩ কিলোমিটার দূরত্বে ঠিক "আলাদিন পার্ক” অতিক্রম করে ৫০০ মিটার সামনে আমাদের ৪৫০ বিঘার আধুনিক আবাসন প্রকল্পটি অবস্থিত।',
     description:
       "Beautifully designed plots with modern amenities and peaceful surroundings for your dream home.",
-    landSize: "425 Bigha",
-    landSizeKatha: Math.round(425 * 20),
-    landSizeShotangsho: Math.round(425 * 33),
+    landSize: "450 Bigha",
+    landSizeKatha: Math.round(450 * 20),
+    landSizeShotangsho: Math.round(450 * 33),
     plotSizes: "Customizable (Decimal / Katha)",
     image: "/lands/Land-Demarcation-2.jpg",
     slug: "borakoir",
