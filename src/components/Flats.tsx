@@ -42,19 +42,19 @@ const Flats = () => {
     {
       name: "নবাবগঞ্জ প্রকল্প",
       location: "ঢাকা-১ আসন",
-      size: "১৮১ বিঘা",
-      //   status: "Under Construction",
+      size: "৬৭৫ বিঘা", // Updated size
+      //   status: "Under Construction",
       description:
-        "১৮১ বিঘা জমির উপর গ্রাউন্ড উঠে এক বিশেষ প্রকল্প-যেখানে গৌরবের জন্য আধুনিক জীবনের আরাম মিলেমিশে একাকার।",
+        "৬৭৫ বিঘা জমির উপর গড়ে উঠছে এক স্বপ্নের প্রকল্প-যেখানে প্রকৃতির সৌন্দর্য আর আধুনিক জীবনের আরাম মিলেমিশে একাকার।", // Updated description
       details:
-        "আজকের ব্যস্ত শহরে জীবন যেখানে একমুঠো খোলা জায়গায় ফ্লাটে খুঁজে পাওয়া কঠিন, সেখানে ১৮১ বিঘা এই প্রকল্প শুধু বসবাসের জন্য নয়, এটি একটি লাভজনক বিনিয়োগের ও দারুণ কমার্স তৈরি করার।",
+        "আজকের ব্যস্ত শহুরে জীবনে যেখানে একটু খোলা জায়গায় ফ্ল্যাট খুঁজে পাওয়া কঠিন, সেখানে ৬৭৫ বিঘার এই প্রকল্প শুধু বসবাসের জন্য নয়, এটি একটি লাভজনক বিনিয়োগেরও দারুণ সম্ভাবনা তৈরি করবে।", // Updated details
       investment:
-        "সময়ের সাথে ফ্লাটের মূল্য বৃদ্ধি বহন করে, যা আপনার জন্য সীমিত সম্পদকে নিশ্চয়তা দিয়ে যায়।",
+        "সময়ের সাথে ফ্ল্যাটের মূল্য বৃদ্ধি পাবে বহুগুন, যা আপনার জন্য নিশ্চিত সম্পদের নিশ্চয়তা হয়ে থাকবে। এটাই সময় সঠিক সিদ্ধান্ত নেওয়ার। কারণ প্রকল্প বড়, ফ্ল্যাট সীমিত, আর সুযোগ একবারই আসে।", // Updated investment
       features: [
         "লাভজনক বিনিয়োগ",
         "আধুনিক জীবনের আরাম",
         "মূল্য বৃদ্ধির নিশ্চয়তা",
-        "দারুণ কমার্স সুবিধা",
+        "প্রকৃতির সৌন্দর্য", // Updated feature
       ],
       image: "/gallery/Apartment Building.avif",
       color: "blue",
@@ -62,14 +62,14 @@ const Flats = () => {
     {
       name: "ধামরাই প্রকল্প",
       location: "ঢাকা-২০ আসন",
-      size: "৪১০ বিঘা",
-      //   status: "Infrastructure Complete",
+      size: "৪৫০ বিঘা", // Updated size
+      //   status: "Infrastructure Complete",
       description:
-        "৪১০ বিঘা এই প্রকল্প পরিকল্পিতভাবে সাজানো হয়েছে প্রশস্ত রাস্তা, নির্দিষ্টানুসারে প্লটসমূহ বিন্যাস, বিক্রয় প্রদর্শনী ব্যবস্থা, উন্মুক্ত স্থান এবং আধুনিক ইনফ্রাস্ট্রাকচার দিয়ে।",
+        "৪৫০ বিঘা বিশাল এই প্রকল্প পরিকল্পিতভাবে সাজানো হয়েছে প্রশস্ত রাস্তা, নির্ভরযোগ্য বিদ্যুৎ সংযোগ, বিশুদ্ধ পানির ব্যবস্থা, উন্নত ড্রেনেজ ও আধুনিক সিকিউরিটি সিস্টেম দিয়ে।", // Updated description
       details:
-        "পরিবার নিয়ে নিশ্চিত, শান্তিপূর্ণ ও আধুনিক জীবনযাপন করার জন্য এখান থেকে সব ধরনের সুযোগ-সুবিধাদি।",
+        "পরিবার নিয়ে নিশ্চিন্ত, শান্তিপূর্ণ ও আধুনিক জীবনযাপন করার জন্য এখানে থাকবে সব ধরনের সুযোগ-সুবিধা। ধামরাই এলাকা এখন দ্রুত উন্নয়নের পথে। ঢাকা শহরের ক্রমবর্ধমান চাপের কারণে ধামরাই হয়ে উঠছে বিনিয়োগের নতুন সম্ভাবনাময় কেন্দ্র।", // Updated details
       investment:
-        "ঢাকা শহরের ক্রমবর্ধমান চাপের কারণে প্রকৃতি ফ্লাট মূল্য প্রতিনিয়ত বৃদ্ধি পাচ্ছে, ফলে আমাদের একটি সঠিক বিনিয়োগ-সিদ্ধান্ত আপনাকে দেবে আগামী সীমিত ভবিষ্যৎ ও আর্থিক সমৃদ্ধি।",
+        "ফ্ল্যাটের মূল্য প্রতিনিয়ত বৃদ্ধি পাচ্ছে, ফলে আজকের একটি সঠিক বিনিয়োগের- সিদ্ধান্ত আপনাকে দেবে আগামী দিনের নিশ্চিন্ত ভবিষ্যৎ ও আর্থিক সমৃদ্ধি।", // Updated investment
       features: [
         "প্রশস্ত রাস্তা",
         "পরিকল্পিত বিন্যাস",
@@ -94,15 +94,19 @@ const Flats = () => {
           whileHover={{ scale: 1.05 }}
           className="inline-block text-xs uppercase tracking-widest text-blue-600 font-semibold bg-blue-100 py-2 px-6 rounded-full mb-4 shadow-sm"
         >
-          প্রিমিয়াম ফ্লাট সুবিধাদি
+          প্রিমিয়াম ফ্ল্যাট সুবিধাদি
         </motion.span>
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-          ফ্লাটের বৈশিষ্ট্য ও নাগরিক সুবিধাদি
+          ফ্ল্যাটের বৈশিষ্ট্য ও নাগরিক সুবিধাদি
         </h2>
         <p className="text-gray-600 max-w-4xl mx-auto text-lg leading-relaxed">
-          বাংলায় ছোঁয়া মডেল সিটি লিমিটেডের ফ্লাটগুলো হলো অত্যাধুনিক নাগরিক
-          সুবিধাদি সম্বলিত। প্রকৃতি ফ্লাট আধুনিক নকশা এবং প্রশস্ততা সমন্বিত, যা
-          পরিবার ও ব্যক্তিগত জীবনকে আরামদায়ক ও সুন্দর করে তোলে।
+          বাংলার ছোয়া মডেল সিটি লিমিটেডের ফ্ল্যাট গুলো অত্যাধুনিক নাগরিক সুবিধাদি
+          সম্বলিত, প্রতিটি ফ্ল্যাট আধুনিক নকশা এবং প্রশস্ততা সমন্বিত, যা পরিবার ও
+          ব্যক্তিগত জীবনকে আরামদায়ক ও সুন্দর করে তোলে। আমাদের প্রকল্পে রয়েছে
+          ২৪ ঘণ্টা নিরাপত্তা ব্যবস্থা, যা আপনার এবং আপনার পরিবারের জন্য নিরাপত্তা
+          নিশ্চিত করে। এছাড়াও, সুইমিং- পুল, জিম, পার্ক, খেলাধুলার স্থান এবং
+          কমিউনিটি হলের মতো সুবিধা রয়েছে, যা জীবনযাত্রাকে আরও সমৃদ্ধ এবং সক্রিয়
+          করে তোলে।
         </p>
       </div>
 
@@ -182,7 +186,9 @@ const Flats = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                   {/* Image Section */}
                   <div
-                    className={`relative ${index % 2 === 0 ? "order-1" : "order-2"}`}
+                    className={`relative ${
+                      index % 2 === 0 ? "order-1" : "order-2"
+                    }`}
                   >
                     <div className="relative group">
                       <img
@@ -193,10 +199,10 @@ const Flats = () => {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 scale-105 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                     {/* <div className={`absolute top-6 left-6 ${
-                      project.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'
-                    } text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg`}>
-                      {project.status}
-                    </div> */}
+                      project.color === 'blue' ? 'bg-blue-600' : 'bg-green-600'
+                    } text-white px-5 py-2 rounded-full text-sm font-semibold shadow-lg`}>
+                      {project.status}
+                    </div> */}
                     <div
                       className={`absolute bottom-6 right-6 bg-white/95 backdrop-blur-md px-5 py-3 rounded-xl border-2 shadow-lg ${
                         project.color === "blue"
@@ -213,7 +219,9 @@ const Flats = () => {
 
                   {/* Content Section */}
                   <div
-                    className={`space-y-6 ${index % 2 === 0 ? "order-2" : "order-1"}`}
+                    className={`space-y-6 ${
+                      index % 2 === 0 ? "order-2" : "order-1"
+                    }`}
                   >
                     <div>
                       <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -299,16 +307,16 @@ const Flats = () => {
 
                     {/* CTA Button */}
                     {/* <button className={`w-full py-4 px-8 rounded-xl font-bold text-white transition-all duration-300 shadow-lg hover:shadow-xl ${
-                      project.color === 'blue' 
-                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800' 
-                        : 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800'
-                    } flex items-center justify-center gap-3`}>
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                      </svg>
-                      {project.name} দেখুন
-                    </button> */}
+                      project.color === 'blue' 
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800' 
+                        : 'bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800'
+                    } flex items-center justify-center gap-3`}>
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                      </svg>
+                      {project.name} দেখুন
+                    </button> */}
                   </div>
                 </div>
               </div>
@@ -358,11 +366,11 @@ const Flats = () => {
                 ফ্রি কনসাল্টেশন
               </button>
               {/* <button className="border-2 border-white text-white hover:bg-white/10 px-10 py-4 rounded-xl font-bold transition-all duration-300 flex items-center justify-center gap-3">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                </svg>
-                ব্রোশার ডাউনলোড
-              </button> */}
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+                ব্রোশার ডাউনলোড
+              </button> */}
             </a>
           </div>
         </Card>
