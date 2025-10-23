@@ -195,7 +195,9 @@ export default function AboutComponent() {
         <LeadershipMessages></LeadershipMessages>
 
         {/* Ongoing Development Projects Section */}
-        <OngoingDevelopment></OngoingDevelopment>
+        <div className="py-10">
+          <OngoingDevelopment></OngoingDevelopment>
+        </div>
 
         {/* flats  */}
         <Flats></Flats>
