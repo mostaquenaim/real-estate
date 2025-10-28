@@ -108,6 +108,14 @@ export const teamMembers = [
       "https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=735&q=80",
   },
   {
+    name: "Asif Chowdhury",
+    role: "Director (Administration)",
+    description:
+      "Oversees all sales and marketing operations with extensive industry experience.",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80",
+  },
+  {
     name: "Md. Golam Akbar",
     role: "Director",
     description:
