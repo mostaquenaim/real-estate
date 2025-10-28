@@ -10,7 +10,7 @@ export const projects = [
     landSizeKatha: Math.round(675 * 20), // approx. 1 Bigha = 20 Katha
     landSizeShotangsho: Math.round(675 * 33), // approx. 1 Bigha = 33 Shotangsho
     plotSizes: "Customizable (Decimal / Katha)",
-    image: "/lands/Land-Demarcation-1.jpg",
+    image: "/gallery/nawabganj/nobabganj-signboard.jpg",
     slug: "nawabganj",
     coordinates: [90.411885, 23.792588],
     layout: "/layouts/layout-nawabganj.jpg",
@@ -27,7 +27,7 @@ export const projects = [
     landSizeKatha: Math.round(450 * 20),
     landSizeShotangsho: Math.round(450 * 33),
     plotSizes: "Customizable (Decimal / Katha)",
-    image: "/lands/Land-Demarcation-2.jpg",
+    image: "/gallery/dhamrai/dhamrai-photo.jpg",
     slug: "borakoir",
     coordinates: [90.411885, 23.792588],
     layout: "",
@@ -45,7 +45,7 @@ export const projects = [
     landSizeKatha: Math.round(525 * 0.603), // 1 Shotangsho ≈ 0.603 Katha
     landSizeShotangsho: 525,
     plotSizes: "Customizable (Decimal / Katha)",
-    image: "/lands/Land-Demarcation-1.jpg",
+    image: "/gallery/kolatia/kolatia-1.jpg",
     slug: "kolatia",
     coordinates: [90.32, 23.7], // Update with exact coords if needed
     layout: "",
