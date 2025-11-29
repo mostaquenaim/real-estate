@@ -9,6 +9,7 @@ import FeaturedProjects from "./FeaturedProjects";
 import BannerSection from "./BannerSection";
 import { useSearchParams } from "next/navigation";
 import Brochure from "./Brochure";
+import SisterConcerns from "./SisterConcerns";
 
 export default function HomeComponent() {
   const searchParams = useSearchParams();
@@ -108,6 +109,9 @@ export default function HomeComponent() {
 
       {/* brochure  */}
       <Brochure></Brochure>
+
+      {/* sister concerns  */}
+      <SisterConcerns />
 
       {/* Testimonials */}
       <Testimonials />
