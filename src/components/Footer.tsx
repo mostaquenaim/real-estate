@@ -163,16 +163,6 @@ export default function Footer() {
                 label: "Dhamrai Projects",
                 location: "Dhamrai, Dhaka",
               },
-              // {
-              //   href: "/projects/kolatia",
-              //   label: "Kolatia Projects",
-              //   location: "Kolatia, Dhaka",
-              // },
-              // {
-              //   href: "/projects/upcoming",
-              //   label: "Upcoming Projects",
-              //   location: "Coming Soon",
-              // },
             ].map(({ href, label, location }) => (
               <Link
                 key={href}

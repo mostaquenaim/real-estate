@@ -10,8 +10,181 @@ import Brochure from "./Brochure";
 import OngoingDevelopment from "./OngoingDevelopment";
 import Flats from "./Flats";
 import LeadershipMessages from "./LeadershipMessages";
+import React, { useState } from "react";
+import {
+  FaFileAlt,
+  FaFilePdf,
+  FaFileImage,
+  FaCertificate,
+  FaUniversity,
+  FaIdCard,
+  FaFileContract,
+} from "react-icons/fa";
+import LegalDocument from "./LegalDocument";
+
+type DocumentCategory = {
+  id: string;
+  name: string;
+  icon: React.ReactNode;
+  description: string;
+};
+
+type Document = {
+  id: string;
+  name: string;
+  category: string;
+  fileType: "pdf" | "image" | "doc";
+  fileSize: string;
+  uploadDate: string;
+  downloadUrl: string;
+  // previewUrl?: string;
+  description?: string;
+  verified?: boolean;
+};
+
+const categories: DocumentCategory[] = [
+  {
+    id: "legal",
+    name: "Legal Documents",
+    icon: <FaFileContract className="text-2xl" />,
+    description: "Company registration and legal papers",
+  },
+  {
+    id: "financial",
+    name: "Financial Documents",
+    icon: <FaUniversity className="text-2xl" />,
+    description: "Bank details and financial information",
+  },
+  {
+    id: "certificates",
+    name: "Certificates & Licenses",
+    icon: <FaCertificate className="text-2xl" />,
+    description: "Official certificates and licenses",
+  },
+  {
+    id: "marketing",
+    name: "Marketing Materials",
+    icon: <FaIdCard className="text-2xl" />,
+    description: "Brochures and promotional materials",
+  },
+];
+
+const documents: Document[] = [
+  // Legal Documents
+  {
+    id: "cert-incorporation",
+    name: "Certificate of Incorporation",
+    category: "legal",
+    fileType: "pdf",
+    fileSize: "214 KB",
+    uploadDate: "2024-10-20",
+    downloadUrl: "/bcmc-documents/certoficate-of-incorportation.pdf",
+    description: "Official company incorporation certificate",
+    verified: true,
+  },
+  {
+    id: "moa",
+    name: "Memorandum of Association (MOA)",
+    category: "legal",
+    fileType: "pdf",
+    fileSize: "63.1 KB",
+    uploadDate: "2024-10-20",
+    downloadUrl: "/bcmc-documents/MOA-Banglar-choya.pdf",
+    description: "Complete MOA document",
+    verified: true,
+  },
+
+  // Financial Documents
+  {
+    id: "bank-details",
+    name: "Bank Account Details",
+    category: "financial",
+    fileType: "pdf",
+    fileSize: "88.3 KB",
+    uploadDate: "2024-01-15",
+    downloadUrl: "/bcmc-documents/bank-details.pdf",
+    description: "NRB Bank account information",
+    verified: true,
+  },
+  {
+    id: "tin-cert",
+    name: "TIN Certificate",
+    category: "financial",
+    fileType: "pdf",
+    fileSize: "164 KB",
+    uploadDate: "2023-11-10",
+    downloadUrl: "/bcmc-documents/tin-certificate.pdf",
+    description: "Tax Identification Number certificate",
+    verified: true,
+  },
+
+  // Certificates & Licenses
+  {
+    id: "trade-license",
+    name: "Trade License",
+    category: "certificates",
+    fileType: "pdf",
+    fileSize: "1.79 MB",
+    uploadDate: "2024-01-01",
+    downloadUrl: "/bcmc-documents/trade-license.pdf",
+    description: "Current trade license",
+    verified: true,
+  },
+
+  // Marketing Materials
+  {
+    id: "company-profile",
+    name: "Company PD (Project Description)",
+    category: "marketing",
+    fileType: "pdf",
+    fileSize: "35.2 KB",
+    uploadDate: "2024-03-01",
+    downloadUrl: "/bcmc-documents/Banglar Choya Model City PD.pdf",
+    description: "Detailed PD document",
+  },
+  {
+    id: "visiting-card",
+    name: "Official Visiting Card",
+    category: "marketing",
+    fileType: "image",
+    fileSize: "165 KB",
+    uploadDate: "2024-01-20",
+    downloadUrl: "/bcmc-documents/visiting-card.png",
+    // previewUrl: "/bcmc-documents/visiting-card.png",
+    description: "Company visiting card design",
+  },
+];
 
 export default function AboutComponent() {
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [previewDoc, setPreviewDoc] = useState<Document | null>(null);
+
+  const filteredDocs =
+    selectedCategory === "all"
+      ? documents
+      : documents.filter((doc) => doc.category === selectedCategory);
+
+  const getFileIcon = (fileType: string) => {
+    switch (fileType) {
+      case "pdf":
+        return <FaFilePdf className="text-red-500 text-3xl" />;
+      case "image":
+        return <FaFileImage className="text-blue-500 text-3xl" />;
+      default:
+        return <FaFileAlt className="text-gray-500 text-3xl" />;
+    }
+  };
+
+  const handleDownload = (doc: Document) => {
+    // In a real app, this would trigger the actual download
+    console.log("Downloading:", doc.name);
+    alert(`Download started: ${doc.name}`);
+  };
+
+  const handlePreview = (doc: Document) => {
+    setPreviewDoc(doc);
+  };
+
   return (
     <motion.div variants={staggerContainer} initial="hidden" animate="show">
       {/* banner section  */}
@@ -206,6 +379,21 @@ export default function AboutComponent() {
         <section className="mb-20">
           <Brochure />
         </section>
+
+        {/* new section  */}
+        {/* new section  */}
+
+        <LegalDocument
+          handlePreview={handlePreview}
+          handleDownload={handleDownload}
+          filteredDocs={filteredDocs}
+          setPreviewDoc={setPreviewDoc}
+          previewDoc={previewDoc}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          categories={categories}
+        />
+        {/* new section  */}
 
         {/* Why Choose Us - Premium Section */}
         <motion.div variants={fadeIn("up", "spring", 0.6, 1)}>
