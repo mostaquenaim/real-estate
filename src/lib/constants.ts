@@ -11,6 +11,7 @@ export const projects = [
     landSizeShotangsho: Math.round(675 * 33), // approx. 1 Bigha = 33 Shotangsho
     plotSizes: "Customizable (Decimal / Katha)",
     image: "/gallery/nawabganj/nobabganj-signboard.jpg",
+    video: "/videos/nobabgonj-video.mp4",
     slug: "nawabganj",
     coordinates: [90.411885, 23.792588],
     layout: "/layouts/layout-nawabganj.jpg",
@@ -189,16 +190,16 @@ export const bankAccounts = [
     branchName: "Progoti Sharari",
     routingNumber: "290263707",
   },
+  // {
+  //   id: 3,
+  //   accountName: "BANGLAR CHOYA MODEL CITY LTD.",
+  //   accountNumber: "3291100318896",
+  //   bankName: "Dutch-Bangla Bank PLC",
+  //   branchName: "Gulshan",
+  //   routingNumber: "090261738",
+  // },
   {
     id: 3,
-    accountName: "BANGLAR CHOYA MODEL CITY LTD.",
-    accountNumber: "3291100318896",
-    bankName: "Dutch-Bangla Bank PLC",
-    branchName: "Gulshan",
-    routingNumber: "090261738",
-  },
-  {
-    id: 4,
     accountName: "Mas Trading Company",
     accountNumber: "3291100318896",
     bankName: "Dutch-Bangla Bank",

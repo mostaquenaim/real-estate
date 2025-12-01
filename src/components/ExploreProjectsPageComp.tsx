@@ -40,6 +40,7 @@ import toast from "react-hot-toast";
 export interface Project {
   title: string;
   image: string;
+  video?: string;
   location: string;
   description: string;
   landSize: string;
@@ -52,7 +53,7 @@ export interface Project {
   gallery?: string[];
   layouts?: string[];
   amenities?: string[];
-  locationDetails?: string; 
+  locationDetails?: string;
 }
 
 interface PropertyCardProps {
@@ -126,12 +127,14 @@ export default function ExploreProjectsPageComp({
       variants={fadeIn("up", "tween", 0.1, 0.6)}
     >
       <BannerSection
-        image={project.image}
+        image={project.image ? project.image : ''}
+        video={project.video ? project.video : ''}
         title={project.title}
         isProject={true}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* share button details  */}
         <motion.div className="relative flex flex-wrap md:flex-nowrap justify-between items-start gap-4 mb-8">
           <button
             onClick={() => setIsShareOpen(!isShareOpen)}
@@ -354,45 +357,46 @@ export default function ExploreProjectsPageComp({
             </motion.div>
 
             {/* Location Map */}
-           {/* Location Map */}
-{project.coordinates && (
-  <motion.div
-    initial="hidden"
-    animate="show"
-    className="bg-white rounded-xl shadow-sm p-6 mb-8"
-  >
-    <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-      Location
-    </h2>
-    <div className="h-96 w-full bg-gray-200 rounded-lg overflow-hidden relative mb-6">
-      <iframe
-        src={`https://maps.google.com/maps?q=${project.coordinates[1]},${project.coordinates[0]}&z=15&output=embed`}
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-      <div className="absolute bottom-4 left-4 bg-white px-3 py-2 rounded-lg shadow-md flex items-center gap-2">
-        <FaMapMarkedAlt className="text-blue-500" />
-        <span className="text-sm font-medium">{project.location}</span>
-      </div>
-    </div>
+            {/* Location Map */}
+            {project.coordinates && (
+              <motion.div
+                initial="hidden"
+                animate="show"
+                className="bg-white rounded-xl shadow-sm p-6 mb-8"
+              >
+                <h2 className="text-2xl font-semibold mb-4 text-gray-800">
+                  Location
+                </h2>
+                <div className="h-96 w-full bg-gray-200 rounded-lg overflow-hidden relative mb-6">
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${project.coordinates[1]},${project.coordinates[0]}&z=15&output=embed`}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                  <div className="absolute bottom-4 left-4 bg-white px-3 py-2 rounded-lg shadow-md flex items-center gap-2">
+                    <FaMapMarkedAlt className="text-blue-500" />
+                    <span className="text-sm font-medium">
+                      {project.location}
+                    </span>
+                  </div>
+                </div>
 
-    {/* ✅ Location details if available */}
-    {project.locationDetails && (
-      <div className="text-gray-700 leading-relaxed text-base">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: project.locationDetails,
-          }}
-        />
-      </div>
-    )}
-  </motion.div>
-)}
-
+                {/* ✅ Location details if available */}
+                {project.locationDetails && (
+                  <div className="text-gray-700 leading-relaxed text-base">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: project.locationDetails,
+                      }}
+                    />
+                  </div>
+                )}
+              </motion.div>
+            )}
           </div>
 
           {/* Sidebar */}

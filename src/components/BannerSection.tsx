@@ -1,14 +1,15 @@
 "use client";
 
 import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { fadeIn } from "./animations";
 import Link from "next/link";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
 import SocialPlatforms from "./SocialPlatforms";
 
 interface BannerSectionProps {
-  image: string;
+  image?: string;
+  video?: string;
   isHome?: boolean;
   isProject?: boolean;
   title?: string;
@@ -21,6 +22,7 @@ interface BannerSectionProps {
 
 const BannerSection = ({
   image,
+  video,
   isHome = false,
   isProject = false,
   title,
@@ -31,13 +33,21 @@ const BannerSection = ({
   button2Link,
 }: BannerSectionProps) => {
   const heroRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [activeVideo, setActiveVideo] = useState(false);
+
+  // const [playVideo, setPlayVideo] = useState(false);
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
   });
+
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   const titleStyle =
     "text-2xl md:text-4xl font-extrabold text-opacity-80 leading-tight mx-auto md:mx-0 tracking-tight drop-shadow-lg text-white";
+
   const homeStyle =
     "max-w-3xl transform transition-transform duration-500 ease-in-out pt-20";
 
@@ -48,30 +58,111 @@ const BannerSection = ({
     });
   };
 
+  const handleVideoClick = () => {
+    // if (!videoRef.current) return;
+    console.log(activeVideo,'activeVideo');
+    setActiveVideo(true);
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.muted = false;
+        videoRef.current.controls = true;
+        videoRef.current.play();
+      }
+    }, 50);
+  };
+
   return (
     <motion.section
       ref={heroRef}
-      className={` ${!isHome ? "md:max-h-screen h-[65vh]" : "md:min-h-screen h-[80vh] md:h-[90vh] items-center"} 
-      relative flex overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl hover:shadow-green-700 group transition`}
+      className={`${
+        !isHome
+          ? "md:max-h-screen h-[65vh]"
+          : "md:min-h-screen h-[80vh] md:h-[90vh] items-center"
+      } relative flex overflow-hidden bg-cover bg-center bg-no-repeat shadow-2xl group transition`}
       style={{
-        backgroundImage: `url('${image}')`,
+        backgroundImage: !video ? `url('${image}')` : undefined,
       }}
       initial="initial"
       whileHover="hover"
     >
+      {/* Background Video */}
+      {/* Background Video (when not active) */}
+      {video && (
+        <video
+          ref={videoRef}
+          src={video}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-300 ${
+            activeVideo ? "opacity-0 pointer-events-none" : "opacity-100 z-0"
+          }`}
+        />
+      )}
+
+      {/* --- FULLSCREEN VIDEO POPUP --- */}
+      {activeVideo && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setActiveVideo(false)}
+        >
+          {/* Stop background click from closing */}
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute -top-10 right-0 text-white text-3xl font-bold"
+              onClick={() => setActiveVideo(false)}
+            >
+              ✕
+            </button>
+
+            <video
+              ref={videoRef}
+              src={video}
+              autoPlay
+              controls
+              className="w-full rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+      )}
+
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60 z-10"></div>
+      {!activeVideo && (
+        <div className="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
+      )}
+
+      {/* Hover Play Button */}
+      {video && !activeVideo && (
+        <motion.button
+          onClick={handleVideoClick}
+          className="absolute bottom-5 right-5 z-30 p-3 bg-white/80 hover:bg-white rounded-full shadow-xl transition"
+          whileHover={{ scale: 1.1 }}
+        >
+          <Play className="text-green-700 w-6 h-6" />
+        </motion.button>
+      )}
 
       {/* Content Container */}
       <div
-        className={`relative z-20 container mx-auto text-center max-w-5xl ${isHome && "md:text-left "}`}
+        className={`relative z-20 container mx-auto text-center max-w-5xl ${
+          isHome && "md:text-left"
+        }`}
       >
         <motion.div
           variants={fadeIn("up", "tween", 0.3, 1)}
-          className={`${!isHome && (isProject ? "absolute bottom-1/6 left-1/2 -translate-x-1/2" : "lg:left-1/2 lg:-translate-x-1/2 absolute bottom-1/6")} `}
+          className={`${
+            !isHome &&
+            (isProject
+              ? "absolute bottom-1/6 left-1/2 -translate-x-1/2"
+              : "lg:left-1/2 lg:-translate-x-1/2 absolute bottom-1/6")
+          } `}
         >
           {isHome ? (
-            <h1 className={`${titleStyle} ${isHome ? homeStyle : ""}`}>
+            <h1 className={`${titleStyle} ${homeStyle}`}>
               {"Your Gateway to Premium Land, Plots & Apartments "
                 .split("")
                 .map((letter, index) => (
@@ -90,12 +181,7 @@ const BannerSection = ({
                       }),
                     }}
                   >
-                    {
-                      // letter === "&" ? (
-                      //   <br></br>
-                      // ) :
-                      letter === " " ? "\u00A0" : letter
-                    }
+                    {letter === " " ? "\u00A0" : letter}
                   </motion.span>
                 ))}
               <span className="text-yellow-400">
@@ -114,8 +200,10 @@ const BannerSection = ({
 
           {subtitle && (
             <p
-              className={`mt-6 text-md text-yellow-100 mx-auto md:mx-0 leading-relaxed drop-shadow-md
-              ${isHome && " transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"}`}
+              className={`mt-6 text-md text-yellow-100 mx-auto md:mx-0 leading-relaxed drop-shadow-md ${
+                isHome &&
+                "transform transition-transform duration-500 ease-in-out delay-300 max-w-2xl"
+              }`}
             >
               {subtitle}
             </p>
@@ -153,20 +241,22 @@ const BannerSection = ({
       </div>
 
       {/* Bouncing Down Arrow */}
-      <motion.div
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 text-white"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ repeat: Infinity, duration: 1.5 }}
-        onClick={handleArrowClick}
-      >
-        <ChevronDown className="cursor-pointer w-8 h-8 md:w-16 md:h-16 text-yellow-200 drop-shadow-xl" />
-      </motion.div>
+      {!activeVideo && (
+        <motion.div
+          className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 text-white"
+          animate={{ y: [0, -10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+          onClick={handleArrowClick}
+        >
+          <ChevronDown className="cursor-pointer w-8 h-8 md:w-16 md:h-16 text-yellow-200 drop-shadow-xl" />
+        </motion.div>
+      )}
 
-      {/* social media */}
+      {/* Social Media */}
       <SocialPlatforms
         classes="flex md:flex-col gap-4 top-0 right-0 absolute m-5 z-50"
         iconStyle="text-white opacity-50 hover:opacity-100"
-        textSize="lg lg:2xl "
+        textSize="lg lg:2xl"
       />
     </motion.section>
   );

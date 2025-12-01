@@ -127,7 +127,7 @@ export default function Footer() {
         </div>
 
         {/* Bank Info */}
-        <div className="space-y-6 flex flex-col md:flex-row md:justify-between mb-12">
+        <div className="space-y-6 grid grid-cols-1 md:grid-cols-3 gap-2 ">
           {bankAccounts.map((account) => (
             <div key={account.id}>
               <h5 className="text-white font-medium mb-3">Bank Details</h5>
@@ -147,6 +147,10 @@ export default function Footer() {
                 <p>
                   <span className="font-medium">Branch:</span>{" "}
                   {account.branchName}
+                </p>
+                <p>
+                  <span className="font-medium">Routing</span>{" "}
+                  {account.routingNumber}
                 </p>
               </div>
             </div>
