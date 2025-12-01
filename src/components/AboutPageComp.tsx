@@ -143,17 +143,17 @@ const documents: Document[] = [
     downloadUrl: "/bcmc-documents/Banglar Choya Model City PD.pdf",
     description: "Detailed PD document",
   },
-  {
-    id: "visiting-card",
-    name: "Official Visiting Card",
-    category: "marketing",
-    fileType: "image",
-    fileSize: "165 KB",
-    uploadDate: "2024-01-20",
-    downloadUrl: "/bcmc-documents/visiting-card.png",
-    // previewUrl: "/bcmc-documents/visiting-card.png",
-    description: "Company visiting card design",
-  },
+  // {
+  //   id: "visiting-card",
+  //   name: "Official Visiting Card",
+  //   category: "marketing",
+  //   fileType: "image",
+  //   fileSize: "165 KB",
+  //   uploadDate: "2024-01-20",
+  //   downloadUrl: "/bcmc-documents/visiting-card.png",
+  //   // previewUrl: "/bcmc-documents/visiting-card.png",
+  //   description: "Company visiting card design",
+  // },
 ];
 
 export default function AboutComponent() {
