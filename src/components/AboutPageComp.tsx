@@ -21,6 +21,7 @@ import {
   FaFileContract,
 } from "react-icons/fa";
 import LegalDocument from "./LegalDocument";
+import Projects from "./Projects";
 
 type DocumentCategory = {
   id: string;
@@ -369,7 +370,10 @@ export default function AboutComponent() {
 
         {/* Ongoing Development Projects Section */}
         <div className="py-10">
-          <OngoingDevelopment></OngoingDevelopment>
+          {/* <OngoingDevelopment></OngoingDevelopment> */}
+
+          {/* Project Showcase */}
+          <Projects></Projects>
         </div>
 
         {/* flats  */}
