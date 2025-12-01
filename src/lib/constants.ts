@@ -171,3 +171,38 @@ export const testimonials = [
     avatar: "/avatars/AI-person-2.webp",
   },
 ];
+
+export const bankAccounts = [
+  {
+    id: 1,
+    accountName: "BANGLAR CHOYA MODEL CITY LIMITED.",
+    accountNumber: "2076304740001",
+    bankName: "BRAC BANK",
+    branchName: "Mohakhali",
+    routingNumber: "060261384",
+  },
+  {
+    id: 2,
+    accountName: "BANGLAR CHOYA MODEL CITY LTD.",
+    accountNumber: "1922210011805",
+    bankName: "NRB Bank",
+    branchName: "Progoti Sharari",
+    routingNumber: "290263707",
+  },
+  {
+    id: 3,
+    accountName: "BANGLAR CHOYA MODEL CITY LTD.",
+    accountNumber: "3291100318896",
+    bankName: "Dutch-Bangla Bank PLC",
+    branchName: "Gulshan",
+    routingNumber: "090261738",
+  },
+  {
+    id: 4,
+    accountName: "Mas Trading Company",
+    accountNumber: "3291100318896",
+    bankName: "Dutch-Bangla Bank",
+    branchName: "Gulshan Avenue",
+    routingNumber: "090261738",
+  },
+];

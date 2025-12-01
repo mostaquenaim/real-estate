@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import SocialPlatforms from "./SocialPlatforms";
 import { bankInfo } from "./BankDetails";
+import { bankAccounts } from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -121,29 +122,35 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
-
-              {/* Bank Info */}
-              <div>
-                <h5 className="text-white font-medium mb-3">Bank Details</h5>
-                <div className="space-y-2 text-gray-400 text-sm">
-                  <p>
-                    <span className="font-medium">Account Name:</span> Banglar
-                    Choya Model City Ltd.
-                  </p>
-                  <p>
-                    <span className="font-medium">Account No:</span>{" "}
-                    1922210011805
-                  </p>
-                  <p>
-                    <span className="font-medium">Bank Name:</span> NRB Bank
-                  </p>
-                  <p>
-                    <span className="font-medium">Branch:</span> Gulshan Branch
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
+        </div>
+
+        {/* Bank Info */}
+        <div className="space-y-6 flex flex-col md:flex-row md:justify-between mb-12">
+          {bankAccounts.map((account) => (
+            <div key={account.id}>
+              <h5 className="text-white font-medium mb-3">Bank Details</h5>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p>
+                  <span className="font-medium">Account Name:</span>{" "}
+                  {account.accountName}
+                </p>
+                <p>
+                  <span className="font-medium">Account No:</span>{" "}
+                  {account.accountNumber}
+                </p>
+                <p>
+                  <span className="font-medium">Bank Name:</span>{" "}
+                  {account.bankName}
+                </p>
+                <p>
+                  <span className="font-medium">Branch:</span>{" "}
+                  {account.branchName}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Projects Section */}
