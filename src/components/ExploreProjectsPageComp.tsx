@@ -127,8 +127,8 @@ export default function ExploreProjectsPageComp({
       variants={fadeIn("up", "tween", 0.1, 0.6)}
     >
       <BannerSection
-        image={project.image ? project.image : ''}
-        video={project.video ? project.video : ''}
+        image={project.image ? project.image : ""}
+        video={project.video ? project.video : ""}
         title={project.title}
         isProject={true}
       />
