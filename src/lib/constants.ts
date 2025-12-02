@@ -200,7 +200,7 @@ export const bankAccounts = [
   // },
   {
     id: 3,
-    accountName: "Mas Trading Company",
+    accountName: "MAS TRADING COMPANY",
     accountNumber: "3291100318896",
     bankName: "Dutch-Bangla Bank",
     branchName: "Gulshan Avenue",
