@@ -190,14 +190,6 @@ export const bankAccounts = [
     branchName: "Progoti Sharari",
     routingNumber: "290263707",
   },
-  // {
-  //   id: 3,
-  //   accountName: "BANGLAR CHOYA MODEL CITY LTD.",
-  //   accountNumber: "3291100318896",
-  //   bankName: "Dutch-Bangla Bank PLC",
-  //   branchName: "Gulshan",
-  //   routingNumber: "090261738",
-  // },
   {
     id: 3,
     accountName: "MAS TRADING COMPANY",
@@ -207,4 +199,3 @@ export const bankAccounts = [
     routingNumber: "090261738",
   },
 ];
-

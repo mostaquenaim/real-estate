@@ -36,7 +36,7 @@ const concerns: Concern[] = [
   },
   {
     id: "mas-trading",
-    title: "MAS Trading Company",
+    title: "MAS TRADING COMPANY",
     image: "/sister-concerns/mas-trading-logo-png.png",
     tagline: "Quality you can trust",
     phone: "+8801337938322",
