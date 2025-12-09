@@ -41,6 +41,7 @@
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
+    "tailwindcss-animate": "^1.0.7",
     "tsparticles": "^3.8.1",
     "tsparticles-slim": "^2.12.0",
     "yet-another-react-lightbox": "^3.24.0",

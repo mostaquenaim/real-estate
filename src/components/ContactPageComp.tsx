@@ -205,7 +205,6 @@ export default function ContactComponent() {
                     </Link>
                   </Card>
                 </motion.div>
-
                 <motion.div whileHover={{ x: 5 }} className="group">
                   <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-green-400 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-green-50">
                     <Link
