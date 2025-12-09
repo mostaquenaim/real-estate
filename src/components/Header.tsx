@@ -36,9 +36,9 @@ export default function Header() {
           className="bg-green-800 text-white w-full py-2"
         >
           <div className="flex gap-10 items-center text-xs md:text-sm font-medium px-2 md:px-0">
-            <a href="tel:01337938322" className="flex items-center gap-2 mr-10">
+            <a href="tel:+8801337938322" className="flex items-center gap-2 mr-10">
               <Phone className="w-4 h-4 text-white md:text-green-600" />
-              <span className="hidden md:inline">+88 01337938322</span>
+              <span className="hidden md:inline">+8801337938322</span>
             </a>
             <a
               href="mailto:banglarchoyamodelcity@gmail.com"
@@ -65,7 +65,7 @@ export default function Header() {
       {/* For small devices (static content) */}
       <div className="block md:hidden bg-green-800 text-white w-full py-2">
         <div className="flex gap-2 items-start px-4 text-xs font-medium justify-end">
-          <a href="tel:01337938322" className="flex items-center gap-2">
+          <a href="tel:+8801337938322" className="flex items-center gap-2">
             <Phone className="w-4 h-4 text-white" />
           </a>
           <a

@@ -421,7 +421,7 @@ export default function ExploreProjectsPageComp({
                       href="tel:+8801337938322"
                       className="font-medium hover:text-blue-600 transition-colors"
                     >
-                      +88 01337938322
+                      +8801337938322
                     </a>
                   </div>
                 </div>

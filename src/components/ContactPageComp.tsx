@@ -110,10 +110,10 @@ export default function ContactComponent() {
                     </h3>
                     <p className="leading-relaxed text-gray-600">
                       <a
-                        href="tel:01337938322"
+                        href="tel:+8801337938322"
                         className="hover:text-green-600 transition-colors"
                       >
-                        01337-938322
+                        +8801337-938322
                       </a>
                     </p>
                   </div>
