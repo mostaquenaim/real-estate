@@ -98,7 +98,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         className="hover:text-yellow-500 transition-colors"
                       >
-                        1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
+                        {process.env.NEXT_PUBLIC_OFFICE_ADDRESS}
                       </a>
                     </address>
                   </div>

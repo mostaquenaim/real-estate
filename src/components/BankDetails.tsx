@@ -3,9 +3,9 @@ import { useState } from "react";
 import { FaUniversity, FaRegCopy, FaCheckCircle } from "react-icons/fa";
 
 export const bankInfo = [
-  { label: "Bank Name", value: "NRB Bank" },
-  { label: "Account Name", value: "Banglar Choya Model City Ltd." },
-  { label: "Account Number", value: "1922210011805" },
+  { label: "Bank Name", value: "Dutch-Bangla Bank PLC" },
+  { label: "Account Name", value: "BANGLAR CHOYA MODEL CITY LTD." },
+  { label: "Account Number", value: "3291100318896" },
   { label: "Branch", value: "Gulshan Branch" },
 ];
 

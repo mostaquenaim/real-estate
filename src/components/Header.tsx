@@ -56,7 +56,7 @@ export default function Header() {
               className="flex items-center gap-2 mr-10"
             >
               <MapPin className="w-4 h-4 text-white md:text-green-600" />
-              <span>Gulshan-2, Dhaka</span>
+              <span>Gulshan-1, Dhaka</span>
             </a>
           </div>
         </Marquee>
@@ -81,7 +81,7 @@ export default function Header() {
             className="flex items-center gap-2"
           >
             <MapPin className="w-4 h-4 text-white" />
-            <span>Gulshan-2, Dhaka</span>
+            <span>Gulshan-1, Dhaka</span>
           </a>
         </div>
       </div>

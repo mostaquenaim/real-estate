@@ -94,7 +94,7 @@ export default function ContactComponent() {
                         rel="noopener noreferrer"
                         className="hover:text-green-600 transition-colors"
                       >
-                        1st floor, house-25, Road-47, Gulshan-2, Dhaka-1212
+                        {process.env.NEXT_PUBLIC_OFFICE_ADDRESS}
                       </a>
                     </p>
                   </div>
@@ -188,7 +188,7 @@ export default function ContactComponent() {
                 </motion.div>
 
                 <motion.div whileHover={{ x: 5 }} className="group">
-                  <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-yellow-500 group-hover:shadow-xl transition-all bg-white hover:bg-gradient-to-tr from-white to-yellow-50">
+                  <Card className="p-6 rounded-2xl shadow-md border border-gray-100 group-hover:border-yellow-500 group-hover:shadow-xl transition-all bg-white hover:bg-linear-to-tr from-white to-yellow-50">
                     <Link
                       href={`/projects/borakoir`}
                       className="flex justify-between items-center"
@@ -238,6 +238,7 @@ export default function ContactComponent() {
             textSize="3xl"
           />
         </motion.div>
+
         {/* Map Section */}
         <motion.div variants={fadeIn("up", "spring", 0.8, 1)} className="mt-20">
           <Card className="rounded-3xl shadow-2xl overflow-hidden bg-white/70 backdrop-blur-md border border-green-100">
