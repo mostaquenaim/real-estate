@@ -242,7 +242,7 @@ export default function ContactComponent() {
         <motion.div variants={fadeIn("up", "spring", 0.8, 1)} className="mt-20">
           <Card className="rounded-3xl shadow-2xl overflow-hidden bg-white/70 backdrop-blur-md border border-green-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.732456590783!2d90.4125895!3d23.7925397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7006ea4d381%3A0x43c87969ff42379e!2sBanglar%20Choya%20Model%20City%20Ltd!5e0!3m2!1sen!2sbd!4v1752577974213!5m2!1sen!2sbd"
+              src={process.env.NEXT_PUBLIC_OFFICE_LOCATION_IFRAME}
               width="100%"
               height="450"
               style={{ border: 0 }}

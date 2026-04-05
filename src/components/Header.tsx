@@ -50,7 +50,7 @@ export default function Header() {
               </span>
             </a>
             <a
-              href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
+              href={process.env.NEXT_PUBLIC_OFFICE_LOCATION}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 mr-10"
@@ -75,7 +75,7 @@ export default function Header() {
             <Mail className="w-4 h-4 text-white" />
           </a>
           <a
-            href="https://maps.app.goo.gl/aWFSKQykjrCaS6t88"
+            href={process.env.NEXT_PUBLIC_OFFICE_LOCATION}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2"
